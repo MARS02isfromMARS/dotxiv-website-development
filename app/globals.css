@@ -14,7 +14,7 @@ button,input { font:inherit; }
 .announcement a,.text-link { display:inline-flex; align-items:center; gap:5px; color:var(--paper); font-weight:700; }
 .site-header { height:76px; display:flex; align-items:center; justify-content:space-between; padding:0 clamp(24px,6vw,104px); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; background:rgba(9,9,11,.88); backdrop-filter:blur(16px); }
 .brand { display:flex; align-items:center; gap:10px; font-family:Georgia,serif; font-size:21px; letter-spacing:-.05em; }
-.brand img { object-fit:cover; object-position:center; filter:brightness(1.1); }
+.brand-logo-wrap { width:52px; height:52px; display:block; overflow:hidden; position:relative; flex:none; }.brand-logo { width:52px; height:52px; max-width:none; object-fit:contain; object-position:center; transform:scale(3.15); mix-blend-mode:screen; filter:brightness(1.1); }
 .desktop-nav { display:flex; align-items:center; gap:28px; color:#a6a1ae; font-size:12px; }
 .desktop-nav a { display:flex; align-items:center; gap:4px; transition:color .2s; }.desktop-nav a:hover,.desktop-nav button:hover { color:var(--paper); }.desktop-nav button,.mobile-menu { border:0; background:none; color:inherit; cursor:pointer; }.mobile-menu{display:none}
 .eyebrow { display:flex; align-items:center; gap:9px; color:var(--violet); font-size:10px; text-transform:uppercase; letter-spacing:.16em; font-weight:700; }.eyebrow-dot { width:5px; height:5px; border-radius:50%; background:var(--violet); box-shadow:0 0 12px var(--violet); }
