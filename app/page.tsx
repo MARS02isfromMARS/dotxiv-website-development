@@ -51,8 +51,6 @@ const categories = [
   },
 ];
 
-]
-
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="eyebrow"><span className="eyebrow-dot" />{children}</p>
 }
@@ -148,7 +146,7 @@ export default function Page() {
           );
         })}
       </div>
-        
+        </section>
 
       <section id="about" className="why-section page-pad">
         <div className="why-header">
