@@ -15,35 +15,35 @@ const categories = [
     title: 'Orbital mechanics',
     text: 'From Keplerian motion to perturbation theory.',
     icon: Orbit,
-    image: '/images/blackhole.jpg', // Replace with your image path
+    image: 'https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1200&auto=format&fit=crop',
   },
   {
     label: '02',
     title: 'Observational astronomy',
     text: 'Read the sky through photons, spectra, and surveys.',
     icon: Telescope,
-    image: '/images/eye-nebula.jpg', // Replace with your image path
+    image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop',
   },
   {
     label: '03',
     title: 'Stellar astronomy',
     text: 'The physics of stars, from birth to remnants.',
     icon: Sun,
-    image: '/images/sun-earth.jpg', // Replace with your image path
+    image: 'https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1200&auto=format&fit=crop',
   },
   {
     label: '04',
     title: 'Galactic astronomy',
     text: 'Structure, dynamics, and the cosmic web.',
     icon: Sparkles,
-    image: '/images/satellite.jpg', // Replace with your image path
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop',
   },
   {
     label: '05',
     title: 'Cosmology',
     text: 'The origin, evolution, and ultimate fate of the universe.',
     icon: Globe2,
-    image: '/images/astronaut.jpg', // Replace with your image path
+    image: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1200&auto=format&fit=crop',
   },
 ];
 
@@ -61,24 +61,24 @@ export default function ResourceCategories() {
             >
               {/* Background Space Image */}
               <div
-                className="absolute inset-0 bg-cover bg-center opacity-30 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-50"
+                className="absolute inset-0 bg-cover bg-center opacity-40 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-60"
                 style={{ backgroundImage: `url(${category.image})` }}
               />
 
-              {/* Dark Gradient Overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
+              {/* Dark Gradient Overlay for readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30" />
 
-              {/* Top Row: Category Label & Icon */}
+              {/* Top Row */}
               <div className="relative z-10 flex items-center justify-between">
                 <span className="text-xs font-mono text-neutral-400 tracking-wider">
                   {category.label}
                 </span>
-                <div className="p-2.5 rounded-lg bg-white/5 backdrop-blur-md border border-white/10 text-neutral-200">
+                <div className="p-2.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/10 text-neutral-200">
                   <IconComponent className="w-5 h-5" />
                 </div>
               </div>
 
-              {/* Bottom Content: Title, Subtext & Action Link */}
+              {/* Bottom Content */}
               <div className="relative z-10 space-y-2.5">
                 <h3 className="text-2xl font-medium tracking-tight text-white">
                   {category.title}
