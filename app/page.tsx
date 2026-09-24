@@ -56,7 +56,7 @@ const categories = [
   },
 ];
   
-];
+
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="eyebrow"><span className="eyebrow-dot" />{children}</p>
