@@ -18,6 +18,7 @@ const categories = [
     label: '01',
     title: 'Orbital mechanics',
     text: 'From Keplerian motion to perturbation theory.',
+    tone: 'violet',
     icon: Orbit,
     image: 'https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1200&auto=format&fit=crop',
   },
@@ -25,6 +26,7 @@ const categories = [
     label: '02',
     title: 'Observational astronomy',
     text: 'Read the sky through photons, spectra, and surveys.',
+    tone: 'blue',
     icon: Telescope,
     image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop',
   },
@@ -32,6 +34,7 @@ const categories = [
     label: '03',
     title: 'Stellar astronomy',
     text: 'The physics of stars, from birth to remnants.',
+    tone: 'amber',
     icon: Sun,
     image: 'https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1200&auto=format&fit=crop',
   },
@@ -39,6 +42,7 @@ const categories = [
     label: '04',
     title: 'Galactic astronomy',
     text: 'Structure, dynamics, and the cosmic web.',
+    tone: 'pink',
     icon: Sparkles,
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop',
   },
@@ -46,9 +50,12 @@ const categories = [
     label: '05',
     title: 'Cosmology',
     text: 'The origin, evolution, and ultimate fate of the universe.',
+    tone: 'emerald',
     icon: Globe2,
     image: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1200&auto=format&fit=crop',
   },
+];
+  
 ];
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
