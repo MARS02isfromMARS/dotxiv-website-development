@@ -5,7 +5,7 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://dotxiv.vercel.app'),
   title: { default: 'DotXiv — Astrophysics & Cosmology Notes', template: '%s | DotXiv' },
-  description: 'Astrophysics olympiad notes, cosmology lecture notes, and rigorous problem sets for USAAAO and IOAA preparation.',
+  description: 'Astrophysics olympiad notes, cosmology lecture notes, and rigorous problem sets for BDOAA and IOAA preparation.',
   generator: 'v0.app',
   alternates: { canonical: '/' },
   openGraph: { title: 'DotXiv — Understand the universe from first principles', description: 'Rigorous astrophysics and cosmology notes for curious minds.', url: 'https://dotxiv.vercel.app', siteName: 'DotXiv', type: 'website', images: [{ url: '/dotxiv-logo.png', width: 1600, height: 1200, alt: 'DotXiv orbital logo' }] },
