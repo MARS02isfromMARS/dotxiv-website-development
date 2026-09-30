@@ -1,33 +1,92 @@
-# dotxiv-website-development
+# 🌌 dotxiv-website-development
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+An open-source, highly interactive web platform built to aggregate, curate, and deliver premium learning resources, notes, and foundational concepts for students preparing for the **Astronomy and Astrophysics Olympiads** (like IAO, IOAA, and national selection tests).
 
-## Built with v0
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_JqQjVEEj2AHGgOAJJNyLYdpHcTs0)
+---
 
-## Getting Started
+## 🚀 Features
 
-First, run the development server:
+- **Comprehensive Syllabus Coverage:** Structured notes tracking core Olympiad topics (Celestial Mechanics, Astrophysics, Cosmology, Instrumentation, and Data Analysis).
+- **Interactive Concept Visualizations:** Dynamic components designed to help students visualize orbital paths, coordinate systems, and stellar evolutions.
+- **Curated Problem Sets:** Past Olympiad papers, mock tests, and deep-dive derivations.
+- **Lightning Fast Performance:** Server-side rendering and optimized static generation powered by Next.js.
 
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org) (App Router)
+- **Language:** [TypeScript](https://typescriptlang.org)
+- **Styling & Components:** Tailwind CSS & Shadcn UI (via v0 components configuration)
+- **Package Manager:** `pnpm`
+
+---
+
+## 🏁 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+Make sure you have Node.js (v18+ recommended) and `pnpm` installed on your machine.
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install -g pnpm
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation & Local Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com
+   cd dotxiv-website-development
+   ```
 
-## Learn More
+2. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
 
-To learn more, take a look at the following resources:
+3. **Start the development server:**
+   ```bash
+   pnpm dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+4. **Open the application:**
+   Navigate to [http://localhost:3000](http://localhost:3000) in your browser to see the live site.
+
+---
+
+## 🔮 Development with v0
+
+This repository is strictly integrated with a **v0 project**. 
+
+- **Do not manually push massive structural changes** to `main` without syncing, as v0 automatically triggers deployments on merges.
+- To suggest or generate new visual layouts or note components, use the linked v0 workspace interface to iterate on UI sections natively.
+
+---
+
+## 📂 Project Structure Overview
+
+```text
+├── app/                  # Next.js App Router (Pages, layouts, and API routes)
+├── components/           # Reusable UI components (Shadcn UI & custom interactive elements)
+├── lib/                  # Utility functions, mathematical constants, and data fetchers
+├── public/               # Static assets (Star maps, diagrams, educational illustrations)
+├── components.json       # Shadcn UI configuration file
+└── next.config.mjs       # Next.js framework configuration
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make to improve the notes, fix physics equations, or enhance the UI layout are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingAstronomyNotes`)
+3. Commit your Changes (`git commit -m 'Add notes on Spherical Trigonometry'`)
+4. Push to the Branch (`git push origin feature/AmazingAstronomyNotes`)
+5. Open a Pull Request
+   
