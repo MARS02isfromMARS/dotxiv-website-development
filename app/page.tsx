@@ -175,7 +175,7 @@ export default function Page() {
             <SectionLabel>A place to ask better questions</SectionLabel>
             <h2>The best discoveries<br />are <em>shared.</em></h2>
             <p>Join students, educators, and fellow sky-watchers in the DotXiv community.</p>
-            <Link href="https://discord.gg/ycjNnkCHn" target="_blank" rel="noopener noreferrer" className="button button-primary">
+            <Link href="https://discord.gg/ycjNnkcHn" target="_blank" rel="noopener noreferrer" className="button button-primary">
             Join the community ↗
             </Link>
             
