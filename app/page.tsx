@@ -215,7 +215,8 @@ export default function Page() {
         </div>
         <div className="footer-bottom">
           <span>© 2026 DotXiv</span>
-          <span>Written and maintained by <strong>Mohammad Marshad Bin Khaled</strong></span>
+          <span>Written and maintained by <Link href="https://thedotastro.netlify.app" className="hover:underline"><strong>the Dot</strong></Link></span>
+    
           <span className="social"><Sparkles size={15} /> <span>Discord</span></span>
         </div>
       </footer>
