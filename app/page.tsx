@@ -221,9 +221,12 @@ export default function Page() {
           <span>© 2026 DotXiv</span>
           <span>Written and maintained by <Link href="https://thedotastro.netlify.app" className="hover:underline"><strong>The Dot</strong></Link></span>
     
-          <span className="social"><Sparkles size={15} /> <span>Discord</span></span>
-        </div>
-      </footer>
-    </main>
+          <span className="social">
+  <Link href="https://discord.gg/ycjNnkcHn" className="hover:underline flex items-center gap-1">
+    <Sparkles size={15} />
+    <span>Discord</span>
+  </Link>
+</span>
+          
   )
     }
