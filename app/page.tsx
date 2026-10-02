@@ -19,7 +19,8 @@ import {
 const categories = [
   {
     label: '01',
-    title: 'Orbital mechanics',
+    title: 'Celestial mechanics',
+    slug: 'celestial-mechanics',
     text: 'From Keplerian motion to perturbation theory.',
     tone: 'violet',
     icon: Orbit,
@@ -28,6 +29,7 @@ const categories = [
   {
     label: '02',
     title: 'Observational astronomy',
+    slug: 'observational-astronomy',
     text: 'Read the sky through photons, spectra, and surveys.',
     tone: 'blue',
     icon: Telescope,
@@ -36,6 +38,7 @@ const categories = [
   {
     label: '03',
     title: 'Stellar astronomy',
+    slug: 'stellar-astronomy',
     text: 'The physics of stars, from birth to remnants.',
     tone: 'amber',
     icon: Sun,
@@ -44,6 +47,7 @@ const categories = [
   {
     label: '04',
     title: 'Galactic astronomy',
+    slug: 'galactic-astronomy',
     text: 'Structure, dynamics, and the cosmic web.',
     tone: 'pink',
     icon: Sparkles,
@@ -51,7 +55,8 @@ const categories = [
   },
   {
     label: '05',
-    title: 'Cosmology',
+    title: 'Cosmology notes',
+    slug: 'cosmology',
     text: 'The origin, evolution, and ultimate fate of the universe.',
     tone: 'emerald',
     icon: Globe2,
@@ -153,7 +158,7 @@ export default function Page() {
         {categories.map((category) => {
           const IconComponent = category.icon;
           return (
-            <Link href="#notes" key={category.label} className="category-card">
+            <Link href={`/notes/${category.slug}`} key={category.label} className="category-card">
               <div className="category-bg-image" style={{ backgroundImage: `url(${category.image})` }} />
               <div className="category-bg-overlay" />
 
