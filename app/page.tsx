@@ -235,7 +235,8 @@ export default function Page() {
     <span>Discord</span>
   </Link>
 </span>
-            
-          
+        </div>
+      </footer>
+    </main>
   )
-    }
+}
