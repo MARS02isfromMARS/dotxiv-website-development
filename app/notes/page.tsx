@@ -3,7 +3,10 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 
 const noteAreas = [
   { title: 'Celestial mechanics', slug: 'celestial-mechanics', description: 'Orbits, Keplerian motion, and the forces that shape trajectories.' },
-  { title: 'Cosmology notes', slug: 'cosmology', description: 'The origin, evolution, and structure of the universe.' },
+  { title: 'Observational astronomy', slug: 'observational-astronomy', description: 'Read the sky through photons, spectra, and surveys.' },
+  { title: 'Stellar astronomy', slug: 'stellar-astronomy', description: 'The physics of stars, from birth to remnants.' },
+  { title: 'Galactic astronomy', slug: 'galactic-astronomy', description: 'Structure, dynamics, and the cosmic web.' },
+  { title: 'Cosmology notes', slug: 'cosmology', description: 'The origin, evolution, and ultimate fate of the universe.' },
 ]
 
 export default function NotesPage() {
