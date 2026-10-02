@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 import { 
   ArrowUpRight, 
@@ -63,6 +66,10 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 export default function Page() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const closeMenu = () => setMenuOpen(false)
+
   return (
     <main>
       <div className="announcement">
@@ -76,7 +83,7 @@ export default function Page() {
           <span className="brand-logo-wrap">
             <img 
               className="brand-logo" 
-              src="https://vercel-storage.com" 
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Black%20White%20Simple%20Minimalist%20Modern%20Tone%20Creative%20Studio%20Logo_20260924_190336_0000-pGpZQE73UHylCkIrLphBg7MlNkmIOk.png" 
               alt="DotXiv orbital xiv logo" 
               width={52} 
               height={52} 
@@ -92,7 +99,14 @@ export default function Page() {
           <Link href="#resources">More resources</Link>
           <button aria-label="Search"><Search size={18} /></button>
         </nav>
-        <button className="mobile-menu" aria-label="Open menu"><Menu size={21} /></button>
+        <button className="mobile-menu" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}><Menu size={21} /></button>
+        {menuOpen && <nav className="mobile-nav" aria-label="Mobile navigation">
+          <Link href="#notes" onClick={closeMenu}>Notes <ChevronDown size={13} /></Link>
+          <Link href="#about" onClick={closeMenu}>About</Link>
+          <Link href="#community" onClick={closeMenu}>Community</Link>
+          <Link href="#contact" onClick={closeMenu}>Contact</Link>
+          <Link href="#resources" onClick={closeMenu}>More resources</Link>
+        </nav>}
       </header>
 
       <section className="hero page-pad">
@@ -191,7 +205,7 @@ export default function Page() {
               <span className="brand-logo-wrap">
                 <img 
                   className="brand-logo" 
-                  src="https://vercel-storage.com" 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Black%20White%20Simple%20Minimalist%20Modern%20Tone%20Creative%20Studio%20Logo_20260924_190336_0000-pGpZQE73UHylCkIrLphBg7MlNkmIOk.png" 
                   alt="DotXiv orbital xiv logo" 
                   width={45} 
                   height={45} 
