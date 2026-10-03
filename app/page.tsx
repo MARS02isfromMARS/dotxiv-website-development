@@ -120,8 +120,8 @@ export default function Page() {
           <h1>Understand the universe.<br /><em>From first principles.</em></h1>
           <p className="hero-lede">Rigorous, beautifully explained notes and problem sets for curious minds — from your first orbit to the edge of the observable universe.</p>
           <div className="hero-actions">
-            <Link className="button button-primary" href="#notes">Browse notes <ArrowUpRight size={16} /></Link>
-            <Link className="button button-quiet" href="#notes">Explore the library <ArrowUpRight size={16} /></Link>
+            <Link className="button button-primary" href="/notes">Browse notes <ArrowUpRight size={16} /></Link>
+            <Link className="button button-quiet" href="/library">Explore the library <ArrowUpRight size={16} /></Link>
           </div>
           <div className="hero-proof">
             <div className="proof-avatars"><span>M</span><span>R</span><span>A</span><span>+</span></div>
