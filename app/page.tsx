@@ -125,7 +125,7 @@ export default function Page() {
           </div>
           <div className="hero-proof">
             <div className="proof-avatars"><span>M</span><span>R</span><span>A</span><span>+</span></div>
-            <span>Written by olympiad alumni<br /><strong>Built for deep understanding</strong></span>
+            <span>Written by olympiad alumni and Astro Olympiad Campers<br /><strong>Built for deep understanding</strong></span>
           </div>
         </div>
         <div className="hero-orbit" aria-hidden="true">
