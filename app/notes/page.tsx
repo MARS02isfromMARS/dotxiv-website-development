@@ -34,7 +34,9 @@ const syllabus = [
     books: [
       'Fundamental Astronomy, Karttunen et al.: Ch. 3 “Celestial Mechanics” and the Solar System chapter for applications to planets, satellites, and small bodies.',
       'Carroll & Ostlie, An Introduction to Modern Astrophysics (Bobcat): Ch. 2 “Newtonian Mechanics”; Ch. 3 “Special Relativity”; Ch. 16 “The Solar System”; Ch. 17 “Planetary Atmospheres”; Ch. 18 “The Formation of the Solar System” (edition numbering may vary).',
+      'Ganitik Jotirbiggyan, Abu Saleh Mohammad Nuruzzaman ,Reads: Geometry of Celestial sphere and Celestial Coordinates'
       'General foundations: Jyotirbigyaner Jotokichu, chapters introducing the celestial sphere, apparent motion, gravity, and the Solar System. Use regional Olympiad problem books by Soumen Saha, Shajib Musthavi, or Ishtiaque Hossain Chowdhury for Kepler-law and orbit calculations.'
+      
     ],
     tools: 'Universe Sandbox for N-body gravity, collisions, and orbital perturbations; NASA Eyes for Solar System trajectories and spacecraft missions; Stellarium for apparent planetary motion, retrograde motion, and conjunctions.'
   },
