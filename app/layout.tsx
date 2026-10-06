@@ -16,21 +16,8 @@ export const metadata: Metadata = {
   openGraph: { title: 'DotXiv — Understand the universe from first principles', description: 'Rigorous astrophysics and cosmology notes for curious minds.', url: 'https://dotxiv.vercel.app', siteName: 'DotXiv', type: 'website', images: [{ url: '/dotxiv-logo.png', width: 1600, height: 1200, alt: 'DotXiv orbital logo' }] },
   twitter: { card: 'summary_large_image', title: 'DotXiv — Astrophysics & Cosmology Notes', description: 'Rigorous notes and problem sets for curious minds.', images: ['/dotxiv-logo.png'] },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: [{ url: '/dotxiv-logo.png', type: 'image/png' }],
+    apple: [{ url: '/dotxiv-logo.png', type: 'image/png' }],
   },
 }
 
