@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   verification: { google: 'QdX4ONxEMz8YUWY8roQaQTlRx2EYmtPWMlvoMaDzHl' },
   generator: 'v0.app',
   alternates: { canonical: '/' },
-  openGraph: { title: 'DotXiv — Understand the universe from first principles', description: 'Rigorous astrophysics and cosmology notes for curious minds.', url: 'https://dotxiv.vercel.app', siteName: 'DotXiv', type: 'website', images: [{ url: '/dotxiv-logo.png', width: 1600, height: 1200, alt: 'DotXiv orbital logo' }] },
-  twitter: { card: 'summary_large_image', title: 'DotXiv — Astrophysics & Cosmology Notes', description: 'Rigorous notes and problem sets for curious minds.', images: ['/dotxiv-logo.png'] },
+  openGraph: { title: 'DotXiv — Understand the universe from first principles', description: 'Rigorous astrophysics and cosmology notes for curious minds.', url: 'https://dotxiv.vercel.app', siteName: 'DotXiv', type: 'website', images: [{ url: '/dotxiv-browser-logo.png', width: 1600, height: 1200, alt: 'DotXiv orbital logo' }] },
+  twitter: { card: 'summary_large_image', title: 'DotXiv — Astrophysics & Cosmology Notes', description: 'Rigorous notes and problem sets for curious minds.', images: ['/dotxiv-browser-logo.png'] },
   icons: {
-    icon: [{ url: '/dotxiv-logo.png', type: 'image/png' }],
-    apple: [{ url: '/dotxiv-logo.png', type: 'image/png' }],
+    icon: [{ url: '/dotxiv-browser-logo.png', type: 'image/png' }],
+    apple: [{ url: '/dotxiv-browser-logo.png', type: 'image/png' }],
   },
 }
 
