@@ -224,7 +224,6 @@ export default function Page() {
             <div>
               <span>Explore</span>
               <Link href="#notes">Notes</Link>
-              <Link href="#notes">Notes</Link>
               <Link href="#about">About us</Link>
             </div>
             <div>
@@ -242,7 +241,7 @@ export default function Page() {
     
           <span className="social">
   <Link 
-    href="https://discord.gg/ycjNnkcHn" 
+    href="https://discord.gg/qYVz3MyUVk" 
     target="_blank" 
     rel="noopener noreferrer" 
     style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none', color: '#B9BBBE' }}
