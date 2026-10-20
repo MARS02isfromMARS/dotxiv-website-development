@@ -4,14 +4,14 @@ import { ArrowLeft, ArrowUpRight, BookOpen, Library } from 'lucide-react'
 const textbooks = [
   { title: 'Fundamental Astronomy', authors: 'H. Karttunen, P. Kröger, H. Oja, M. Poutanen & K. J. Donner', cover: '/textbook-covers/karttunen.jpg', pdf: 'https://drive.google.com/file/d/1jAAtkF0YCrT3Fm9B4I2kxez393olF_iy/view?usp=drivesdk' },
   { title: 'Fundamentals of Astronomy: A Guide for Olympiads', authors: 'Flavio Salvati', cover: '/textbook-covers/salvati-olympiads.jpg', pdf: 'https://drive.google.com/file/d/15bDhuOIYbaz2CmQemkBOSsJuuQPXRJdL/view?usp=drivesdk' },
-  { title: "A Student's Guide to the Mathematics of Astronomy", authors: 'Daniel Fleisch & Julia Kregenow', cover: '/textbook-covers/fleisch-kregenow.jpg' },
+  { title: "A Student's Guide to the Mathematics of Astronomy", authors: 'Daniel Fleisch & Julia Kregenow', cover: '/textbook-covers/fleisch-kregenow.jpg', pdf: 'https://drive.google.com/file/d/1stxvjdeDodxtcAIGUbKBZDJEnxftPZKs/view?usp=drivesdk' },
   { title: 'An Introduction to Modern Astrophysics', authors: 'Bradley W. Carroll & Dale A. Ostlie', cover: '/textbook-covers/carroll-ostlie.jpg', pdf: 'https://drive.google.com/file/d/1V12rbls_OdmsxS4HSG2sudghqPZ54Wfz/view?usp=drivesdk' },
   { title: 'Foundations of Astrophysics', authors: 'Barbara Ryden & Bradley M. Peterson', cover: '/textbook-covers/ryden-peterson.jpg' },
   { title: 'Astronomy: Principles and Practice', authors: 'A. E. Roy & D. Clarke', cover: '/textbook-covers/roy-clarke.jpg', pdf: 'https://drive.google.com/file/d/1LBJJhPa87_UqNKCdONRnhYcKN_B12iz5/view?usp=drivesdk' },
   { title: 'A Problem Book in Astronomy and Astrophysics', authors: 'Aniket Sule', cover: '/textbook-covers/sule-problem-book.webp', pdf: 'https://drive.google.com/file/d/1gFn2rYAE5QMrge7B0cz1x4K12mr2Ca1s/view?usp=drivesdk' },
   { title: 'Introduction to Cosmology', authors: 'Barbara Ryden', cover: '/textbook-covers/ryden-cosmology.jpg' },
   { title: 'Astronomy: A Physical Perspective', authors: 'Marc L. Kutner', cover: '/textbook-covers/kutner.jpg' },
-  { title: 'The Physical Universe: An Introduction to Astronomy', authors: 'Frank H. Shu', cover: '/textbook-covers/shu-physical-universe.jpg' },
+  { title: 'The Physical Universe: An Introduction to Astronomy', authors: 'Frank H. Shu', cover: '/textbook-covers/shu-physical-universe.jpg' , pdf: 'https://drive.google.com/file/d/1zdN3pwRzSjEIq2ox3ZKyEjppTa9GsNrV/view?usp=drivesdk' },
 ]
 
 const areas = [
