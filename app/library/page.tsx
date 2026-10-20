@@ -2,14 +2,14 @@ import Link from 'next/link'
 import { ArrowLeft, ArrowUpRight, BookOpen, Library } from 'lucide-react'
 
 const textbooks = [
-  { title: 'Fundamental Astronomy', authors: 'H. Karttunen, P. Kröger, H. Oja, M. Poutanen & K. J. Donner', cover: 'https://covers.openlibrary.org/b/title/Fundamental%20Astronomy-L.jpg' },
+  { title: 'Fundamental Astronomy', authors: 'H. Karttunen, P. Kröger, H. Oja, M. Poutanen & K. J. Donner', cover: 'https://covers.openlibrary.org/b/id/1018186-L.jpg' },
   { title: 'Fundamentals of Astronomy: A Guide for Olympiads', authors: 'Flavio Salvati', cover: 'https://covers.openlibrary.org/b/title/Fundamentals%20of%20Astronomy%20A%20Guide%20for%20Olympiads-L.jpg' },
   { title: "A Student's Guide to the Mathematics of Astronomy", authors: 'Daniel Fleisch & Julia Kregenow', cover: "https://covers.openlibrary.org/b/title/A%20Student's%20Guide%20to%20the%20Mathematics%20of%20Astronomy-L.jpg" },
-  { title: 'An Introduction to Modern Astrophysics', authors: 'Bradley W. Carroll & Dale A. Ostlie', cover: 'https://covers.openlibrary.org/b/title/An%20Introduction%20to%20Modern%20Astrophysics-L.jpg' },
-  { title: 'Foundations of Astrophysics', authors: 'Barbara Ryden & Bradley M. Peterson', cover: 'https://covers.openlibrary.org/b/title/Foundations%20of%20Astrophysics-L.jpg' },
+  { title: 'An Introduction to Modern Astrophysics', authors: 'Bradley W. Carroll & Dale A. Ostlie', cover: 'https://covers.openlibrary.org/b/id/135149-L.jpg' },
+  { title: 'Foundations of Astrophysics', authors: 'Barbara Ryden & Bradley M. Peterson', cover: 'https://covers.openlibrary.org/b/id/10389918-L.jpg' },
   { title: 'Astronomy: Principles and Practice', authors: 'A. E. Roy & D. Clarke', cover: 'https://covers.openlibrary.org/b/title/Astronomy%20Principles%20and%20Practice-L.jpg' },
   { title: 'A Problem Book in Astronomy and Astrophysics', authors: 'Aniket Sule', cover: 'https://covers.openlibrary.org/b/title/A%20Problem%20Book%20in%20Astronomy%20and%20Astrophysics-L.jpg' },
-  { title: 'Introduction to Cosmology', authors: 'Barbara Ryden', cover: 'https://covers.openlibrary.org/b/title/Introduction%20to%20Cosmology-L.jpg' },
+  { title: 'Introduction to Cosmology', authors: 'Barbara Ryden', cover: 'https://covers.openlibrary.org/b/id/300084-L.jpg' },
   { title: 'Astronomy: A Physical Perspective', authors: 'Marc L. Kutner', cover: 'https://covers.openlibrary.org/b/title/Astronomy%20A%20Physical%20Perspective-L.jpg' },
   { title: 'The Physical Universe: An Introduction to Astronomy', authors: 'Frank H. Shu', cover: 'https://covers.openlibrary.org/b/title/The%20Physical%20Universe-L.jpg' },
 ]
@@ -54,7 +54,7 @@ export default function LibraryPage() {
               {/* VO: Leave the PDF link empty like this for me to fill in */}
               <a href="PASTE_PDF_LINK_HERE" target="_blank" rel="noopener noreferrer">
                 <div className="book-cover-frame">
-                  <img src={book.cover} alt={`${book.title} cover`} className="book-cover" loading="lazy" />
+                  <div className="book-cover-fallback" role="img" aria-label={`${book.title} cover`}><span>{book.title}</span><small>{book.authors}</small></div>
                   <span className="book-number">{String(index + 1).padStart(2, '0')}</span>
                 </div>
                 <div className="book-copy">
