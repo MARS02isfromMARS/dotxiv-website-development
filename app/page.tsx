@@ -97,20 +97,20 @@ export default function Page() {
           <span>DotXiv</span>
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
-          <Link href="#notes">Notes <ChevronDown size={13} /></Link>
+          <Link href="/notes">Notes <ChevronDown size={13} /></Link>
           <Link href="#about">About</Link>
           <Link href="#community">Community</Link>
           <Link href="#contact">Contact</Link>
-          <Link href="#resources">More resources</Link>
-          <button aria-label="Search"><Search size={18} /></button>
+          <Link href="/library">More resources</Link>
+          <Link className="nav-search" href="/notes" aria-label="Search notes"><Search size={18} /></Link>
         </nav>
         <button className="mobile-menu" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}><Menu size={21} /></button>
         {menuOpen && <nav className="mobile-nav" aria-label="Mobile navigation">
-          <Link href="#notes" onClick={closeMenu}>Notes <ChevronDown size={13} /></Link>
+          <Link href="/notes" onClick={closeMenu}>Notes <ChevronDown size={13} /></Link>
           <Link href="#about" onClick={closeMenu}>About</Link>
           <Link href="#community" onClick={closeMenu}>Community</Link>
           <Link href="#contact" onClick={closeMenu}>Contact</Link>
-          <Link href="#resources" onClick={closeMenu}>More resources</Link>
+          <Link href="/library" onClick={closeMenu}>More resources</Link>
         </nav>}
       </header>
 
@@ -151,7 +151,7 @@ export default function Page() {
             <SectionLabel>Explore the library</SectionLabel>
             <h2>Start anywhere.<br /><em>Go everywhere.</em></h2>
           </div>
-          <Link href="#notes" className="text-link">View all notes <ArrowUpRight size={15} /></Link>
+          <Link href="/notes" className="text-link">View all notes <ArrowUpRight size={15} /></Link>
         </div>
         
                     <div className="category-grid">
@@ -223,15 +223,14 @@ export default function Page() {
           <div className="footer-links">
             <div>
               <span>Explore</span>
-              <Link href="#notes">Notes</Link>
+              <Link href="/notes">Notes</Link>
+              <Link href="/library">Library</Link>
               <Link href="#about">About us</Link>
             </div>
             <div>
-              <span>Elsewhere</span>
+              <span>Connect</span>
               <Link href="#community">Community</Link>
-              <Link href="#resources">Resources</Link>
               <Link href="#contact">Contact</Link>
-              
             </div>
           </div>
         </div>
