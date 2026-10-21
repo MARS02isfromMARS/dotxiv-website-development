@@ -6,7 +6,7 @@ const textbooks = [
   { title: 'Fundamentals of Astronomy: A Guide for Olympiads', authors: 'Flavio Salvati', cover: '/textbook-covers/salvati-olympiads.jpg', pdf: 'https://drive.google.com/file/d/15bDhuOIYbaz2CmQemkBOSsJuuQPXRJdL/view?usp=drivesdk' },
   { title: "A Student's Guide to the Mathematics of Astronomy", authors: 'Daniel Fleisch & Julia Kregenow', cover: '/textbook-covers/fleisch-kregenow.jpg', pdf: 'https://drive.google.com/file/d/1stxvjdeDodxtcAIGUbKBZDJEnxftPZKs/view?usp=drivesdk' },
   { title: 'An Introduction to Modern Astrophysics', authors: 'Bradley W. Carroll & Dale A. Ostlie', cover: '/textbook-covers/carroll-ostlie.jpg', pdf: 'https://drive.google.com/file/d/1V12rbls_OdmsxS4HSG2sudghqPZ54Wfz/view?usp=drivesdk' },
-  { title: 'IOAA Problem Book: Problems and Official Solutions (2007–2025)', authors: 'Ioana A. Zelko',cover: '/textbook-covers/zelko-ioaa.jpg', pdf: 'https://drive.google.com/file/d/1yTgE2auhzpKfjFVQaCCHU-6vooBQHxRv/view?usp=drivesdk'},
+  { title: 'IOAA Problem Book: Problems and Official Solutions (2007–2025)', authors: 'Ioana A. Zelko',cover: 'Screenshot_2026-10-21-10-22-55-17.JPG', pdf: 'https://drive.google.com/file/d/1yTgE2auhzpKfjFVQaCCHU-6vooBQHxRv/view?usp=drivesdk'},
   
   { title: 'Foundations of Astrophysics', authors: 'Barbara Ryden & Bradley M. Peterson', cover: '/textbook-covers/ryden-peterson.jpg' },
   { title: 'Astronomy: Principles and Practice', authors: 'A. E. Roy & D. Clarke', cover: '/textbook-covers/roy-clarke.jpg', pdf: 'https://drive.google.com/file/d/1LBJJhPa87_UqNKCdONRnhYcKN_B12iz5/view?usp=drivesdk' },
