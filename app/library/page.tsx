@@ -10,7 +10,7 @@ const textbooks = [
   { title: 'Foundations of Astrophysics', authors: 'Barbara Ryden & Bradley M. Peterson', cover: '/textbook-covers/ryden-peterson.jpg' },
   { title: 'Astronomy: Principles and Practice', authors: 'A. E. Roy & D. Clarke', cover: '/textbook-covers/roy-clarke.jpg', pdf: 'https://drive.google.com/file/d/1LBJJhPa87_UqNKCdONRnhYcKN_B12iz5/view?usp=drivesdk' },
   { title: 'A Problem Book in Astronomy and Astrophysics', authors: 'Aniket Sule', cover: '/textbook-covers/sule-problem-book.webp', pdf: 'https://drive.google.com/file/d/1gFn2rYAE5QMrge7B0cz1x4K12mr2Ca1s/view?usp=drivesdk' },
-  { title: 'Introduction to Cosmology', authors: 'Barbara Ryden', cover: '/textbook-covers/ryden-cosmology.jpg' },
+  { title: 'Introduction to Cosmology', authors: 'Barbara Ryden', cover: '/textbook-covers/ryden-cosmology.jpg', pdf:'https://drive.google.com/file/d/1EU9BMWuDMEkYaPJGurBBH4JUUrz4RIOD/view?usp=drivesdk' },
   { title: 'Astronomy: A Physical Perspective', authors: 'Marc L. Kutner', cover: '/textbook-covers/kutner.jpg' },
   { title: 'The Physical Universe: An Introduction to Astronomy', authors: 'Frank H. Shu', cover: '/textbook-covers/shu-physical-universe.jpg', pdf: 'https://drive.google.com/file/d/1zdN3pwRzSjEIq2ox3ZKyEjppTa9GsNrV/view?usp=drivesdk' },
 ]
