@@ -4,7 +4,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dotxiv.vercel.app'),
-  title: { default: 'DotXiv — Astrophysics & Cosmology Notes', template: '%s | DotXiv' },
+  title: { default: 'DotXiv', template: '%s | DotXiv' },
   description: 'DotXiv is an astronomy olympiad guide with structured notes, study roadmaps, celestial mechanics, stellar astronomy, cosmology, galactic astronomy, and observational astronomy resources for BDOAA and IOAA preparation.',
   keywords: ['DotXiv', 'DotXiv Astronomy Olympiad guide', 'astronomy olympiad', 'BDOAA', 'IOAA', 'celestial mechanics', 'stellar astronomy', 'cosmology', 'galactic astronomy', 'observational astronomy'],
   authors: [{ name: 'DotXiv' }],
