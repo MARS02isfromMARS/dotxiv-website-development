@@ -16,7 +16,11 @@ export const metadata: Metadata = {
   openGraph: { title: 'DotXiv — Understand the universe from first principles', description: 'Rigorous astrophysics and cosmology notes for curious minds.', url: 'https://dotxiv.vercel.app', siteName: 'DotXiv', type: 'website', images: [{ url: '/dotxiv-browser-logo.png', width: 1600, height: 1200, alt: 'DotXiv orbital logo' }] },
   twitter: { card: 'summary_large_image', title: 'DotXiv — Astrophysics & Cosmology Notes', description: 'Rigorous notes and problem sets for curious minds.', images: ['/dotxiv-browser-logo.png'] },
   icons: {
-    icon: [{ url: '/dotxiv-browser-logo.png', type: 'image/png' }],
+    icon: [
+      { url: '/dotxiv-browser-logo.png', type: 'image/png', sizes: 'any' },
+      { url: '/dotxiv-browser-logo.png', type: 'image/png', sizes: '48x48' },
+    ],
+    shortcut: ['/dotxiv-browser-logo.png'],
     apple: [{ url: '/dotxiv-browser-logo.png', type: 'image/png' }],
   },
 }
@@ -38,6 +42,19 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'DotXiv',
+              alternateName: 'DotXiv Astronomy Olympiad Guide',
+              url: 'https://dotxiv.vercel.app/',
+              description: 'Astronomy olympiad notes, study roadmaps, and astrophysics resources.',
+            }),
+          }}
+        />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
