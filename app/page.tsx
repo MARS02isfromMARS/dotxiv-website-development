@@ -2,18 +2,18 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { 
-  ArrowUpRight, 
-  ChevronDown, 
-  Menu, 
-  Search, 
-  Users,
+import {
+  ArrowUpRight,
+  ChevronDown,
+  Mail,
+  Menu,
+  Search,
   // Relevant astronomy & physics symbols
-  Orbit, 
-  Telescope, 
-  Sun, 
-  Sparkles, 
-  Globe2 
+  Orbit,
+  Telescope,
+  Sun,
+  Sparkles,
+  Globe2,
 } from 'lucide-react'
 
 const categories = [
@@ -65,6 +65,20 @@ const categories = [
 ];
   
 
+
+const contributors = [
+  {
+    id: 'mohammad-marshad-bin-khaled',
+    name: 'Mohammad Marshad Bin Khaled',
+    role: 'Astrophotographer, Olympiad Competitor, and Founder of The Dot and DotXiv',
+    image: '/mohammad-marshad-bin-khaled.jpg',
+    imageAlt: 'Mohammad Marshad Bin Khaled at an event',
+    linkedinUrl: 'https://www.linkedin.com/in/mohammad-marshad-bin-khaled-a6863139b?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+    githubUrl: 'https://github.com/MARS02isfromMARS',
+    email: 'mohammadmarshadbinkhaled@gmail.com',
+    bio: 'Mohammad Marshad Bin Khaled is a Bangladeshi astronomy enthusiast, olympiad competitor, and founder of The Dot, an initiative promoting accessible astronomy education. He received an IAAC International Bronze Honour Award (Top 10% worldwide), ranked 67th in the Online Physics Olympiad 2026, and placed 8th in the IOAA Junior Team Selection Test. Through DotXiv, he aims to make astronomy olympiad preparation more accessible through quality learning resources and challenging practice problems for aspiring young astronomers.',
+  },
+];
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="eyebrow"><span className="eyebrow-dot" />{children}</p>
@@ -123,10 +137,16 @@ export default function Page() {
             <Link className="button button-primary" href="/notes">Browse notes <ArrowUpRight size={16} /></Link>
             <Link className="button button-quiet" href="/library">Explore the library <ArrowUpRight size={16} /></Link>
           </div>
-          <div className="hero-proof">
-            <div className="proof-avatars"><span>M</span><span>R</span><span>A</span><span>+</span></div>
+          <a href="#contributors" className="hero-proof" aria-label="Meet the contributors behind DotXiv">
+            <span className="proof-avatars" aria-hidden="true">
+              {contributors.slice(0, 3).map((contributor) => (
+                <img key={contributor.id} className="proof-avatar" src={contributor.image} alt="" />
+              ))}
+              {contributors.length > 3 && <span className="proof-avatar-more">+{contributors.length - 3}</span>}
+            </span>
             <span>Written by olympiad alumni and Astro Olympiad Campers<br /><strong>Built for deep understanding</strong></span>
-          </div>
+            <ArrowUpRight className="hero-proof-arrow" size={14} aria-hidden="true" />
+          </a>
         </div>
         <div className="hero-orbit" aria-hidden="true">
           <div className="orbit orbit-one" />
@@ -203,6 +223,43 @@ export default function Page() {
         </div>
       </section>
 
+      <section id="contributors" className="contributors-section page-pad" aria-labelledby="contributors-title">
+        <div className="contributors-heading">
+          <div>
+            <SectionLabel>The people behind DotXiv</SectionLabel>
+            <h2 id="contributors-title">Contributors</h2>
+          </div>
+          <p>Built by curious people who want astronomy learning to be open, rigorous, and welcoming. This list will grow with DotXiv.</p>
+        </div>
+        <div className="contributors-grid">
+          {contributors.map((contributor, index) => (
+            <article className="contributor-card" key={contributor.id}>
+              <div className="contributor-image-wrap">
+                <img className="contributor-photo" src={contributor.image} alt={contributor.imageAlt} loading="lazy" />
+                <span className="contributor-image-caption">Contributor {String(index + 1).padStart(2, '0')}</span>
+              </div>
+              <div className="contributor-details">
+                <span className="contributor-kicker">Founder &amp; contributor</span>
+                <h3>{contributor.name}</h3>
+                <p className="contributor-role">{contributor.role}</p>
+                <p className="contributor-bio">{contributor.bio}</p>
+                <div className="contributor-socials" role="group" aria-label={`${contributor.name} links`}>
+                  <Link href={contributor.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn profile for ${contributor.name}`}>
+                    <ArrowUpRight size={16} aria-hidden="true" /><span>LinkedIn</span>
+                  </Link>
+                  <Link href={contributor.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`GitHub profile for ${contributor.name}`}>
+                    <ArrowUpRight size={16} aria-hidden="true" /><span>GitHub</span>
+                  </Link>
+                  <Link href={`mailto:${contributor.email}`} aria-label={`Email ${contributor.name}`}>
+                    <Mail size={16} aria-hidden="true" /><span>Email</span>
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <footer id="contact" className="footer page-pad">
         <div className="footer-top">
           <div>
@@ -226,6 +283,7 @@ export default function Page() {
               <Link href="/notes">Notes</Link>
               <Link href="/library">Library</Link>
               <Link href="#about">About us</Link>
+              <a href="#contributors">Contributors</a>
             </div>
             <div>
               <span>Connect</span>
