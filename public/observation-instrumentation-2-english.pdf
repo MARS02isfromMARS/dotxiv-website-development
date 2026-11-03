@@ -1,0 +1,1387 @@
+
+
+Instrumentation - 2: A Practical
+Handout for Olympiad
+Ayush Tiwari
+1
+and Saurya Shrestha
+2
+1
+Nepal Astronomy Olympiad – Gold Medal (Rank 1),
+Email: at2322911@gmail.com   —   Instagram: @ayyushtiwaari
+2
+IPhO Silver, EuPhO grader, Physics Cup – Bronze Medal (Rank 14), NYPT – (Rank 1),
+Email: shresthasaurya0@gmail.com   —   Instagram: @
+eve.lq
+If you want newer versions of the handouts, check the drive:
+Google Drive – Handout Repository
+©2026 Ayush Tiwari and Saurya Shrestha
+Licensed under Creative Commons BY-NC-SA 4.0
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+1
+
+InstrumentationOlympiad Handout
+Contents
+1   Telescope Mounts3
+1.1    Basic Altazimuth Mount .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .3
+1.1.1Manual Handling  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .4
+1.1.2Field Rotation:  Avoid Alt-az Mount for Astrophotography   .  .  .  .  .  .  .  .  .  .  .  .  .5
+1.2    Basic Equatorial Mount (EQ)  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .6
+1.2.1Components in EQ mount .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .7
+1.2.2Polar Alignment   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    12
+1.3    Dobsonian Mount (Altazimuth).  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    13
+1.3.1Design  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    14
+1.4    German Equatorial Mount (GEM)   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    15
+1.4.1    The Meridian Flip   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    15
+1.5    Fork Mount  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    16
+1.6    Horseshoe Mount  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    17
+2   Accessories18
+2.1    Finderscope  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    18
+2.1.1    Aligning the Finderscope   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    19
+2.2    Eyepiece  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    20
+2.2.1Eyepiece Internal Ray Diagram  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    22
+2.2.2Field Stop Diameter  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    23
+2.2.3Exit Pupil .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    23
+2.2.4Eye Relief  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    23
+2.3    Barlow Lens .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    25
+2.3.1How Barlow Works .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    26
+2.4    Focuser   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    26
+2.5    Filters  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    27
+2.5.1Broadband Filters   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    27
+2.5.2Narrowband Filters    .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    28
+2.5.3Solar Filter   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    29
+2.5.4Light Pollution Filters  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    29
+2.6    Stopwatch  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    29
+3   Further Resources32
+2
+
+InstrumentationOlympiad Handout
+Prerequisite
+Before starting Instrumentation - 2, it’s an absolute necessity that you understand stuffs form Instrumen-
+tation - 1.  You can find it here.  Also, one need to have a fundamental grasp of positional astronomy and
+coordinate systems.  You can follow AO Guide - Positional Astronomy.  If you don’t have a telescope to
+play around with, watch videos on the internet to familiarize yourself.
+1  Telescope Mounts
+A telescope mount is the mechanical platform that holds and moves the optical tube assembly.  Its primary
+purpose is to provide a stable, movable support structure that allows the telescope to be pointed at
+celestial targets.
+Mounts are classified by their axes of rotation and tracking method.  The two fundamental types are
+the altazimuth mount, which moves in altitude (up/down) and azimuth (left/right), and the equatorial
+mount, which aligns one axis with Earth’s rotational axis (Right ascension α and Declination δ).
+Olympiad relevancy:
+In the IOAA and the IAO, the telescope round often tests mount operation skills.  Different mounts
+appear each year:  a German equatorial mount was used in IOAA 2025 and IAO 2023, a Galileoscope
+with its simple altazimuth mount in IOAA 2024, and a Dobsonian mount in IOAA 2023.  We’ll mostly
+talk about an Alt-az, a German equatorial, and a Dobsonian.  There are some other mounts, like a Fork
+mount or Horseshoe mount, but they aren’t often seen in IOAA.
+1.1  Basic Altazimuth Mount
+The altazimuth mount is a two-axis mount that allows movement in altitude (vertical angle) and azimuth
+(horizontal angle).  Its name is derived from ”altitude” and ”azimuth.” The altitude axis (an imaginary
+line about which a body rotates) is horizontal and allows the telescope to tilt up and down.  The azimuth
+axis is vertical and allows the telescope to rotate left and right parallel to the ground plane.  This design
+mimics the natural motion of looking around the sky:  up/down and left/right.
+A basic altazimuth mount consists of a base that rotates on a bearing around the vertical azimuth axis.
+Mounted on this base is a cradle or fork that holds the telescope tube and pivots around the horizontal
+altitude axis.  The altitude axis must be precisely perpendicular to the azimuth axis to avoid pointing
+3
+
+InstrumentationOlympiad Handout
+errors.  Friction, bearing quality, and balance determine the smoothness of motion.
+To track an object automatically, an altazimuth mount requires two independent motors,one on each
+axis,driven at continuously variable, non-constant rates.  The required angular velocities
+ ̇
+A
+(azimuth rate)
+and   ̇a (altitude rate) for an object at azimuth A, altitude a, latitude φ, and sidereal rate ω are given:
+ ̇
+A = ω(sinφ + cosφ cosA tana)
+ ̇a = ω cosφ sinA
+1.1.1    Manual Handling
+The manual movement is typically controlled through manual slow-motion controls and free-hand motion.
+•  Free-hand movement
+Free-hand movement refers to directly grasping the telescope tube or a handle on the mount and
+physically moving it in altitude and azimuth.  This is common on simpler mounts, especially Dobsonians
+and basic tripod-mounted refractors.  The telescope tube is typically held in place (locked at one exact
+alt-azimuth) by adjustable friction clutches or locking knobs.  When these clutches are loosened, the
+telescope can be moved smoothly and freely in any direction.  This freehand movement is used for
+initial rough pointing toward a target.
+•  Fine-adjustment cables
+Once the target is approximately centered in the finderscope or eyepiece, the observer tightens the
+clutches just enough to allow fine adjustment.  Most manual altazimuth mounts are equipped with
+slow-motion control knobs or fine-adjustment cables.  These are connected to worm gears or tangent
+arms that provide small angular movements without disturbing the telescope’s balance.
+The altitude slow-motion knob moves the telescope up and down, while the azimuth slow-motion knob
+rotates it left and right.  You can use these knobs to move the telescope at a controlled, slow rate, for
+accurate centering of objects in the field of view.  These controls are necessary for tracking objects
+manually during observation, and the observer must continuously adjust both axes to compensate for
+Earth’s rotation.
+Above is how a fire-adjustment cable looks (enclosed in a yellow shape, kinda contrasts with the white
+background, but it’s fine).  In observational tasks during astronomy olympiads, participants may be
+required to use these knobs to point at the celestial targets.  It’s better to have hands-on experience with
+the telescope.
+4
+
+InstrumentationOlympiad Handout
+Task 1: IOAA 2024
+Check how the telescope round was in IOAA 2024.  If you have a telescope, try to mimic something
+similar.  here is the question (Page 5-7), and here is the solution (Page 9-14).
+1.1.2    Field Rotation:  Avoid Alt-az Mount for Astrophotography
+This content is from StarMaps101 by Fahim Rajit Hossein.
+Alt-az mounts are to be avoided due to a phenomenon known as field rotation.  Field rotation occurs
+due to the design of the alt-az mount.  One axis, the azimuth axis, rotates around a vertical line passing
+from the center of the telescope to the zenith (left to right).  The altitude axis rotates about a horizontal
+axis (up and down).  Both axes must rotate at different rates to maintain the object in the field of view
+(FOV). As the Earth rotates about its axis, the central object in the field of view will remain centered,
+but other objects in the FOV will appear to rotate with elapsed time.  The orientation of the sky in
+your FOV slowly twists, and overtime star forms arcs instead of points, which eventually ruins long
+exposure.  Field Rotation is an undesirable effect on time-exposure astrophotographs caused when an
+“Alt-Az” (“altitude-azimuth” or alt-azimuth) mount is used to hold and point a telescope with a camera.
+It is also sometimes called Frame Rotation because the objects framed by the photograph seem to have
+rotated while the picture was taken.  Check this video here
+Let the FOV of the telescope be represented by a square and follow the motion of Sagittarius as it rises
+in the east.  Because the alt-az mount can only move around the azimuth axis and up and down on
+the altitude axis, the FOV remains fixed with the bottom parallel to the horizon.  The objects in the
+sky, however, are rotating around the celestial pole star, Polaris.  So asterisms and binary stars appear
+to rotate in the FOV. An equatorial mounted telescope does not suffer from field rotation because the
+5
+
+InstrumentationOlympiad Handout
+telescope is polar aligned, and the FOV does not remain horizontal as it tracks; the telescope rotates.  So
+the FOV matches the rotation of the object, and it remains in the same fixed position.
+Mathematics behind Field Rotation:
+Stars appear to rise in the east and set in the west, rotating about the north celestial pole star, Polaris.
+Rising stars will reach their highest elevation in the sky as they cross the local meridian, due south of the
+line between Polaris and the zenith.  The altitude indicates the vertical position of the star with 90
+◦
+at
+the horizon and 90
+◦
+at the zenith.  From direct observation, the following aspects are known about the
+rate of rotation:
+1.  The maximum rate of field rotation occurs as the star passes through the zenith.
+2.  The rate of field rotation is minimal when a star passes through the prime vertical at the horizon.
+3.
+Considering the azimuth only, the rate of field rotation is highest when the star passes through 0
+◦
+(N)
+and 180
+◦
+(S), and lowest when the star passes through 90
+◦
+(E) and 270
+◦
+(W).
+4.
+Regarding latitude, field rotation is highest at the Earth’s equator and non-existent at the NCP and
+SCP.
+The field rotation rate
+ ̇
+θ(in degrees per second) for an observer at latitudeφ, tracking an object at
+altitude a and azimuth A, with sidereal angular velocity ω, is given by:
+ ̇
+θ =
+ω· cosφ· cosA
+cosa
+where,ω= 4.178×10
+−3
+degrees/second; Earth’s rotation.  For small altitudes,cosa≈1, and the rotation
+is approximately constant.  Near the zenith (a→90
+◦
+),cosa→0, making the rotation rate theoretically
+infinite,this is the ”zenith blind spot” where altazimuth tracking fails.
+1.2  Basic Equatorial Mount (EQ)
+The equatorial mount is a telescope mounting system designed with one rotational axis aligned parallel to
+Earth’s rotational axis.  This axis is called the polar axis or right ascension axis.  The second axis, called
+the declination axis, is perpendicular to the polar axis.  When properly aligned, the polar axis points
+toward the celestial pole.  Check this YouTube video here.
+Why EQ mount over Altazimuth Mount?
+Equatorial mounts are preferred over alt-az mounts because they require motion in only one axis to
+6
+
+InstrumentationOlympiad Handout
+track (during long exposure astrophotography.  It follows the rotation of sky, so its easier to track the
+object.  They also eliminate field rotation during long-exposure astrophotography.  Additionally, their
+axes align directly with celestial coordinates, which makes object location and navigation more easier for
+observational astronomy.
+1.2.1    Components in EQ mount
+1.  Polar or Right Ascension (α) axis:
+The Right Ascension (RA) axis is the primary rotational axis of an equatorial mount.  It is aligned
+parallel to Earth’s rotational axis, pointing toward the celestial pole.  When properly aligned, this axis
+remains fixed relative to the stars while Earth rotates beneath it.
+The RA axis has sidereal tracking.  During astrophotography, by rotating the telescope around this
+axis at exactly 15.041
+′′
+per second (in a motorized system) (one complete revolution in 23 hours 56
+minutes 4 seconds), the mount compensates for Earth’s rotation.  This constant tracking rate applies
+to all celestial objects regardless of their position in the sky.  In equatorial coordinates, rotation around
+the RA axis changes only the right ascension coordinate of the telescope’s pointing direction.  The
+declination remains constant during pure RA motion.
+2.  Declination (δ) axis:
+The Declination (Dec) axis is perpendicular to the RA axis.  Rotation around this axis changes only
+the declination coordinate of the telescope’s pointing direction, while right ascension remains constant
+during pure declination motion.
+7
+
+InstrumentationOlympiad Handout
+During astrophotography, the declination axis is fixed relative to the RA axis.  This means that once
+an object is centered in the field of view, only the RA axis needs to move to track it.  The declination
+axis remains stationary during tracking, except when making corrections for polar alignment errors or
+guiding.
+3.  Setting Circles (Dial)
+Equatorial mounts often feature graduated dials called setting circles on both the Right Ascension
+(RA) and Declination axes.  These circles allow the observer to set or read the telescope’s pointing
+coordinates directly without electronic aids.
+(a)  Right Ascension Setting Circle
+The RA setting circle is mounted on the polar (RA) axis.  It is typically marked in hours, minutes,
+and sometimes seconds, covering the full 24-hour range of right ascension from 0h to 23h 59m 59s.
+However, since sidereal time advances at a rate slightly different from solar time, the RA circle
+corresponds to sidereal hours.  To use the RA circle effectively, the observer must first synchronize
+it with the current sidereal time or the RA of a known star.  The procedure is:
+1.  Polar align your telescope.  (We’ll deal with it in the next subsection)
+2.  Point the telescope at a star of known right ascension.
+3.  Rotate the RA setting circle until it reads the star’s RA value.
+4.  The circle is now calibrated; pointing to other objects involves rotating the telescope until the
+circle reads the target’s RA.
+Example:  Suppose you want the setting circles calibrated.  This is done by pointing the telescope
+at a bright reference star of known coordinates, such as Vega (RA 18h 37m, Dec +38
+◦
+47
+′
+).  The
+observer centers Vega in the eyepiece, then rotates the RA circle until it reads Vega’s RA (18h
+37m), and adjusts the Dec circle to read Vega’s Dec (+38
+◦
+47
+′
+).
+(b)  Declination Setting Circle
+The Declination setting circle is mounted on the declination axis.  It is marked in degrees from
+−90
+◦
+to +90
+◦
+, corresponding to the full range of declination coordinates.  The declination circle
+is fixed relative to the telescope tube and indicates the current declination pointing.  Unlike the
+RA circle, it does not need frequent recalibration once properly zeroed.  The circle can be zeroed
+using a star of known declination.
+Setting circles provide a manual method for locating celestial objects by coordinates.  First, you need
+to calibrate both circles using a known reference star.  Then, for a target at coordinates (α,δ), rotate
+8
+
+InstrumentationOlympiad Handout
+the telescope in declination until the Dec circle readsδ, and right ascension until the RA circle readsα.
+Idea 1: Intuitive understanding
+Imagine you’re at an astronomy camp with a manual equatorial mount telescope.  You polar-align
+it perfectly, then point it at Vega (RA 18h 36m) at exactly 7:00 PM local time (which is at your
+meridian), and you even set the RA setting circle to 18h 36m.  Then you just...  leave it there, no
+tracking, no touching.  You come back at 3:00 AM to show your friend Vega, but it’s totally not
+in the eyepiece anymore, and you only see some random patch of sky.  Your friend asks, “Hey,
+what RA does the setting circle show right now, and why isn’t Vega there?” Explain what went
+wrong and calculate roughly how many hours of RA the circle is off by now, assuming Sideral
+Time = Solar Time.
+Answer:
+Earth is rotating.  So even though they set the circle to Vega’s RA at 7 PM, the mount isn’t
+moving, so the sky basically slides past the telescope.  Vega drifted west out of the field, minutes
+after they left.
+When they come back at 3 AM, that’s 8 hours later.  The setting circle is still stuck at 18h 36m
+because they never moved the scope, but the sky’s meridian has moved forward in RA by about
+8 hours (since 1 solar hour≈1 sidereal hour roughly).  So the circle is literally 8 hours behind ,
+it shows 18h 36m, but the meridian is now at like 2h 36m RA (next day).  That’s why Vega isn’t
+there; it set hours ago, and they’re pointing at some random RA from earlier.  So, if they don’t
+track, their RA setting circle becomes useless after a short time.  You again have to recalibrate it
+again as mentioned above.
+Example 1: Point to a star
+Consider the star Antares, which has approximate coordinates:
+Right Ascension (RA) = 16h 29m 24s,Declination (Dec) =−26
+◦
+25
+′
+55
+′′
+To point at Antares, the observer rotates the telescope in declination until the Dec circle reads
+approximately−26
+◦
+26
+′
+.  Then, while keeping the declination fixed, the observer rotates the
+telescope along the RA axis until the RA circle reads 16h 29m 24s.  The telescope should now be
+pointed at Antares.
+Task 2: IOAA 2015
+Check this IOAA 2015 (Main Telescope) Page 1, here.  Familiarize yourself with these kinda
+Observational tasks.  We’ll talk about some in detail as we go further.
+4.  Manual Handling of Equatorial Mounts
+Equatorial mounts include manual controls for both coarse and fine positioning.  These controls allow
+the observer to point the telescope without motorized assistance.
+(a)  Locking Knobs and Free Movement
+Each axis of an equatorial mount is equipped with a locking knob or clutch mechanism (check the
+figure on page 7).  When these knobs are loosened, the telescope can be moved freely by hand
+9
+
+InstrumentationOlympiad Handout
+along that axis.  This allows for rapid, large-angle movements.  For example, to move the telescope
+from Right Ascension 6h to 14h, the observer would:
+i.  Loosen the RA locking knob.
+ii.Physically (with free hand) rotate the telescope tube around the RA axis until it is approxi-
+mately at the desired position.
+iii.  Tighten the RA locking knob to secure the position.
+The same procedure applies to the declination axis:  loosening the Dec knob allows the telescope
+to be tilted up or down freely.  Once the target is roughly centered in the finderscope, the knob is
+tightened to prevent further movement
+(b)  Fine Adjustment Cables (Slow-Motion Controls)
+After locking the axes approximately on target, fine adjustment is done using slow-motion control
+cables (check the figure on page 7).  These are flexible cables connected to gears on each axis.
+Turning the cable’s knob rotates the gear, moving the telescope slowly.
+The RA slow-motion control rotates the telescope in right ascension at a rate much slower than
+manual turning.  One full turn of the knob might move the telescope only a few arcminutes in RA.
+The Dec slow-motion control provides similar fine movement in declination.  It is used to center
+objects vertically in the field of view.  Unlike the RA control, it does not need to be continuously
+turned during tracking, unless correcting for polar alignment errors.
+Tip 1: Handling in IOAA 2025 (My Personal Experience)
+So in IOAA 2025, the telescope exam was indoors, we had to point the scope at a screen showing
+a star field and match it to RA and Dec coordinates we’d calculated earlier.  The catch was that
+the equatorial mount’s RA axis was locked, so you could only move it using the fine adjustment
+knob on the polar axis.  The Dec axis, though, was completely free,you could just tilt the tube
+by hand.
+Took me a minute to figure that out,  ngl.  I wasted like two minutes trying to use the fine
+adjustment for declination because that’s what we practiced with in camp, and I thought that
+knob was basically detached or broken in the exam setup.  Well, I was panicking so much that it
+eventually ruined that part of the test (OT 01.3).  Once I realized it, I just moved the declination
+axis with freehand (without the knob).  So, in the olympiad test, always check which axes are
+actually drivable before you start.  Don’t assume all knobs work.  Sometimes you just gotta
+freehand it.
+Also, don’t forget to remove the cover from the telescope aperture and the eyepiece :D (From
+Trishav’s (Nepal’s IAO and IOAA delegate) and Teodor’s (Romanian IOAA, IOAA Jr & IAO
+Medalist) IAO 2023 experience).
+You can check the question here.  and here are the things we saw on the screen.
+5.  Dovetail mount
+Alright, so about dovetails,they’re basically the metal rails that connect your telescope tube to the
+mount head.  They slide into a clamp on the mount and get locked in with one or two screws.  Super
+simple, but important.  (In the photo below, Lovemandy and Vixen are the names of the producers,
+not a specific type of dovetail).  And also, check the figure on page 7, that reflector has its own tube
+ring, and you can slide that in the dovetail.  Check any of these YouTube video from here.
+10
+
+InstrumentationOlympiad Handout
+Tip 2: Accidental slipup in IOAA
+In the heat of an olympiad round under time pressure and all, it’s easy to confuse the dovetail
+locking screw with the RA/Dec locking knobs.
+•The dovetail lock just holds the telescope on the mount.  If you loosen it mid-task, your whole
+scope can slide out or rotate.  Tighten it once at the start and leave it alone.
+•
+The RA and Dec locks control whether you can move the telescope around each axis.  Loosen
+them to move freely, tighten to hold position.
+If you accidentally loosen the dovetail instead of an axis lock, your tube might swing or droop,
+and you’ll waste time re-balancing.  Before you even touch the fine-adjustment knobs check if
+the dovetail is secure or not (Give the tube a gentle wiggle).  Also check, which axis locks are
+actually working?  (RA locked?  Dec free?  Vice versa?)
+6.  Latitude Adjustment
+The latitude adjustment on an equatorial mount sets the angle of the polar axis to match your observing
+location’s latitude.  Basically, you tilt the mount so it points at the celestial pole,Polaris in the north,
+Sigma Octantis in the south.
+There’s usually a scale on the mount side with degrees marked.  You set it to your latitude (like 27
+◦
+for Kathmandu, 40
+◦
+for New York).  Some mounts have a locking bolt; others use a fine-adjust screw.
+Once set, you don’t need to touch it unless you move to a different location.
+Tip 3: Latitude adjustment
+Say in IOAA, you’re asked to point to a certain (α,δ) (like in IOAA 2015).  If you don’t set the
+latitude right, polar alignment will be off from the start and eventually will drift in Declination,
+even if you try to align manually.  In timed tasks, you might waste minutes trying to fix drift
+instead of doing the actual pointing.
+Check the latitude scale before you start.  If it’s way off, fix it first.  During indoor rounds, they
+usually pre-set it, but verify anyway.  If the mount has a fine-adjust for latitude, use it for final
+tweaking after rough polar alignment.
+7.  Counterweight System in Equatorial Mounts
+The counterweight is a weighted mass mounted on a shaft opposite the telescope on German equatorial
+11
+
+InstrumentationOlympiad Handout
+mounts.  Its purpose is to balance the telescope’s weight around the polar (RA) axis.  (check the figure
+on page 7)
+The counterweight shaft extends from the opposite side of the polar axis from the telescope.  The
+counterweight itself slides along this shaft and can be locked at different positions.  The basic principle
+is torque balance:
+W
+scope
+× d
+scope
+= W
+cw
+× d
+cw
+WhereW
+scope
+is the telescope weight,d
+scope
+is its distance from the RA axis,W
+cw
+is the counterweight
+mass, andd
+cw
+is its distance from the RA axis.  Check this YouTube video here.  And, to balance the
+Declination axis, adjust the telescope’s position in its mounting rings (tu until it remains balanced at
+any Dec angle.  It’s just an iterative process.
+1.2.2    Polar Alignment
+Polar alignment means setting your mount’s polar axis to point exactly at the celestial pole (North or
+South).  This aligns the mount’s rotation axis with Earth’s, so you only need to turn one knob (RA)
+to track stars at a constant sidereal rate, because the declination axis stays fixed relative to the star’s
+position.  Without accurate polar alignment, objects will drift out of view even if you’re tracking, and the
+drift will be in both RA and Dec directions, making long-exposure astrophotography impossible.  Once
+aligned, setting circles becomes accurate, and manual tracking with slow-motion controls works smoothly
+along a single axis.  In IOAA 2017 & 2019, the telescope had come with polar alignment by defauly.  You
+didn’t have to care for that :D
+Setup:
+First, set the mount’s latitude scale to your location’s latitude.  Then point the polar axis roughly north
+(south in Southern Hemisphere).  Use a compass, but remember magnetic declination,true north isn’t the
+same as magnetic north.  You could use Stellarium to locate Polaris (Not applicable for IOAA tho).  And
+at night, you can just eyeball it toward Polaris if you’re in the north.
+Polar Alignment Using Polaris (Northern Hemisphere):
+This method uses Polaris (αUrsae Minoris) to align the equatorial mount’s polar axis with the celestial
+north pole.  Polaris is not exactly at the pole; it orbits around it at a radius of approximately 0.75
+◦
+(45
+′
+).
+For IOAA, if the test is outdoor, then this shall work as they won’t ask for long exposure astrophotography
+12
+
+InstrumentationOlympiad Handout
+stuff.  But, in real life, this error would eventually pileup causing an error in declination.  Watch this
+YouTube video here.  You can you Polarscope method too, which is very accurate.  Watch this YouTube
+video to see how a polarscope is used here.
+Position Angle (Precise positioning of the Celestial Pole)
+If you don’t have a polar scope, you can still accurately align using Polaris by knowing its position angle.
+It is the direction from the true celestial north pole to Polaris, measured east from north.  Think of it like
+a clock face centered on the true pole, with Polaris moving around it every 24 hours.
+Polaris orbits the true pole at a fixed distance of about 0.75
+◦
+(45
+′
+).  The
+position angle (PA) tells you where along that circle Polaris is at any
+given time.  It’s measured in degrees.
+•  0
+◦
+= Polaris directly above the pole (north)
+•  90
+◦
+= Polaris to the right of the pole (east)
+•  180
+◦
+= directly below (south)
+•  270
+◦
+= to the left (west)
+For any star (α,δ), Local sideral time being (LST) and observer being
+at latitude φ, the position angle is given by:
+tan(PA) =
+sin(LST− α)
+tanφ cosδ− sinδ cos(LST− α)
+For, Polaris’ coordinates (α
+Pol
+,δ
+P ol
+), Since Polaris’ declination is very close to 90
+◦
+,cosδ
+P ol
+≈1 and
+sinδ
+pol
+≈ 1, so a simpler approximation works:
+PA≈ α
+pol
+− LST
+Example:  If  LST  =  8h  andα
+Pol
+≈2.5h,  thenPA ≈(2.5−8)×15  =−82.5
+◦
+.   So  Polaris  is  about
+360
+◦
+− 82.5
+◦
+= 277.5
+◦
+east of north relative to the true pole.
+Now, you need to mentally picture the relationship between the true celestial north pole and Polaris.  The
+position angle (PA) tells you exactly where Polaris sits around the pole at that moment.  Now you need
+to adjust the mount’s polar axis so that Polaris is positioned at this calculated offset from where the axis
+is pointing.
+1.3  Dobsonian Mount (Altazimuth)
+The Dobsonian mount is a specialized altazimuth mounting system designed
+for Newtonian reflectors.  It’s characterized by its simplicity, stability, and low
+cost per inch of aperture.  It was developed by John Dobson in the 1960s, and it
+revolutionized amateur astronomy by making large-aperture telescopes accessible.
+The mount consists of two main components:  a circular ground board typically
+made from plywood or similar material, and a rocker box.  The telescope tube
+is pivoted in the rocker box.  Watch this YouTube video from here.
+Why Use it?
+So, for everyday amateur astronomy, a Dobsonian is basically the GOAT for
+beginners.  It’s basically a super stable alt-az mount made of cheap materials
+like plywood and Teflon, so you get a huge aperture for way less money than an
+13
+
+InstrumentationOlympiad Handout
+EQ mount.  It’s stupid easy to use,just point and look,without the annoying setup and counterweights of
+an EQ mount.  You get significantly more light-gathering power for your buck than a small, wobbly alt-az
+mount or an expensive, complicated EQ mount in the same price range.
+1.3.1    Design
+1. Azimuth Bearing
+The azimuth bearing consists of a flat, circular ground board.  Three Teflon pads are mounted on this
+board in an equilateral triangle configuration.  The rocker box rests on these pads, with its bottom
+surface made from a smooth, low-friction material.  The azimuth bearing allows the entire telescope to
+rotate horizontally (360
+◦
+).
+2. Altitude Bearing
+The altitude bearing consists of large, circular bearing surfaces attached to the sides of the telescope
+tube.  These bear against pads mounted on the sides of the rocker box.  The altitude bearing allows
+the tube to tilt vertically.
+3.  Manual Movement
+Tracking an object requires manual movement in both axes simultaneously.  As Earth rotates, the
+observer must gently push the telescope to follow the object’s motion.  This is done by applying light
+pressure to the tube.  The bearing surface is smooth, and it allows precise, small movements.  There are
+no gears, motors, or slow-motion controls (fine adjustment cables) in a basic Dobsonian.  So, tracking
+is entirely manual using your hands.  The required tracking rates depend on the object’s altitude and
+14
+
+InstrumentationOlympiad Handout
+azimuth, which is the same as the altaz mount.
+ ̇
+A = ω(sinφ + cosφ cosA tana)
+ ̇a = ω cosφ sinA
+where
+ ̇
+A
+is azimuth rate and ̇ais altitude rate for an object at azimuthA, altitudea, latitudeφ, and
+sidereal rate ω.
+4.  Balance
+For balance, the telescope tube must be positioned so its center of gravity aligns with the altitude
+bearing axis.  If the tube is too front-heavy, it will tend to tilt downward.  If too back-heavy, it will tilt
+upward.  Balance is adjusted by sliding the tube forward or backward in the rocker box, or by adding
+small counterweights.
+Task 3: IOAA 2023
+The Telescope test was indoors in IOAA 2023.  They used a Dobsonian inside a Planetarium.  You
+had 30 minutes to do actual observations of simulated screens showing an asteroid occultation
+and Starlink satellites, then another 30 to write everything up.  For the asteroid, you had to time
+exactly when it blocked a star and for how long.  With the satellites, you measured how fast they
+moved across the sky and calculated how far apart they were in space.  Then there was a planet
+image where you had to identify five of its moons, and finally, you had to find and measure a new
+”supernova” in a galaxy image.  Check the problems from here
+1.4  German Equatorial Mount (GEM)
+German equatorial mount (GEM) is basically the classic EQ mount
+you’ve probably seen pictures of.  It has the same two axes as any
+equatorial mount:  the polar axis (RA) and the declination axis
+(Dec).  The polar axis points at the celestial pole, and you track
+by just rotating that axis at the sidereal rate.  The Dec axis lets
+you move north/south in the sky.  The working mechanism is the
+same as we talked in 1.2 Basic Equatorial Mount (EQ), IT’S NO
+DIFFERENT!  In  this  section,  I’ll  talk  about  the  specifics  of  a
+GEM.
+You’ll mostly find a GEM in IOAA. What makes the GEM special
+is its T-shaped design.  The telescope sits on one end of the Dec
+axis, and a counterweight sits on the other end to balance it.  The
+whole thing rotates around the polar axis, which is attached to a
+tripod or pier.  So yeah, the basic idea is exactly the same as other
+EQ mounts, but the mechanical layout is different,unlike a fork
+mount, where the scope sits between two arms, or a yoke mount, where it’s inside a ring.
+1.4.1    The Meridian Flip
+So here’s the deal with the meridian flip.  Imagine you’re tracking an object as it rises in the east and
+moves west.  On a GEM, the telescope starts off on the east side of the mount.  As the object crosses the
+15
+
+InstrumentationOlympiad Handout
+meridian (that imaginary north-south line through the zenith), the telescope eventually hits the tripod or
+the mount itself,it literally can’t go further without crashing.
+To keep tracking, you have to do a “meridian flip.” You stop tracking, quickly slew the telescope to the
+other side of the mount (the west side), and restart tracking.  The whole thing takes like 30 seconds if
+you’re fast, but during that time, the target is obviously not being tracked.
+Why does this matter?  If you’re doing visual observing, it’s just a minor annoyance to you.  You have to
+recenter the object after the flip.  But if you’re doing astrophotography and you’re in the middle of a long
+exposure, you have to stop the exposure, do the flip, and restart a new exposure.  It breaks your imaging
+run.  Watch this YouTube video here.
+Tip 4: You never know - IOAA 2017 OT
+In IOAA 2017, the participants were asked to use both the Equatorial Mount Telescope in (N1) and
+a Dobsonian in (N2).  So, it’s better to learn fundamental of all even before the Telescope camp.
+You can just mess and play around there :D
+Check the IOAA 2017 Telescope round problems from here.
+Task 4: IOAA 2013 - OT2
+Check the question from here.  This was EVIL!!  They didn’t allow the participants to look at the
+setting circle.  So, practice pointing the objects in the sky without the help of setting circles too :(
+1.5  Fork Mount
+Fork mount is basically the other common type of equatorial mount you’ll see.  Instead of that T-shaped
+German equatorial setup, the fork mount looks like,well, a fork.  Two arms come up from a base and hold
+the telescope tube between them.  The whole fork rotates left and right for RA, and the telescope pivots
+up and down between the arms for Declination.
+If you just put a fork mount on a flat tripod, it’s actually an altazimuth mount.  The base rotates left/right
+(azimuth) and the scope tilts up/down (altitude).  To make it equatorial, you have to put it on a wedge.
+The wedge is a metal plate that tilts the entire fork so that the base’s rotation axis points at the celestial
+pole.  Once you add the wedge and polar align, boom!  it’s an equatorial mount.  If you forget the wedge
+or set it to the wrong latitude, your tracking will drift in Dec just like any misaligned EQ mount.  So
+16
+
+InstrumentationOlympiad Handout
+yeah, it’s literally an alt-az mount tilted sideways.  Once it’s tilted and polar aligned, it tracks just like
+any other EQ mount, thus you only need to move the RA axis at the sidereal rate.
+Fork mounts are super common on Schmidt-Cassegrains and Maksutovs.  What’s cool is that there’s no
+counterweight needed, because the scope is centered between the arms.  That makes the whole thing more
+compact and stable.  The tube doesn’t stick out to one side like on a GEM, so it’s less likely to wobble.
+But they can get heavy and aren’t as easy to balance if you add a bunch of accessories to the back.
+Tip 5: Fine Adjustment on Fork Mounts
+Fine adjustment knobs on fork equatorial mounts can feel a bit weird if you’re used to German
+equatorials.  On a fork mount, the fine adjustment for RA is usually on the base, near where the
+fork rotates, and the Dec fine adjustment is on one of the arms.  The trick is:  always check which
+axis you’re actually moving before you start turning.  Sometimes the knobs are close together, and
+in the stress of the round, it’s easy to crank the Dec knob thinking you’re tracking in RA, and then
+you watch your target slowly drift vertically out of frame.
+There aren’t many videos in YouTube on Fork mount.  Well, there’s one, and that’s how to balance it
+(here).  You don’t have to worry much about it as Fork Mount isn’t quite asked in IOAA.
+1.6  Horseshoe Mount
+The horseshoe mount is the big-dad version of a fork mount that you see on huge professional telescopes
+like the Hale Telescope at Palomar.  It’s called a horseshoe because instead of a full fork becuase it
+has a massive, curved, horseshoe-shaped bearing that holds the telescope at the top.  The horseshoe
+handles  all  the  weight  of  the  telescope,  so  it’s  super  stable.   Also,  these  mounts  are  almost  always
+computer-controlled because they’re on research scopes, but in principle, you could move them manually
+with motors disengaged, but it would just be really slow.
+17
+
+InstrumentationOlympiad Handout
+2  Accessories
+Okay, so you’ve got the telescope and the mount figured out.  But honestly, the real headaches during an
+olympiad often come from the accessories.  These are all the little extra pieces you attach to your scope,
+like the finderscope, eyepieces, focuser, Barlow lens, and filters, etc.  They’re not just add-ons; they’re
+what actually let you see stuff, find stuff, and tweak what you’re seeing.  In IOAA, you’ll be tested on
+how well you know these parts,how to use them quickly, how to choose the right one for the job, and how
+to fix things when they go wrong mid-task.
+2.1  Finderscope
+The finderscope is literally your telescope’s GPS,it’s that little mini-telescope or red-dot thing mounted
+on top of your main tube.  Its whole job is to help you find stuff without having to squint through the
+main eyepiece at a tiny patch of sky.  The main telescope has a narrow field of view, like looking through
+a straw, so pointing it blindly at the sky is pretty much hopeless.  The finder gives you a much wider
+view, so you can star-hop to your target.  There are two main types of finderscopes:
+An Optical FinderA Reflex Finder
+1.  Optical Finders
+Optical finders are basically mini telescopes mounted on top of your main scope.  They usually come
+in sizes like 6x30, 8x50, or 9x60,where the first number is the magnification and the second is the
+aperture in millimeters.  A 6x30 has 6x magnification and a 30mm front lens; an 8x50 is brighter and
+shows more detail because of the bigger aperture.  They have crosshairs (reticles) inside that you align
+with your main telescope’s view.
+Because they magnify, optical finders let you see fainter stars than you can with your naked eye.  This
+makes star-hopping way easier.  The downside is that they invert the image (usually upside-down and
+mirrored), which can be confusing if you’re trying to match what you see to a star chart.  Also, at high
+magnification, the field of view is smaller, and if your finder isn’t well aligned, you’ll miss the target
+completely.
+2.  Reflex Finder
+Reflex finders don’t magnify anything.  They have a clear glass window and project a lit reticle (usually
+18
+
+InstrumentationOlympiad Handout
+a red dot or a circle) that seems to float in the sky.  You look through it with both eyes open, so you
+see the dot overlaid on the actual night sky.  They’re super intuitive because there’s no image inversion,
+and they have a huge field of view, like around 10 degrees or more, so pointing is fast.
+But because there’s no magnification, you can’t see fainter stars through them.  If you’re looking for
+something dim, you have to aim using bright stars you can already see with your naked eye.  Parallax
+can be an issue too,if your eye isn’t centered, the dot appears to shift relative to the stars.
+2.1.1    Aligning the Finderscope
+Aligning the finder is step one,  and if you skip it,  you’re gonna have a bad time.  So,  aligning your
+finderscope is non-negotiable.  If it’s off, you’ll point the main telescope at the empty sky every time.
+Here’s how to do it right, whether you’re in daylight or already at night.  Here’s the step to aligning the
+finderscope with the eyepiece:
+•  Choose a distant target
+You want to do this during the day using a fixed land object.  At night the things in the sky are moving
+which makes it more difficult to get the alignment correct.  During the day, set your telescope so that
+you can see a distant object, at least 1/4 mile away and farther is better.  That gives a very well defined
+target right where the cross arm meets the pole.  But the top of a chimney, a letter on a distant sign,
+or something similar can work as well.  This is your alignment target.
+•  Center the target in the main telescope
+Put in a low- or medium-power eyepiece (like a 25mm) and point the telescope at your target.  Get it
+perfectly centered in the eyepiece.  Use the telescope’s slow-motion controls if available, or gently nudge
+the tube.  If it’s a star, defocus it slightly so it looks like a big blob,this makes centering way easier.
+•  Look through the finder & Adjust
+Without moving the main telescope, check the finder.  You’ll likely see the target way off-center, maybe
+not even in the field of view.
+Finders have either three or six small screws around the mounting bracket.  Usually, three locking
+screws (to hold it tight) and three adjustment screws (to push the finder around).  Loosen the locking
+screws just enough so the finder can move, but not so much that it flops around.  Then gently turn the
+adjustment screws to move the reticle toward the target.  Move it until the target is exactly on the
+crosshairs.
+•  Recheck and fine-tune
+Go back to the main eyepiece.  Is the target still centered?  If not, recenter it in the telescope first,
+then check the finder again and tweak further.  This might take a couple of back-and-forths.  Once it’s
+aligned, tighten the locking screws evenly.  To be sure, point at another object in a different part of the
+sky.  Center it in the main scope and verify it’s also centered in the finder.
+Tip 6: Finderscope in an IOAA Round
+In an IOAA round, you might not get time to align the finder from scratch.  So, they often give you
+a telescope that’s already roughly aligned.  You should never just assume it’s perfect.  Take literally
+30 seconds at the start to verify:  point the main scope at the brightest star you can see, center it in
+a medium-power eyepiece, and then check the finder.  If the star is dead-center on the crosshairs,
+great.  If it’s even a little off, adjust it right then.  Those few seconds will save you from chasing
+19
+
+InstrumentationOlympiad Handout
+nothing later.
+When the task is to find something faint like a galaxy, nebula, or a tight double star, you can’t just
+swing the finder around hoping to stumble on it.  Open your star chart (they usually provide one
+like in the IOAA 2019, 2025) and identify a bright, easy-to-find star near your target.  Point the
+finder at that star first.  Then, using the pattern of fainter stars between that bright star and your
+target, move slowly, matching what you see in the finder to the chart.
+Task 5: IOAA 2019 – Finderscope Alignment Breakdown
+Check the Task 1 from here
+Okay, so this is literally the first thing they hit you with in the 2019 telescope round.  They give you
+a 150/750 Newtonian (that’s 150mm aperture, 750mm focal length).  You’ve got three eyepieces
+(25mm, 10mm) and a 2x Barlow, but for this task, you must use the 25mm.  The telescope is
+already polar-aligned, so you don’t need to touch the mount, just the finder.  The task says:  “The
+finderscope is NOT aligned at the beginning.  Point the telescope at Saturn and align the finderscope
+parallel to the main tube.” They give you 5 minutes.  Sounds simple, but here’s what’s really going
+on.
+First, you need to actually find Saturn in the main telescope using only the main tube, because the
+finder is off.  Since the mount is polar-aligned and tracking, you can’t just swing it around freely.
+You’ll have to use the slow-motion controls (probably the RA and Dec fine-adjust knobs) to sweep
+the sky until Saturn appears in your 25mm eyepiece.  Saturn is bright and distinctive (rings!), so
+once you see it, center it carefully.  Then, without moving the main scope, you look through the
+finder.  Saturn will probably be nowhere near the crosshairs.  You now loosen the finder’s adjustment
+screws and move the finder until Saturn is centered exactly on the crosshairs.  Tighten everything
+down, recheck in the main scope, and if it’s still centered, you’re done.
+But here’s the catch:  They say,  “If the alignment of Saturn is not within the crosshair of the
+finderscope, the telescope assistant will correct it,and you receive only partial or no points.” That
+means if you mess up and hand it over unaligned, they’ll fix it for you, but you lose points.  So
+precision matters.
+2.2  Eyepiece
+Eyepieces are the part you actually look through, they’re like the lens of your telescope, but removable so
+you can swap them out for different magnifications.  Think of them as different camera lenses:  wide-angle,
+telephoto, etc.  They take the focused light cone from your telescope and magnify it into the image you
+see.
+Every eyepiece has a focal length, measured in millimeters.  That’s the number printed on the side,like
+25mm, 10mm, 6mm, etc.  Shorter focal length = higher magnification.  The magnification formula is super
+simple:
+Magnification =
+Telescope Focal Length
+Eyepiece Focal Length
+=
+f
+o
+f
+e
+So if your telescope has a 750mm focal length (like the IOAA 2019 Newtonian) and you use a 25mm
+eyepiece, you get:
+750
+25
+= 30×  magnification
+20
+
+InstrumentationOlympiad Handout
+Switch to a 10mm, and you’re at 750/10 = 75×.
+But magnification isn’t everything.  Eyepieces also have an apparent
+field of view (AFOV), measured in degrees.  This is how wide the
+view feels when you look into it.  Cheap eyepieces might have a
+narrow 40°–50° AFOV, like looking through a tunnel.  Wide-field
+eyepieces can go 70°, 82°, or even 100°, which feels more like a
+window.  A wider field makes finding and tracking objects easier,
+especially at high power.
+AFOV = 2 tan
+−1
+(
+d
+F S
+2f
+e
+)
+This is the general formula for AFOV of the Eyepiece whered
+F S
+is the field stop diameter (exit eye pupil) andf
+e
+is the focal length
+of the eyepiece.  I recommend you to read Instrumentation - 1 (Field of View)
+Task 6: IOAA 2025 – Telescope Task (Eyepiece thing) Breakdown
+Check OT01.3 from here
+Alright, so this is a classic indoor screen-based telescope task from IOAA 2025.  Your job is to find
+object ‘Z’ in that projected sky using your telescope, center it in the eyepiece’s crosshair, and show
+it to the examiner.
+•  Map Study First
+Before you reach your station, you would be provided 20-30 minutes of the question reading time
+and would be asked to solve the above part of the question.  You already have the printed map
+(Map-OT01).  Mark object ‘Z’ clearly on it and memorize the star pattern around it.  The screen
+projection is different in scale from the real sky, so you need to mentally match the pattern, not
+the size.
+•  Start with High Focal length (Low Power) Eyepiece
+Use the 25mm eyepiece first.  It gives a wider field of view, so it’s easier to find the general area
+and recognize the star pattern from your map.  Once you see the pattern on the screen through
+your scope, slowly move until ‘Z’ is somewhere in the field.  Don’t worry about centering yet.
+Just get it in view.
+•  Switch to Low Focal Length (High Power) with Crosshair
+Then, swap to the 10mm eyepiece (which has a crosshair).  This gives higher magnification and
+makes centering precise.  Now,  using fine-adjustment knobs,  nudge the telescope until ‘Z’ is
+exactly on the intersection of the crosshair.
+•  Scoring Breakdown
+The scoring was super specific:
+If you use the 10mm eyepiece:
+- 2 points for correct eyepiece choice.
+- 3 points if the object is anywhere in the field of view.
+- 6 points if any part of the object is touching the origin (center) of the crosshair.
+If you only use the 25mm eyepiece:
+- You only get points if the object is in the field.  No crosshair centering points.
+21
+
+InstrumentationOlympiad Handout
+In this type of observational task, try until the last second to find the object.  And, until the final
+second, even if you fail to find the object with a low-power (25mm) eyepiece, just replace that with
+the high-power (10mm) eyepiece.  You could get an extra 2 points just by switching the eyepieces.
+So, the key is to use the 25mm for finding and the 10mm for measuring.
+2.2.1    Eyepiece Internal Ray Diagram
+Starting from the left side, where it says barrel, that’s basically the ”front door” of the eyepiece.  As
+the light enters from your telescope, it hits the entrance focal plane.  This is the exact spot where the
+telescope’s objective lens or mirror has already done the hard work of creating a tiny, inverted version of
+whatever star or planet you’re looking at.  Right there, you’ve got the field stop, which is one of the most
+important parts.  It’s essentially a physical ”crop tool”, a ring that blocks out the messy, distorted light
+at the edges so you get a crisp, circular view instead of a blurry mess around the rim.  It defines your
+field angle α, which is basically how much of the sky you’re seeing at once.
+Once the light passes that entrance window, it hits the glass.  The first glass is the field lens.  Its main job
+is to catch the diverging light rays and bend them back toward the center so they don’t just get lost inside
+the mount.  Then, those rays pass through the eye lens, which is the one you actually look into.  This lens
+collimates (a fancy way of saying it makes the rays parallel again), so your eye can relax and focus on
+them as if they were coming from infinitely far away.  The space between these lenses, held steady by that
+spacer ring, is what determines the overall focal length and how much magnification you’re getting.
+Finally, we get to the part where you actually put your face:  the eye relief and exit pupil.  The exit pupil
+is that tiny, concentrated circle of light on the far right where all those rays cross over.  If you want to see
+the full apparent field of view, your eye’s pupil has to be hovering exactly at that spot.  The distance you
+have to hold your eye back from the lens to see clearly is the eye relief.  If that distance is too short, you’re
+basically smashing your eyelashes against the glass just to see the whole image; if it’s long, it’s a much
+more chill experience.  It’s all about finding that perfect ”sweet spot” where the light being projected
+matches up perfectly with your own eye.
+Let’s talk about some important terms in the next page.
+22
+
+InstrumentationOlympiad Handout
+2.2.2    Field Stop Diameter
+Alright, so you know how every eyepiece has a certain field of view?  The thing that actually determines
+that is the field stop.  It’s a physical ring or diaphragm inside the eyepiece that cuts off the light cone.
+Think of it like a window inside the eyepiece barrel:  only light that passes through this window gets to
+your eye.  Anything outside it is blocked.
+tan(TFOV) =
+Field Stop (mm)
+Telescope Focal Length (mm)
+=
+d
+F S
+f
+o
+tan(AFOV) =
+Field Stop (mm)
+Eyepiece Focal Length (mm)
+=
+d
+F S
+f
+e
+2.2.3    Exit Pupil
+It’s the diameter of the beam of light exiting the eyepiece, measured in millimeters.  It’s the bright circle
+you see floating above the eyepiece.  You can calculate it easily:
+Exit Pupil =
+Telescope Aperture
+Magnification
+=
+D
+M
+Or, since magnification = f
+o
+/f
+e
+, it’s also:
+Exit Pupil =
+D
+f
+o
+/f
+e
+=
+f
+e
+f
+o
+/D
+=
+Eyepiece Focal Length
+Telescope f/#
+So if you have a 150mm telescope and you’re using a 25mm eyepiece at 30× magnification:
+Exit Pupil =
+150
+30
+= 5 mm
+Why does this matter?  Your eye’s pupil only opens about 7mm max in total darkness for a young person,
+less if there’s light pollution or you’re older.  If the exit pupil is bigger than your eye’s pupil, you’re
+wasting light.  The extra light just hits your iris.  If it’s too small (like below 1mm), the view gets dim
+and starts showing floaters in your eye.  For deep-sky viewing, you want an exit pupil around 2–7mm.  For
+planets, you can go smaller (1–2mm) because you’re looking for detail, not brightness.
+2.2.4    Eye Relief
+Eye relief is the distance between the eyepiece lens and your eye where you can still see the whole field
+of view.  It’s measured in millimeters.  Long eye relief (15–20mm) means you can hold your eye back
+comfortably, maybe even with glasses on.  Short eye relief (less than 10mm) means you have to press your
+eyeball almost against the glass.
+If you wear glasses (especially if you have astigmatism), you need long eye relief so your glasses don’t
+scratch the lens and you can still see the full field.  Even if you don’t wear glasses, short eye relief is
+annoying.  Your eyelashes smear the lens, you get kidney-beaning (where part of the field blacks out if
+you move slightly), and it’s just uncomfortable for long sessions.
+Some good eyepieces have adjustable eyecups that roll up or down to help you position your eye just
+right.  In an olympiad setting, you usually can’t choose your eyepiece, but if you have options, pick one
+23
+
+InstrumentationOlympiad Handout
+with comfortable eye relief so you’re not squinting and losing time.
+Problem 1: IOAA 2018 Telescope Round – Problems 1
+Check the problem from here.  The telescope had focal lengthf
+o
+= 700mm and the focal length of
+the eyepiece wasf
+e
+= 26mm.  They gave you the eyepiece’s apparent field of view (AFOV) (45°).
+Now, Estimate the TFoV.
+Solution:
+They gave you the eyepiece’s apparent field of view (AFOV) (45°), telescope focal lengthf
+o
+= 700
+mm, and eyepiece focal lengthf
+e
+= 26 mm.  You had to find the true field of view (TFOV). The
+formula they expect you to use is:
+F · tan
+(︃
+TFOV
+2
+)︃
+= f · tan
+(︃
+AFOV
+2
+)︃
+Because the eyepiece’s field stop diameter isD= 2f
+e
+tan(AFOV/2).  That same diameter projected
+at the telescope’s focal plane givesD= 2f
+o
+tan(TFOV/2).  Set them equal and solve.  (We’ve
+discussed these formulas above and also in Instrumentation - 1, Plug inf
+o
+= 700,f
+e
+= 26, AFOV
+= 45°,
+TFOV≈ 1.76
+◦
+(round to 1.8°)
+Scoring was strict, 10 points for 1.6°–1.9°, 5 points for 1.3°–1.5° or 2.0°–2.2°.  So if you messed up
+the formula or calculation by even 0.2°, you lost half the points.
+Task 7: IOAA 2018 Telescope Round – Problems 2
+Check the problem from here.  The telescope had focal lengthf
+o
+= 700mm and the focal length of
+the eyepiece was f
+e
+= 26mm.
+This one was purely observational.  They displayed text on a screen somewhere in the room, and
+you had to point the telescope at it, focus, and read what it said.  The text listed:  two planets
+(Saturn, Jupiter), two Messier objects (M15, M74), and one equatorial coordinate (+30° 21h).  You
+wrote these down for points,8 points each.
+But the catch is that you couldn’t just look with your eyes.  You had to use the telescope.  That
+means:
+•First, you had to find the screen in your finderscope, and also, they tested mount handling:  could
+you smoothly point the scope from one part of the room to another?  If it were an equatorial
+mount, you might need to loosen clutches and move it manually since you’re not tracking the sky.
+•  Then, center it in the main telescope using a low-power eyepiece (probably the 26mm).
+•  Possibly switch to a higher-power eyepiece if the text was small.
+Idea 2: Calculating FOV of a telescope - IOAA 2022 Telescope round (Problem 2)
+Check the problem from here.  So, in this problem you have to calculate the TFOV of the telescope.
+But this time you dont have any other information.  YOU JUST HAVE YOUR TELESCOPE
+TUBE, ALT-AZ MOUNT and YOUR EYEPIECE. Let’s learn how to calculate the TFOV with
+this setup only.
+Let’s start with the definition of TFOV itself.  It’s basically how much of the sky (or the ground)
+24
+
+InstrumentationOlympiad Handout
+you can see at once through the eyepiece.  The steps you do it is:
+1.  Pick the reference object
+Point your telescope at something easy to recognize here on Earth, like a building with clear
+features (windows, edges, etc.).  You want something that won’t move, so you can measure
+accurately.
+2.  Move the Azimuth Knob
+Look through your telescope and pick a starting point on the building (maybe the left edge of a
+window).  Now, without moving the telescope up or down, just turn it slowly sideways (using
+one axis, like the azimuth slow motion knob) until that starting point moves out of view and
+another landmark appears at the opposite side of your view.  Before doing this, note the initial
+azimuth reading in the dial (α
+1
+)
+3.  Repeat!
+Keep doing that.  Count how many entire fields of view (n) you move past until you’ve gone from
+one end of the building to the other (or between two clear landmarks).  Let’s say you moved
+n full “frames” or fields of view.  After completingnframes, check the dial and note the final
+azimuth reading in the dial (a
+2
+).  Thus ∆α (change in azimuth) is simply (∆α = α
+2
+− α
+1
+)
+4.  Formulate
+The math is super simple
+TFOV =
+|∆α|
+n
+So if your telescope moved through 6° total (∆α= 6°) and you counted 5 fields of view (n= 5),
+then:
+TFOV =
+6
+5
+= 1.2
+◦
+That means each field of view is 1.2° wide.
+This was the exact idea behind IOAA 2022 (OT2).  You chose a reference point, then do the smart
+work as above.  And then after this, we had to calculate AFOV similar to IOAA 2018 OT1 (above
+discussed Problem 1).
+2.3  Barlow Lens
+It’s a tube with a lens inside that you put between your telescope and your eyepiece, and it multiplies
+your magnification.  If you have a 2x Barlow, it doubles the power of whatever eyepiece you use.  So your
+25mm eyepiece suddenly acts like a 12.5mm, and your 10mm acts like a 5mm.  It’s way cheaper than
+buying a whole set of short focal length eyepieces.  Watch this YouTube video on Barlow from here.
+25
+
+InstrumentationOlympiad Handout
+2.3.1    How Barlow Works
+A Barlow is a diverging lens.  It spreads out the light cone coming from your telescope before it reaches
+the eyepiece, which makes the eyepiece ”think” the telescope has a longer focal length.  The magnification
+factor is usually written on the side:  2x, 3x, sometimes 2.5x.  The formula to calculate the effective
+magnification simple:
+New Effective Magnification (M
+ef f ective
+) = Original Magnification (M
+original
+)× Barlow Factor (BF )
+Or, in focal length terms:
+Effective Focal Length (F
+ef f ective
+) =
+Eyepiece Focal Length (F
+original
+)
+Barlow Factor (BF )
+So yeah, a 2x Barlow turns a 25mm eyepiece into a 12.5mm one.  But remember, it also changes the
+effective focal ratio of your system.  If your telescope is f/5, adding a 2x Barlow makes it act like f/10 for
+that eyepiece.  I’ve covered IOAA 2016 (T7) (Which was on Barlow) in Instrumentation - 1 (Page 32-34).
+Check it out!
+Task 8: IOAA 2019 - Barlow in IOAA
+Check the Task 2 from here.  This is IOAA 2019 Telescope Round Questions.
+So in IOAA 2019, Task 2 was all about Saturn.  You had to mark Titan’s position, draw the rings
+to scale, and measure Titan’s angular distance and position angle.  They gave you a 10mm eyepiece,
+a 25mm, and a 2x Barlow.  The note said:  “For task 2, we recommend using 10 mm eyepiece and
+Barlow 2x.” That’s a huge hint!  They want you at high magnification so you can see Titan clearly
+and measure the ring dimensions accurately.
+Why?  Because Saturn’s rings are only about 43
+′′
+across.  At 30× (with the 25mm), Titan might
+look like a tiny dot close to the planet, and the rings will be small.  But with the 10mm + 2x
+Barlow, you’re at 150× (750mm scope / (10mm/2) = 150×). That makes Saturn bigger in the
+field, so you can clearly separate Titan from the planet’s glare, see the ring orientation and width
+more precisely, and make more accurate measurements for angular distance.  But the catch is, high
+magnification also magnifies atmospheric turbulence.  If the seeing is bad, the image might be shaky,
+making drawing harder.  Still, in 2019 they recommended it, so they expected decent conditions.
+2.4  Focuser
+Focus in a telescope is achieved when light rays from a distant object, such as a star or planet, are
+converged (brought together) at a single point by the telescope’s lens or mirror.  When this convergence
+point coincides perfectly with the focal plane of our eyepiece or camera sensor, the object appears sharp
+and clear.  Focusers help with this by sliding the eyepiece back and forth, effectively moving the focal
+plane of the eyepiece along with it.
+Tip 7: Setup the Focuser early
+Before you start your Telescope work in IOAA, adjust your focuser.  If you don’t do it, then you
+won’t see anything from the eyepiece.  So, first, start with a reference object.  If you’re indoors
+pointing at a screen, use text or a sharp pattern or if you’re outdoor, use a bright star or planet.
+26
+
+InstrumentationOlympiad Handout
+Turn the focuser all the way in (eyepiece closest to the telescope), then slowly turn it out until the
+image snaps into focus.  If you go past it, backtrack slowly.  At high power, the focus point is really
+narrow and sensitive, like a millimeter of movement can ruin it.
+In tasks where you switch eyepieces, you’ll likely need to refocus each time.  Different eyepieces
+have different optical positions, so when you swap, the focus changes.  And if you add a Barlow
+lens, you’ll need to focus again, usually moving the focuser outward.
+2.5  Filters
+Filters are essential tools in observational astronomy that allow you to see specific details by controlling
+which colors of light reach your eye or camera.  Think of them like specialized sunglasses for your telescope.
+Each filter is designed to highlight certain features while suppressing others.  The filters screw into a
+standard eyepiece barrel.  The contrast differences are subtle, and some observers report little or no
+observable differences.  It may take patience and experience to recognize the differences.
+2.5.1    Broadband Filters
+Broadband filters are the most common type of visual filter.  They allow a wide range of wavelengths
+to pass through, typically covering a large portion of the visible spectrum.  Their main purposes are to
+reduce glare, enhance contrast for specific colors, and protect your eyes from excessively bright objects
+like the Moon.
+1.  Luminance Filters
+A luminance filter, often called a neutral density (ND) filter, reduces the overall brightness of an
+image without changing its color balance.  It works like sunglasses for your telescope, cutting down
+the intensity of light evenly across the visible spectrum.  These are primarily used for observing very
+bright objects.
+The most common application is lunar observation (Provided in IOAA 2016).  Without a filter, the full
+Moon can be painfully bright through a telescope, causing eye fatigue and reducing the visibility of
+subtle surface details.  A typical moon filter transmits only 13%, 18%, or 25% of the incoming light.
+The transmission percentage is usually marked on the filter’s rim.  For example, an ND25 filter allows
+25% of light to pass, cutting 75% of the brightness.
+27
+
+InstrumentationOlympiad Handout
+2.  Planetary Color Filters
+These are colored glass filters that transmit specific color ranges while blocking others.  They are
+identified by Wratten numbers, a standard system developed by Kodak.  Each color enhances certain
+planetary features by increasing contrast.
+•Red (Wratten #25):  Transmits red and orange light while blocking blue and green.  Useful for
+increasing contrast on Martian surface features and dust storms.
+•Green (Wratten #58):  Transmits green and yellow-green light.  Excellent for enhancing the cloud
+structures and the Great Red Spot on Jupiter, and for observing Venus’s atmospheric features.
+•
+Blue (Wratten #80A): Transmits blue and violet light.  Helps to see details in the cloud tops of
+Venus and Mars.
+•Yellow (Wratten #12):  Transmits yellow and some green light.  Useful for improving contrast on
+Martian surface features and reducing glare on Venus and Jupiter.
+In IOAA, you may be asked to select the appropriate filter to sketch a specific planetary detail or to
+estimate the visibility of a lunar feature under filtered conditions.
+2.5.2    Narrowband Filters
+Jarrowband filters are the next level up from those colored planetary filters.  They’re not just letting
+through “red” or “blue” light.  They’re designed to isolate super-specific colors of light that come from
+glowing gas in space.  Think of them like a super precise bouncer at a club, only light with one exact
+wavelength gets in, everything else gets bounced.
+What They Actually Isolate:
+Space isn’t just full of white starlight.  Nebulae and certain stars emit light at very specific wavelengths
+called emission lines.  This happens when atoms get excited and then drop down energy levels, emitting a
+photon with a precise energy (and therefore color).  The most important ones for visual astronomy are:
+•Hydrogen-alpha (H-α):  Wavelength = 656.28 nm.  This is deep red light emitted by hydrogen gas
+when an electron falls from the 3rd to the2nd energy level.  It’s what makes emission nebulae like the
+Orion Nebula glow.
+•Oxygen-III (O-III): Wavelengths = 495.9 nm and 500.7 nm.  These are teal-green lines from doubly
+ionized oxygen.  They dominate in planetary nebulae (like the Ring Nebula) and supernova remnants.
+•Sulfur-II (S-II): Wavelength = 672.4 nm.  This is a deeper red line from ionized sulfur.  It’s often
+used in astrophotography to map different gas structures, but it’s less common for visual use.
+A narrowband filter has a super-tiny bandpass.  Bandpass is the range of wavelengths it lets through.  A
+good visual O-III filter might have a bandpass of 10-12 nm wide.  An ultra-narrow one for photography
+can be as tight as 3 nm.  The narrower it is, the more it blocks other light (like light pollution), but also
+the dimmer the view gets.
+Why You’d Use One:
+Let’s say you’re looking at the Orion Nebula (M42) from a suburban backyard.  Without a filter, it looks
+like a faint gray smudge because the skyglow from streetlights washes it out.  If you screw in an H-alpha
+or O-III filter, the filter blocks most of that white streetlight glow but lets the specific red or teal light
+from the nebula through.  Suddenly, the nebula pops out with way more contrast and detail.  It literally
+turns an invisible object into a visible one.
+28
+
+InstrumentationOlympiad Handout
+The Trade-Off:
+Narrowband filters make everything darker.  You’re blocking like 90% of the total light.  So, stars will
+look much fainter, often disappearing entirely unless they’re emission-line stars themselves.  You’ll need a
+decently large telescope (like 6-inch or bigger) to gather enough of that specific light.
+Math for Narrowband Filters:
+The filter’s transmission is described by its profile T (λ).  The light you see is:
+S =
+∫︂
+F (λ)· T (λ)dλ
+whereF(λ) is the spectrum of the object.  You need to know:  if an object is strong in O-III (like the
+Ring Nebula), use an O-III filter.  If it’s an H-II region (like Orion), use H-alpha.
+2.5.3    Solar Filter
+Solar  filters  are  a  special  and  absolutely  critical  category  of  filters.   Their  purpose  is  to  allow  safe
+observation of the Sun by blocking more than 99.999% of its incoming light and harmful infrared (IR)
+and ultraviolet (UV) radiation. Warning:  Using an improper filter or misusing a solar filter can cause
+instant and permanent eye damage, including blindness.  Solar observation requires strict safety protocols.
+Solar filters work by reflection and absorption.  They are not like neutral density filters; they are specifically
+engineered to reject the immense heat and radiation of the Sun.  There are two main types based on
+where they are placed:
+•
+Aperture Filters (Full-Aperture Filters):  These are placed over the front opening (aperture) of
+the telescope.  They block the sunlight before it enters the optical tube.  This is the only safe method
+for visual solar observation with most telescopes.
+•  Herschel Wedges (for Refractors):  This is a specialized prism-based system used with refracting
+telescopes.  It reflects a tiny, safe percentage of sunlight to the eyepiece while diverting the vast majority
+of the heat and light out of the system.
+In an olympiad setting, solar observation tasks are rare due to the safety risk and scheduling, but they
+can occur.  If presented, it will be under tightly controlled conditions.
+2.5.4    Light Pollution Filters
+Light pollution filters are designed to block the specific wavelengths emitted by common artificial light
+sources, particularly mercury vapor (at 546 nm) and high/low-pressure sodium vapor lamps (around
+589 nm and 570-620 nm), while allowing the continuum and emission lines from celestial objects to pass
+through.
+2.6  Stopwatch
+In IOAA practical rounds, a stopwatch is often provided to make timing-based measurements.  Here, we’ll
+see different types of questions that have appeared in IOAA and Stopwatch.  In the circular, they’ll say
+whether you’ll be provided with a stopwatch, headlight, or neither (3-4 months ahead of the IOAA itself).
+So with that in mind, you can guess what kind of question might be asked.  I’ve covered some of the
+problems that appeared with the stopwatch.
+29
+
+InstrumentationOlympiad Handout
+Idea 3: IOAA 2016 – Drift Time Calculation
+Check IOAA 2016 OT3 from here.  In this task, you’re given a telescope, a moon filter, an eyepiece
+with a crosshair, and a stopwatch.  Your objective is to estimate the diameter of Mare Serenitatis (a
+large, circular lunar mare) as a fraction of the Moon’s overall diameter using the drift-time method.
+Setup:
+First, you point the telescope at the Moon and attach the moon filter.  This filter reduces the
+Moon’s intense brightness, making it comfortable to view and preventing eye fatigue during the
+detailed measurement.  The eyepiece has a crosshair, which is essential for precise timing as objects
+drift across the field of view due to Earth’s rotation.
+The method of calculation is based on a simple principle:  the time it takes for an object to drift
+across the fixed crosshair in the eyepiece is proportional to its angular size.  Since the telescope’s
+field of view is constant, a larger angular object takes longer to drift past the crosshair.
+Measurement Steps:
+•Align the Crosshair:  Orient the crosshair so that the Moon drifts perpendicularly across one
+of the lines.  Typically, you align it east-west, as the Moon’s drift is primarily in right ascension.
+(Checks your ability to point, focus, and use an eyepiece with a crosshair.)
+•
+Time the Full Moon’s Diameter:  Place the Moon’s eastern limb on the crosshair, then start
+the stopwatch the moment the limb touches the line.  Stop the watch the moment the western
+limb leaves the crosshair.  Record this time as t
+Moon
+.
+•
+Time Mare Serenitatis:  Now center Mare Serenitatis in the field.  Similarly, record how long it
+takes for this circular mare to drift completely across the same crosshair.  Record this as t
+MSr
+.
+Calculation:
+The ratio of the drift times gives the ratio of their angular diameters:
+D
+MSr
+D
+Moon
+=
+t
+MSr
+t
+Moon
+Therefore, the estimated diameter of Mare Serenitatis as a fraction of the lunar diameter is simply
+the ratio of the two measured times.
+Idea 4: IOAA 2015 – FOV estimation by Transit Time method
+We’ve already discussed the maths behind this in Instrumentation - 1, so before proceeding, I
+recommend that you guys understand that.  Check IOAA 2015 (Main Telescope) Page 1, here.  In
+Participants were first asked to point their telescope to the open cluster NGC 6475 (Messier 7)
+using its equatorial coordinates (RA: 17
+h
+53
+m
+54
+s
+, Dec:−34
+◦
+49
+′
+).  The telescope was mounted on an
+equatorial mount that was presumably polar-aligned.  You were given a 15mm eyepiece.
+For the subsequent FOV estimation task, participants needed to switch from M7 to a bright star
+(tho not mentioned in the instruction, but in my opinion, this is necessary because you can’t just
+track M7 all the way, cuz its faint) at a similar declination.  A suitable choice was Shaula (λScorpii),
+which is near M7 and has a comparable declination (approximately−37
+◦
+), minimizing the need for
+large declination adjustments and simplifying the measurement.
+Procedure for FOV Measurement:
+30
+
+InstrumentationOlympiad Handout
+1.Position the star at the eastern edge of the field, but on the midline.  Don’t just plop it anywhere,
+move the telescope so the star is on the *eastern* side of the field, but exactly on the horizontal
+line that runs through the center.
+2.Wait for it to reach the center, then start the timer.  Let the star drift naturally toward the
+center of the field.  The moment it crosses the exact center (the intersection of your crosshair),
+that’s when you hit start on the stopwatch.
+3.
+Stop the timer when it reaches the western edge.  Keep tracking it with your eyes.  Don’t touch
+the telescope.  The star will keep drifting west.  The moment it touches the *western* edge of
+the field, hit stop.  That time (t
+half
+) is the time it took to travel across the *radius* of the field.
+4.The time you just measured is for half the field (center to edge).  We need the full diameter time,
+just multiply t
+half
+by 2.
+t
+f ull
+= t
+half
+× 2
+Now just, plug your time t
+new
+(in seconds) and the star’s declination δ into:
+FOV [in
+◦
+] = ω· cos(δ)· t
+new
+=
+360
+◦
+23
+hr
+56
+m
+4
+s
+· cos(δ)· t
+new
+=
+t
+new
+· cos(δ)· 360
+86164
+In IOAA 2013, too, a problem with same implication was asked.  You can check it from here.
+Task 9: IOAA 2025 - Lensing Time Delay
+I recommend you try this by yourself.  This question can be entirely done while you are sitting in
+your chair (except for pointing your telescope at the screen).  Grab a stopwatch by yourself.  here -
+Question (page 4-5) is the question and marking scheme.  here - Simulation video is the video (start
+the video from 14:40), and finally here - Summary Answer Sheet is the summary sheet.
+You can find everything in the IOAA 2025 Website (Problem and Solutions), here - IOAA 2025
+Problem and Solutions.
+31
+
+InstrumentationOlympiad Handout
+3  Further Resources
+1.  IOAA Past Papers
+It is necessary to practice past papers to get familiar with the type of problems that could appear
+in the NAO. You can access all IOAA past papers through the provided Drive link. It’s created by
+AstroSandbox
+IOAA Past Papers – Google Drive
+2.  SAO (Singapore Astronomy Olympiad) Past Papers.
+The SAO resources are a great complement to the IOAA.
+SAO Past Papers – Google Drive
+here’s their website: SAO
+3.  Star Charts 101 and Practices
+Compiled by Fahim Rajit Hossain, the Bangladeshi IOAA team leader.  They are available in the
+shared resource drive.
+Resource – Google Drive
+here’s his GitHub repository
+Rajit13/Star-Maps-101-and-Practices
+4. AO Guide
+It’s one of the best guides for IOAA level preparation one can find online, made up by Akshat
+Srivastava (India, IOAA’25 Gold).  He also crafted a web app to play with spherical diagrams.
+AO Guide, Celestial Sphere
+5.  Spherical Trig and Stellar Physics Handouts
+It’s an amazingly crafted handout by Sean Ken M. Galanza (Philippines, IOAA’24 Bronze).  Reading
+this handout will help you build a solid and strong grasp of Spherical Trig and Stellar Physics.
+Handouts - Google drive
+6. AstroSandbox
+It was founded by some previous Ukrainian IOAA folks.  AstroSandbox gives lectures, organizes
+events, manages clubs, composes their own astronomy tasks, as well as collects existing problems
+from Olympiads and public sources.
+AstroSandbox
+7.  Communities
+(a) AODS - Astronomy Olympiad Discord Server
+(b) Nepal Astronomy Society Discord Server
+(c) Nepal Physics Olympiad Discord Server
+(d) Learn2Lead Nepal Discord Server
+(e) Olympiad Prep Hub Discord Server
+8.  Some other resources:
+(a)
+This Drive contains all the sources used in AOGuide by Akshat and more. Many national and
+international olympiad papers are also available here.
+32
+
+InstrumentationOlympiad Handout
+(b) AOGuide - Resources
+(c) OAC
+(d) OAAO
+(e) Astronomy Olympiad Archives by Stefan Ivanov
+(f) Resources Drive by Sudip Rokaya (NAO’23 - Absolute Winner)
+(g) National Page Archives
+33

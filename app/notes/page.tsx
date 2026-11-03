@@ -34,7 +34,6 @@ const syllabus = [
     books: [
       'Fundamental Astronomy, Karttunen et al.: Ch. 3 “Celestial Mechanics” and the Solar System chapter for applications to planets, satellites, and small bodies.',
       'Carroll & Ostlie, An Introduction to Modern Astrophysics (Bobcat): Ch. 2 “Newtonian Mechanics”; Ch. 3 “Special Relativity”; Ch. 16 “The Solar System”; Ch. 17 “Planetary Atmospheres”; Ch. 18 “The Formation of the Solar System” (edition numbering may vary).',
-      'Ganitik Jotirbiggyan, Abu Saleh Mohammad Nuruzzaman: Geometry of the Celestial Sphere and Celestial Coordinates.',
       'General foundations: Jyotirbigyaner Jotokichu, chapters introducing the celestial sphere, apparent motion, gravity, and the Solar System. Use regional Olympiad problem books by Soumen Saha, Shajib Musthavi, or Ishtiaque Hossain Chowdhury for Kepler-law and orbit calculations.'
       
     ],
@@ -60,7 +59,8 @@ const syllabus = [
     books: [
       'Fundamental Astronomy, Karttunen et al.: Ch. 1 “Introduction”; Ch. 2 “Spherical Astronomy”; Ch. 4 “Observations and Instruments”; Ch. 6 “Photometry and Magnitudes”; Ch. 7 “The Solar System” for observational applications.',
       'Carroll & Ostlie, An Introduction to Modern Astrophysics (Bobcat): Ch. 1 “Introduction”; Ch. 2 “Newtonian Mechanics”; Ch. 3 “Special Relativity”; Ch. 4 “Radiation and Matter”; Ch. 5 “The Tools of Astronomy”; Ch. 6 “The Sun as a Star” (confirm titles in your edition).',
-      'Star Maps 101 / Star Charts 101 by Fahim Rajit Hossain Shwadhin: assign the chapters on spherical coordinates, naked-eye constellation identification, star maps, and sky navigation. Jyotirbigyaner Jotokichu chapters on the celestial sphere and foundations provide the Bengali-language bridge. Add regional observing/problem guides by Soumen Saha, Shajib Musthavi, or Ishtiaque Hossain Chowdhury.'
+      'Star Maps 101 / Star Charts 101 by Fahim Rajit Hossain Shwadhin: assign the chapters on spherical coordinates, naked-eye constellation identification, star maps, and sky navigation. Jyotirbigyaner Jotokichu chapters on the celestial sphere and foundations provide the Bengali-language bridge. Add regional observing/problem guides by Soumen Saha, Shajib Musthavi, or Ishtiaque Hossain Chowdhury.',
+      'Ganitik Jotirbiggyan, Abu Saleh Mohammad Nuruzzaman: Geometry of the Celestial Sphere and Celestial Coordinates.'
     ],
     tools: 'Stellarium for coordinates, constellation identification, rise/set times, and sky planning; SkySafari for mobile observing lists, telescope control, and time simulation; Aladin Sky Atlas for survey images, catalogues, and multi-band observation.'
   },
@@ -90,7 +90,7 @@ export default function NotesPage() {
           </article>
         ))}
       </div>
-      <div className="pdf-intro"><BookOpen size={19} /><span>Downloadable notes and PDFs will be added below as each collection grows.</span><ExternalLink size={15} /></div>
+      <div className="pdf-intro"><BookOpen size={19} /><span>Choose a subject to find available handouts and PDFs. More resources will be added as each collection grows.</span><ExternalLink size={15} /></div>
     </main>
   )
 }
