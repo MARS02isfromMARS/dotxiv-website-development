@@ -1,12 +1,5 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, ArrowUpRight, BookOpen } from 'lucide-react'
-import { astronomySubjects } from '@/lib/astronomy-syllabus'
-
-export const metadata: Metadata = {
-  title: 'Astronomy Subject Library',
-  description: 'Explore DotXiv’s five astronomy study paths and a curated reading room of foundational astrophysics textbooks.',
-}
+import { ArrowLeft, ArrowUpRight, BookOpen, Library } from 'lucide-react'
 
 const textbooks = [
   { title: 'Fundamental Astronomy', authors: 'H. Karttunen, P. Kröger, H. Oja, M. Poutanen & K. J. Donner', cover: '/textbook-covers/karttunen.jpg', pdf: 'https://drive.google.com/file/d/1jAAtkF0YCrT3Fm9B4I2kxez393olF_iy/view?usp=drivesdk' },
@@ -17,12 +10,18 @@ const textbooks = [
   { title: 'Foundations of Astrophysics', authors: 'Barbara Ryden & Bradley M. Peterson', cover: '/textbook-covers/ryden-peterson.jpg', pdf: 'https://drive.google.com/file/d/1b9CeCRhjxnMlDF_tboXlKxn0tvOUspux/view?usp=drivesdk'},
   { title: 'Astronomy: Principles and Practice', authors: 'A. E. Roy & D. Clarke', cover: '/textbook-covers/roy-clarke.jpg', pdf: 'https://drive.google.com/file/d/1LBJJhPa87_UqNKCdONRnhYcKN_B12iz5/view?usp=drivesdk' },
   { title: 'A Problem Book in Astronomy and Astrophysics', authors: 'Aniket Sule', cover: '/textbook-covers/sule-problem-book.webp', pdf: 'https://drive.google.com/file/d/1gFn2rYAE5QMrge7B0cz1x4K12mr2Ca1s/view?usp=drivesdk' },
-  { title: 'Introduction to Cosmology', authors: 'Barbara Ryden', cover: '/textbook-covers/ryden-cosmology-art.png', pdf:'https://drive.google.com/file/d/1EU9BMWuDMEkYaPJGurBBH4JUUrz4RIOD/view?usp=drivesdk' },
-  { title: 'Astronomy: A Physical Perspective', authors: 'Marc L. Kutner', cover: '/textbook-covers/kutner-astronomy-art.png', pdf:'https://drive.google.com/file/d/1syG_f03CiVO-YZK9A4sltQJYQ7A9MKm4/view?usp=drivesdk' },
-  { title: 'The Physical Universe: An Introduction to Astronomy', authors: 'Frank H. Shu', cover: '/textbook-covers/shu-universe-art.png', pdf: 'https://drive.google.com/file/d/1zdN3pwRzSjEIq2ox3ZKyEjppTa9GsNrV/view?usp=drivesdk' },
+  { title: 'Introduction to Cosmology', authors: 'Barbara Ryden', cover: '/textbook-covers/ryden-cosmology.jpg', pdf:'https://drive.google.com/file/d/1EU9BMWuDMEkYaPJGurBBH4JUUrz4RIOD/view?usp=drivesdk' },
+  { title: 'Astronomy: A Physical Perspective', authors: 'Marc L. Kutner', cover: '/textbook-covers/kutner.jpg', pdf:'https://drive.google.com/file/d/1syG_f03CiVO-YZK9A4sltQJYQ7A9MKm4/view?usp=drivesdk' },
+  { title: 'The Physical Universe: An Introduction to Astronomy', authors: 'Frank H. Shu', cover: '/textbook-covers/shu-physical-universe.jpg', pdf: 'https://drive.google.com/file/d/1zdN3pwRzSjEIq2ox3ZKyEjppTa9GsNrV/view?usp=drivesdk' },
 ]
 
-const areas = astronomySubjects
+const areas = [
+  { title: 'Stellar Astronomy', slug: 'stellar-astronomy', description: 'Explore how stars form, shine, evolve, and end as white dwarfs, neutron stars, or black holes.' },
+  { title: 'Cosmology', slug: 'cosmology', description: 'Study the origin, expansion, contents, geometry, and ultimate fate of the universe.' },
+  { title: 'Celestial Mechanics', slug: 'celestial-mechanics', description: 'Build an understanding of orbits, gravity, perturbations, tides, and dynamical systems.' },
+  { title: 'Galactic Astronomy', slug: 'galactic-astronomy', description: 'Learn how galaxies form, grow, rotate, interact, and organize the large-scale universe.' },
+  { title: 'Observational Astronomy', slug: 'observational-astronomy', description: 'Develop practical skills in sky navigation, coordinates, photometry, spectroscopy, and observation.' },
+]
 
 export default function LibraryPage() {
   return (
@@ -30,8 +29,8 @@ export default function LibraryPage() {
       <Link className="back-link" href="/"><ArrowLeft size={14} /> Back home</Link>
       <header className="notes-page-heading">
         <p className="eyebrow"><span className="eyebrow-dot" />The DotXiv library</p>
-        <h1>Five fields.<br /><em>One universe.</em></h1>
-        <p>Five connected study paths, from the motions of nearby worlds to the history of the universe. Choose a field to explore its concepts, reading path, and visual tools.</p>
+        <h1>Choose a <em>field.</em></h1>
+        <p>A structured map of the subjects covered by DotXiv. Pick a domain to see its study guide, reading path, visual tools, and notes.</p>
       </header>
       <section className="notes-page-grid" aria-label="Astronomy library subjects">
         {areas.map((area, index) => (
@@ -56,7 +55,7 @@ export default function LibraryPage() {
               {/* VO: Leave the PDF link empty like this for me to fill in */}
               <a href={book.pdf ?? 'PASTE_PDF_LINK_HERE'} target="_blank" rel="noopener noreferrer">
                 <div className="book-cover-frame">
-                  <img src={book.cover} alt={`${book.title} cover artwork`} className="book-cover" loading="lazy" />
+                  <img src={book.cover} alt={`${book.title} cover`} className="book-cover" loading="lazy" />
                   <span className="book-number">{String(index + 1).padStart(2, '0')}</span>
                 </div>
                 <div className="book-copy">

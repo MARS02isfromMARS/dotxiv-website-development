@@ -4,42 +4,33 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dotxiv.vercel.app'),
-  applicationName: 'DotXiv',
-  title: { default: 'DotXiv | Astronomy & Astrophysics', template: '%s | DotXiv' },
+  title: { default: 'DotXiv', template: '%s | DotXiv' },
   description: 'DotXiv is an astronomy olympiad guide with structured notes, study roadmaps, celestial mechanics, stellar astronomy, cosmology, galactic astronomy, and observational astronomy resources for BDOAA and IOAA preparation.',
   keywords: ['DotXiv', 'DotXiv Astronomy Olympiad guide', 'astronomy olympiad', 'BDOAA', 'IOAA', 'celestial mechanics', 'stellar astronomy', 'cosmology', 'galactic astronomy', 'observational astronomy'],
   authors: [{ name: 'DotXiv' }],
   creator: 'DotXiv',
   publisher: 'DotXiv',
   verification: { google: 'QdX4ONxEMz8YUWY8roQaQTlRx2EYmtPWMlvoMaDzHl' },
+  generator: 'v0.app',
   alternates: { canonical: '/' },
-  openGraph: {
-    title: 'DotXiv — Understand the universe from first principles',
-    description: 'Rigorous astrophysics and cosmology notes for curious minds.',
-    url: 'https://dotxiv.vercel.app',
-    siteName: 'DotXiv',
-    type: 'website',
-    images: [{ url: '/dotxiv-logo.png', width: 6250, height: 6250, alt: 'DotXiv logo' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'DotXiv — Astrophysics & Cosmology Notes',
-    description: 'Rigorous notes and problem sets for curious minds.',
-    images: ['/dotxiv-logo.png'],
-  },
+  openGraph: { title: 'DotXiv — Understand the universe from first principles', description: 'Rigorous astrophysics and cosmology notes for curious minds.', url: 'https://dotxiv.vercel.app', siteName: 'DotXiv', type: 'website', images: [{ url: '/dotxiv-browser-logo.png', width: 1600, height: 1200, alt: 'DotXiv orbital logo' }] },
+  twitter: { card: 'summary_large_image', title: 'DotXiv — Astrophysics & Cosmology Notes', description: 'Rigorous notes and problem sets for curious minds.', images: ['/dotxiv-browser-logo.png'] },
   icons: {
     icon: [
-      { url: '/dotxiv-icon.svg', type: 'image/svg+xml' },
       { url: '/dotxiv-browser-logo.png', type: 'image/png', sizes: 'any' },
+      { url: '/dotxiv-browser-logo.png', type: 'image/png', sizes: '48x48' },
     ],
-    shortcut: ['/dotxiv-icon.svg'],
+    shortcut: ['/dotxiv-browser-logo.png'],
     apple: [{ url: '/dotxiv-browser-logo.png', type: 'image/png' }],
   },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: '#080b12',
+  colorScheme: 'light dark',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
 }
 
 export default function RootLayout({

@@ -1,11 +1,5 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, ArrowUpRight, BookOpen, ExternalLink, Telescope } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Astronomy Study Paths',
-  description: 'Explore five structured astronomy study paths with core concepts, textbook chapters, and interactive tools for Olympiad preparation.',
-}
 
 const syllabus = [
   {
@@ -79,7 +73,7 @@ export default function NotesPage() {
       <div className="notes-page-heading">
         <p className="eyebrow"><span className="eyebrow-dot" />The DotXiv library</p>
         <h1>Five paths into<br /><em>the universe.</em></h1>
-        <p>A curated astronomy roadmap. Follow each subject’s core ideas, textbook sequence, and visual tools, then open its dedicated study path.</p>
+        <p>A curated astronomy roadmap. Read the description, follow the textbook sequence, practise the physics, and use the visualisation tools before opening the downloadable notes.</p>
       </div>
       <div className="syllabus-stack">
         {syllabus.map((area) => (

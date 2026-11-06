@@ -102,8 +102,8 @@ export default function Page() {
           <span className="brand-logo-wrap">
             <img 
               className="brand-logo" 
-              src="/dotxiv-browser-logo.png"
-              alt=""
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Black%20White%20Simple%20Minimalist%20Modern%20Tone%20Creative%20Studio%20Logo_20260924_190336_0000-pGpZQE73UHylCkIrLphBg7MlNkmIOk.png" 
+              alt="DotXiv orbital xiv logo" 
               width={52} 
               height={52} 
             />
@@ -151,7 +151,7 @@ export default function Page() {
         <div className="hero-orbit" aria-hidden="true">
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
-          <div className="orbit-core"><span><Orbit size={34} strokeWidth={1.15} /></span><small>knowledge<br />in orbit</small></div>
+          <div className="orbit-core"><span>∴</span><small>knowledge<br />in orbit</small></div>
           <div className="orbit-star star-one" />
           <div className="orbit-star star-two" />
           <div className="orbit-star star-three" />
@@ -178,17 +178,16 @@ export default function Page() {
         {categories.map((category) => {
           const IconComponent = category.icon;
           return (
-            <Link href={`/notes/${category.slug}`} key={category.label} className={`category-card category-card-${category.tone}`}>
+            <Link href={`/notes/${category.slug}`} key={category.label} className="category-card">
               <div className="category-bg-image" style={{ backgroundImage: `url(${category.image})` }} />
               <div className="category-bg-overlay" />
 
-              <span className="category-number">{category.label}</span>
               <div className="category-icon">
                 <IconComponent size={17} />
               </div>
               <h3>{category.title}</h3>
               <p>{category.text}</p>
-              <span className="category-link">Explore subject <ArrowUpRight size={13} aria-hidden="true" /></span>
+              <span className="category-link">Click to explore ↗</span>
             </Link>
           );
         })}
@@ -210,7 +209,7 @@ export default function Page() {
 
       <section id="community" className="community-section page-pad">
         <div className="community-card">
-          <Sparkles className="community-spark" size={18} aria-hidden="true" />
+          <div className="community-spark">✦</div>
           <div>
             <SectionLabel>A place to ask better questions</SectionLabel>
             <h2>The best discoveries<br />are <em>shared.</em></h2>
@@ -268,8 +267,8 @@ export default function Page() {
               <span className="brand-logo-wrap">
                 <img 
                   className="brand-logo" 
-                  src="/dotxiv-browser-logo.png"
-                  alt=""
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Black%20White%20Simple%20Minimalist%20Modern%20Tone%20Creative%20Studio%20Logo_20260924_190336_0000-pGpZQE73UHylCkIrLphBg7MlNkmIOk.png" 
+                  alt="DotXiv orbital xiv logo" 
                   width={45} 
                   height={45} 
                 />
@@ -305,7 +304,7 @@ export default function Page() {
     style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none', color: '#B9BBBE' }}
   >
     {/* Official Discord SVG Logo */}
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 127.14 96.36" fill="currentColor">
+    <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 127.14 96.36" fill="currentColor">
       <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a74.37,74.37,0,0,0,6.72-10.93,68.6,68.6,0,0,1-10.64-5.12c.91-.67,1.81-1.37,2.67-2.1a75.22,75.22,0,0,0,72.78,0c.86.73,1.76,1.43,2.67,2.1a68.86,68.86,0,0,1-10.64,5.12,74.74,74.74,0,0,0,6.72,10.93,105.73,105.73,0,0,0,31.05-18.83C129.66,48.22,123.39,25.41,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z"/>
     </svg>
     <span>Discord</span>
