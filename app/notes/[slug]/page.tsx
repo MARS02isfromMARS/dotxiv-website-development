@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ArrowLeft, ArrowUpRight, FileText } from 'lucide-react'
 
-const celestialCoordinateSystemsPdf = 'https://blobs.vusercontent.net/blob/Celestial_Coordinate_Systems-1%20%281%29%20%281%29-uf5qMxm69mBPNtO0o0kPDjJI9imjIi.pdf'
+const celestialCoordinateSystemsPdf = '/celestial-coordinate-systems-english.pdf'
 
 type NoteResourceVersion = { label: string; language: 'en' | 'bn'; href: string }
 type NoteResource = { title: string; description: string; versions: NoteResourceVersion[] }
