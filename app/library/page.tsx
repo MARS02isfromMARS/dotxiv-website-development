@@ -12,6 +12,7 @@ const textbooks = [
   { title: 'A Problem Book in Astronomy and Astrophysics', authors: 'Aniket Sule', cover: '/textbook-covers/sule-problem-book.webp', pdf: 'https://drive.google.com/file/d/1gFn2rYAE5QMrge7B0cz1x4K12mr2Ca1s/view?usp=drivesdk' },
   { title: 'Introduction to Cosmology', authors: 'Barbara Ryden', cover: '/textbook-covers/ryden-cosmology.jpg', pdf:'https://drive.google.com/file/d/1EU9BMWuDMEkYaPJGurBBH4JUUrz4RIOD/view?usp=drivesdk' },
   { title: 'Astronomy: A Physical Perspective', authors: 'Marc L. Kutner', cover: '/textbook-covers/kutner.jpg', pdf:'https://drive.google.com/file/d/1syG_f03CiVO-YZK9A4sltQJYQ7A9MKm4/view?usp=drivesdk' },
+  { title: 'Star Maps 101 and Practices', authors: 'Fahim Rajit Hossain' , cover: '/textbook-covers/starmaps101Cover.jpg', pdf:'https://drive.google.com/file/d/17LJaTztX3J5AJ0gnOrNrDfHlMBQ6yWPG/view?usp=drivesdk' },
   { title: 'The Physical Universe: An Introduction to Astronomy', authors: 'Frank H. Shu', cover: '/textbook-covers/shu-physical-universe.jpg', pdf: 'https://drive.google.com/file/d/1zdN3pwRzSjEIq2ox3ZKyEjppTa9GsNrV/view?usp=drivesdk' },
 ]
 
