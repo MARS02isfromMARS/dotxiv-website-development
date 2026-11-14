@@ -42,7 +42,7 @@ const allowedSvgTags = [
 
 const svgSchema = {
   ...defaultSchema,
-  tagNames: [...(defaultSchema.tagNames ?? []), ...allowedSvgTags],
+  tagNames: [...(defaultSchema.tagNames ?? []).filter((tag) => tag !== 'img'), ...allowedSvgTags],
   attributes: {
     ...defaultSchema.attributes,
     code: [
@@ -75,7 +75,7 @@ const svgSchema = {
     circle: ['cx', 'cy', 'r', ['fill', safeColor], ['stroke', safeColor], 'strokeWidth', 'opacity'],
     ellipse: ['cx', 'cy', 'rx', 'ry', ['fill', safeColor], ['stroke', safeColor], 'strokeWidth', 'opacity'],
     line: ['x1', 'y1', 'x2', 'y2', ['stroke', safeColor], 'strokeWidth', 'strokeDasharray', 'opacity'],
-    polyline: ['points', 'fill', ['stroke', safeColor], 'strokeWidth', 'strokeLinecap', 'strokeLinejoin', 'opacity'],
+    polyline: ['points', ['fill', safeColor], ['stroke', safeColor], 'strokeWidth', 'strokeLinecap', 'strokeLinejoin', 'opacity'],
     polygon: ['points', ['fill', safeColor], ['stroke', safeColor], 'strokeWidth', 'strokeLinejoin', 'opacity'],
     rect: ['x', 'y', 'width', 'height', 'rx', 'ry', ['fill', safeColor], ['stroke', safeColor], 'strokeWidth', 'opacity'],
     text: ['x', 'y', 'fontSize', 'textAnchor', 'dominantBaseline', ['fill', safeColor], ['stroke', safeColor], 'opacity'],

@@ -164,7 +164,11 @@ export function ChatPanel() {
     stop()
     setMessages([])
     setRequestError(null)
-    window.localStorage.removeItem(HISTORY_KEY)
+    try {
+      window.localStorage.removeItem(HISTORY_KEY)
+    } catch {
+      setRequestError('Chat history could not be cleared on this device.')
+    }
   }
 
   return (

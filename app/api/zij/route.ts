@@ -12,16 +12,26 @@ import { ZIJ_PROMPT } from '@/lib/zij-prompt'
 const MAX_MESSAGE_LENGTH = 2_000
 const MAX_REQUEST_LENGTH = 256_000
 const MAX_HISTORY_MESSAGES = 16
-const redis = new Redis({
-  url: process.env.KV_REST_API_URL!,
-  token: process.env.KV_REST_API_TOKEN!,
-})
-const rateLimiter = new Ratelimit({
-  redis,
-  limiter: Ratelimit.slidingWindow(12, '1 m'),
-  prefix: 'dotxiv:zij:chat',
-})
 const localRateLimits = new Map<string, { count: number; reset: number }>()
+
+function createRateLimiter() {
+  const url = process.env.KV_REST_API_URL
+  const token = process.env.KV_REST_API_TOKEN
+  if (!url || !token) throw new Error('Rate limit storage is not configured')
+
+  return new Ratelimit({
+    redis: new Redis({ url, token }),
+    limiter: Ratelimit.slidingWindow(12, '1 m'),
+    prefix: 'dotxiv:zij:chat',
+  })
+}
+
+let rateLimiter: ReturnType<typeof createRateLimiter> | undefined
+
+function getRateLimiter() {
+  rateLimiter ??= createRateLimiter()
+  return rateLimiter
+}
 
 export const maxDuration = 45
 
@@ -82,7 +92,7 @@ export async function POST(request: Request) {
   let rateLimitResult: RateLimitResult
   if (process.env.NODE_ENV === 'production') {
     try {
-      const { success, reset } = await rateLimiter.limit(ip)
+      const { success, reset } = await getRateLimiter().limit(ip)
       rateLimitResult = { success, reset }
     } catch {
       console.error('[zij] Production rate limit service unavailable')
