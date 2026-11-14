@@ -1,6 +1,8 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import 'katex/dist/katex.min.css'
+import { ZijAssistant } from '@/components/zij/ZijAssistant'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dotxiv.vercel.app'),
@@ -42,6 +44,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         {children}
+        <ZijAssistant />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
