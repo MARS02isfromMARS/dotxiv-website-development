@@ -241,7 +241,7 @@ export default function Page() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 DotXiv</span>
+          <span>© 2027 DotXiv</span>
           <span>Written and maintained by <Link href="https://thedotastro.netlify.app" className="hover:underline"><strong>The Dot</strong></Link></span>
     
           <span className="social">
