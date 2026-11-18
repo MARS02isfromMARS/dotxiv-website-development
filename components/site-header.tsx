@@ -11,18 +11,18 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <Link href="/" className="brand" aria-label="DotXiv home">
+      <a href="/" className="brand" aria-label="DotXiv home">
         <span className="brand-logo-wrap">
           <img
             className="brand-logo"
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Black%20White%20Simple%20Minimalist%20Modern%20Tone%20Creative%20Studio%20Logo_20260924_190336_0000-pGpZQE73UHylCkIrLphBg7MlNkmIOk.png"
-            alt="DotXiv orbital xiv logo"
-            width={52}
-            height={52}
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Black%20White%20Simple%20Minimalist%20Modern%20Tone%20Creative%20Studio%20Logo_20261023_215651_0000-L1MzwcweuUaElM8WIDRhvAKkgQ9oD3.png"
+            alt="DotXiv orbital logo"
+            width={46}
+            height={46}
           />
         </span>
         <span>DotXiv</span>
-      </Link>
+      </a>
 
       <nav className="desktop-nav" aria-label="Main navigation">
         <details className="nav-dropdown">
