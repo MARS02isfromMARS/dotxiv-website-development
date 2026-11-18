@@ -11,7 +11,16 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <a href="/" className="brand" aria-label="DotXiv home">
+      <a
+        href="/"
+        className="brand"
+        aria-label="DotXiv home"
+        onClick={(event) => {
+          if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+          event.preventDefault()
+          window.location.assign('/')
+        }}
+      >
         <span className="brand-logo-wrap" aria-hidden="true">
           <span className="brand-logo" />
         </span>
