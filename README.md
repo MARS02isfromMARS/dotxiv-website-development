@@ -1,4 +1,4 @@
-# 🌌 dotxiv-website-development
+# dotxiv-website-development
 
 An open-source, highly interactive web platform built to aggregate, curate, and deliver premium learning resources, notes, and foundational concepts for students preparing for the **Astronomy and Astrophysics Olympiads** (like IAO, IOAA, and national selection tests).
 
@@ -6,7 +6,7 @@ An open-source, highly interactive web platform built to aggregate, curate, and 
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Comprehensive Syllabus Coverage:** Structured notes tracking core Olympiad topics (Celestial Mechanics, Astrophysics, Cosmology, Instrumentation, and Data Analysis).
 - **Interactive Concept Visualizations:** Dynamic components designed to help students visualize orbital paths, coordinate systems, and stellar evolutions.
@@ -15,7 +15,7 @@ An open-source, highly interactive web platform built to aggregate, curate, and 
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Framework:** [Next.js](https://nextjs.org) (App Router)
 - **Language:** [TypeScript](https://typescriptlang.org)
