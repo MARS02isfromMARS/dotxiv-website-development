@@ -12,14 +12,8 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <a href="/" className="brand" aria-label="DotXiv home">
-        <span className="brand-logo-wrap">
-          <img
-            className="brand-logo"
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Black%20White%20Simple%20Minimalist%20Modern%20Tone%20Creative%20Studio%20Logo_20261023_215651_0000-L1MzwcweuUaElM8WIDRhvAKkgQ9oD3.png"
-            alt="DotXiv orbital logo"
-            width={46}
-            height={46}
-          />
+        <span className="brand-logo-wrap" aria-hidden="true">
+          <span className="brand-logo" />
         </span>
         <span>DotXiv</span>
       </a>
