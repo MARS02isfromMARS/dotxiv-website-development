@@ -5,7 +5,7 @@ const resources = [
     name: 'Notre Dame Eco and Space Club',
     type: 'Astronomy Olympiad notes',
     description: 'Founded on 28 October 1992, it is the first Bangladeshi astronomical club at the higher-secondary level.',
-    href: 'https://facebook.com/1473900466041003',
+    href: 'https://github.com/sheikhabrar140/NDESC-Astronomy-Olympiad-Handouts-',
     logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FB_IMG_1794985778246-f3oz5Y7czzLTRmkAx8WYsx6Jfccu9P.jpg',
   },
   {
