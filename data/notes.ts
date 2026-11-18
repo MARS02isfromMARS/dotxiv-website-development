@@ -18,6 +18,14 @@ export type NoteCollection = {
   resources: NoteResource[]
 }
 
+export const noteSections = [
+  { title: 'Celestial Mechanics', slug: 'celestial-mechanics' },
+  { title: 'Observational Astronomy', slug: 'observational-astronomy' },
+  { title: 'Stellar Astronomy', slug: 'stellar-astronomy' },
+  { title: 'Galactic Astronomy', slug: 'galactic-astronomy' },
+  { title: 'Cosmology', slug: 'cosmology' },
+]
+
 export const noteCollections: Record<string, NoteCollection> = {
   'celestial-mechanics': {
     title: 'Celestial mechanics',

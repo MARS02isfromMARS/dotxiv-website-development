@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowLeft, ArrowUpRight, FileText } from 'lucide-react'
 import { noteCollections } from '@/data/notes'
+import { SiteHeader } from '@/components/site-header'
 
 export default async function NotePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -9,7 +10,9 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
   const resources = collection?.resources ?? []
 
   return (
-    <main className="notes-page note-detail page-pad">
+    <>
+      <SiteHeader />
+      <main className="notes-page note-detail page-pad">
       <Link href="/notes" className="back-link"><ArrowLeft size={15} /> All notes</Link>
       <div className="note-detail-heading">
         <p className="eyebrow"><span className="eyebrow-dot" />Notes collection</p>
@@ -51,6 +54,7 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
           <p>Content for this collection will be added here soon.</p>
         </section>
       )}
-    </main>
+      </main>
+    </>
   )
 }
