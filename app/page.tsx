@@ -217,18 +217,12 @@ export default function Page() {
       <footer id="contact" className="footer page-pad">
         <div className="footer-top">
           <div>
-            <Link href="/" className="brand footer-brand">
-              <span className="brand-logo-wrap">
-                <img 
-                  className="brand-logo" 
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Black%20White%20Simple%20Minimalist%20Modern%20Tone%20Creative%20Studio%20Logo_20260924_190336_0000-pGpZQE73UHylCkIrLphBg7MlNkmIOk.png" 
-                  alt="DotXiv orbital xiv logo" 
-                  width={45} 
-                  height={45} 
-                />
+            <a href="/" className="brand footer-brand">
+              <span className="brand-logo-wrap" aria-hidden="true">
+                <span className="brand-logo" />
               </span>
               <span>DotXiv</span>
-            </Link>
+            </a>
             <p className="footer-blurb">A home for first-principles astrophysics<br />and the people who love it.</p>
           </div>
           <div className="footer-links">
