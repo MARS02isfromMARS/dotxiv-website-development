@@ -37,7 +37,7 @@ export function SiteHeader() {
         <Link href="/#about">About</Link>
         <Link href="/#community">Community</Link>
         <Link href="/#contact">Contact</Link>
-        <Link href="/library">More resources</Link>
+        <Link href="/resources">More resources</Link>
         <Link className="nav-search" href="/notes" aria-label="Search notes"><Search size={18} /></Link>
       </nav>
 
@@ -65,7 +65,7 @@ export function SiteHeader() {
           <Link href="/#about" onClick={closeMenu}>About</Link>
           <Link href="/#community" onClick={closeMenu}>Community</Link>
           <Link href="/#contact" onClick={closeMenu}>Contact</Link>
-          <Link href="/library" onClick={closeMenu}>More resources</Link>
+          <Link href="/resources" onClick={closeMenu}>More resources</Link>
         </nav>
       )}
     </header>
