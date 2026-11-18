@@ -1,20 +1,6 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
-import {
-  ArrowUpRight,
-  ChevronDown,
-  Mail,
-  Menu,
-  Search,
-  // Relevant astronomy & physics symbols
-  Orbit,
-  Telescope,
-  Sun,
-  Sparkles,
-  Globe2,
-} from 'lucide-react'
+import { ArrowUpRight, Mail, Orbit, Telescope, Sun, Sparkles, Globe2 } from 'lucide-react'
+import { SiteHeader } from '@/components/site-header'
 
 const categories = [
   {
@@ -85,48 +71,16 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 export default function Page() {
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  const closeMenu = () => setMenuOpen(false)
-
   return (
-    <main>
+    <>
       <div className="announcement">
         <span>New release</span>
         <span>The Dot — Cosmology, now available in English & Bangla</span>
         <Link href="#notes">Explore <ArrowUpRight size={13} /></Link>
       </div>
       
-      <header className="site-header">
-        <Link href="/" className="brand" aria-label="DotXiv home">
-          <span className="brand-logo-wrap">
-            <img 
-              className="brand-logo" 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Black%20White%20Simple%20Minimalist%20Modern%20Tone%20Creative%20Studio%20Logo_20260924_190336_0000-pGpZQE73UHylCkIrLphBg7MlNkmIOk.png" 
-              alt="DotXiv orbital xiv logo" 
-              width={52} 
-              height={52} 
-            />
-          </span>
-          <span>DotXiv</span>
-        </Link>
-        <nav className="desktop-nav" aria-label="Main navigation">
-          <Link href="/notes">Notes <ChevronDown size={13} /></Link>
-          <Link href="#about">About</Link>
-          <Link href="#community">Community</Link>
-          <Link href="#contact">Contact</Link>
-          <Link href="/library">More resources</Link>
-          <Link className="nav-search" href="/notes" aria-label="Search notes"><Search size={18} /></Link>
-        </nav>
-        <button className="mobile-menu" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}><Menu size={21} /></button>
-        {menuOpen && <nav className="mobile-nav" aria-label="Mobile navigation">
-          <Link href="/notes" onClick={closeMenu}>Notes <ChevronDown size={13} /></Link>
-          <Link href="#about" onClick={closeMenu}>About</Link>
-          <Link href="#community" onClick={closeMenu}>Community</Link>
-          <Link href="#contact" onClick={closeMenu}>Contact</Link>
-          <Link href="/library" onClick={closeMenu}>More resources</Link>
-        </nav>}
-      </header>
+      <SiteHeader />
+      <main>
 
       <section className="hero page-pad">
         <div className="hero-copy">
@@ -312,6 +266,7 @@ export default function Page() {
 </span>
         </div>
       </footer>
-    </main>
+      </main>
+    </>
   )
 }

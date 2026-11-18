@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ArrowUpRight, BookOpen, Library } from 'lucide-react'
+import { SiteHeader } from '@/components/site-header'
 
 const textbooks = [
   { title: 'Fundamental Astronomy', authors: 'H. Karttunen, P. Kröger, H. Oja, M. Poutanen & K. J. Donner', cover: '/textbook-covers/FundamentalAstronomycover.jpg', pdf: 'https://drive.google.com/file/d/1jAAtkF0YCrT3Fm9B4I2kxez393olF_iy/view?usp=drivesdk' },
@@ -26,7 +27,9 @@ const areas = [
 
 export default function LibraryPage() {
   return (
-    <main className="notes-page page-pad">
+    <>
+      <SiteHeader />
+      <main className="notes-page page-pad">
       <Link className="back-link" href="/"><ArrowLeft size={14} /> Back home</Link>
       <header className="notes-page-heading">
         <p className="eyebrow"><span className="eyebrow-dot" />The DotXiv library</p>
@@ -69,6 +72,7 @@ export default function LibraryPage() {
           ))}
         </div>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

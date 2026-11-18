@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ArrowUpRight, BookOpen, ExternalLink, Telescope } from 'lucide-react'
+import { SiteHeader } from '@/components/site-header'
 
 const syllabus = [
   {
@@ -68,7 +69,9 @@ const syllabus = [
 
 export default function NotesPage() {
   return (
-    <main className="notes-page page-pad">
+    <>
+      <SiteHeader />
+      <main className="notes-page page-pad">
       <Link href="/" className="back-link"><ArrowLeft size={15} /> Back to DotXiv</Link>
       <div className="notes-page-heading">
         <p className="eyebrow"><span className="eyebrow-dot" />The DotXiv library</p>
@@ -90,7 +93,8 @@ export default function NotesPage() {
           </article>
         ))}
       </div>
-      <div className="pdf-intro"><BookOpen size={19} /><span>Choose a subject to find available handouts and PDFs. More resources will be added as each collection grows.</span><ExternalLink size={15} /></div>
-    </main>
+      <div className="pdf-intro"><BookOpen size={19} /><span>Choose a subject to find available handouts and PDFs. More resources will be added as each collection grows.</span><ExternalLink size={15} />      </div>
+      </main>
+    </>
   )
 }
