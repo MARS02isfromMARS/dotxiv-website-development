@@ -263,6 +263,21 @@ export default function Page() {
     </svg>
     <span>Discord</span>
   </Link>
+  <a
+    href="https://github.com/MARS02isfromMARS/dotxiv-website-development"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View the DotXiv GitHub repository"
+    style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#B9BBBE' }}
+  >
+    <img
+      src="https://thesvg.org/icons/github/light.svg"
+      width="20"
+      height="20"
+      alt=""
+      style={{ filter: 'brightness(0) invert(0.74)' }}
+    />
+  </a>
 </span>
         </div>
       </footer>
