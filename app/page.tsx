@@ -2,6 +2,12 @@ import Link from 'next/link'
 import { ArrowUpRight, Mail, Orbit, Telescope, Sun, Sparkles, Globe2 } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 
+const newRelease = {
+  title: 'The Dot — Cosmology, now available in English & Bangla',
+  linkLabel: 'Explore',
+  href: '#notes',
+};
+
 const categories = [
   {
     label: '01',
@@ -75,8 +81,8 @@ export default function Page() {
     <>
       <div className="announcement">
         <span>New release</span>
-        <span>The Dot — Cosmology, now available in English & Bangla</span>
-        <Link href="#notes">Explore <ArrowUpRight size={13} /></Link>
+        <span>{newRelease.title}</span>
+        <Link href={newRelease.href}>{newRelease.linkLabel} <ArrowUpRight size={13} /></Link>
       </div>
       
       <SiteHeader />
@@ -109,7 +115,6 @@ export default function Page() {
             width={1280}
             height={654}
           />
-          <figcaption>Saturn and its rings. Credit: NASA/JPL/Space Science Institute</figcaption>
         </figure>
       </section>
 
