@@ -102,14 +102,15 @@ export default function Page() {
             <ArrowUpRight className="hero-proof-arrow" size={14} aria-hidden="true" />
           </a>
         </div>
-        <div className="hero-orbit" aria-hidden="true">
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-          <div className="orbit-core"><span>∴</span><small>knowledge<br />in orbit</small></div>
-          <div className="orbit-star star-one" />
-          <div className="orbit-star star-two" />
-          <div className="orbit-star star-three" />
-        </div>
+        <figure className="hero-media">
+          <img
+            src="/images/saturn-cassini.jpg"
+            alt="Saturn and its rings in natural color, mosaicked from Cassini images"
+            width={1280}
+            height={654}
+          />
+          <figcaption>Saturn and its rings. Credit: NASA/JPL/Space Science Institute</figcaption>
+        </figure>
       </section>
 
       <section className="stats-strip page-pad">
