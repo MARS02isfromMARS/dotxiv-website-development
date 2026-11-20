@@ -7,7 +7,6 @@ type ConstellationImageProps = {
   chart?: ConstellationChart
   constellationName: string
   mode?: 'card' | 'detail' | 'quiz' | 'review'
-  concealName?: boolean
   showCredit?: boolean
 }
 
@@ -15,7 +14,6 @@ export function ConstellationImage({
   chart,
   constellationName,
   mode = 'card',
-  concealName = false,
   showCredit = true,
 }: ConstellationImageProps) {
   const imageRef = useRef<HTMLImageElement>(null)
@@ -52,11 +50,9 @@ export function ConstellationImage({
         ) : (
           <img
             ref={imageRef}
-            className={`constellation-image__img${concealName ? ' constellation-image__img--concealed' : ''}${imageStatus === 'ready' ? ' is-ready' : ''}`}
+            className={`constellation-image__img${imageStatus === 'ready' ? ' is-ready' : ''}`}
             src={chart.imageUrl}
-            alt={concealName
-              ? 'Official IAU star chart with printed labels softened for identification practice'
-              : `Official IAU constellation chart for ${constellationName}`}
+            alt={`Official IAU constellation chart for ${constellationName}`}
             loading={mode === 'card' ? 'lazy' : 'eager'}
             decoding="async"
             fetchPriority={mode === 'quiz' ? 'high' : 'auto'}
@@ -67,7 +63,6 @@ export function ConstellationImage({
       </div>
       {showCredit && (
         <figcaption className="constellation-image__credit">
-          {concealName && <span>Quiz display softens printed chart labels.</span>}
           <span>{chart.attribution} · {chart.license}</span>
           <span className="constellation-image__credit-links">
             <a href={chart.sourceUrl} target="_blank" rel="noopener noreferrer">IAU source</a>
