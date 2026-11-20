@@ -436,18 +436,15 @@ button,input { font:inherit; }
 }
 
 .constellation-page {
-  --sky-ink: #080e18;
+  --sky-ink: var(--ink);
   --sky-panel: #0c1522;
   --sky-panel-raised: #101c2b;
   --sky-line: rgba(164, 194, 224, .16);
   --sky-muted: #9aa8ba;
   --sky-blue: #a8c9ec;
   min-height: 100vh;
-  color: #eef3f8;
-  background:
-    radial-gradient(circle at 14% 10%, rgba(114, 162, 210, .11), transparent 28rem),
-    radial-gradient(circle at 1px 1px, rgba(196, 217, 239, .28) .65px, transparent .85px) 0 0 / 43px 43px,
-    var(--sky-ink);
+  color: var(--paper);
+  background: var(--ink);
 }
 .constellation-shell {
   width: min(100%, 1480px);
