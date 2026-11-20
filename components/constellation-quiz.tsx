@@ -261,6 +261,7 @@ export function ConstellationQuiz({ onClose }: { onClose: () => void }) {
                   chart={currentQuestion.chart}
                   constellationName={currentQuestion.constellation.name}
                   mode="quiz"
+                  hideConstellationName={phase === 'question'}
                 />
               </div>
             </section>

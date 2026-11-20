@@ -7,6 +7,7 @@ type ConstellationImageProps = {
   chart?: ConstellationChart
   constellationName: string
   mode?: 'card' | 'detail' | 'quiz' | 'review'
+  hideConstellationName?: boolean
   showCredit?: boolean
 }
 
@@ -14,6 +15,7 @@ export function ConstellationImage({
   chart,
   constellationName,
   mode = 'card',
+  hideConstellationName = false,
   showCredit = true,
 }: ConstellationImageProps) {
   const imageRef = useRef<HTMLImageElement>(null)
@@ -27,7 +29,7 @@ export function ConstellationImage({
 
   if (!chart || !chart.verified) {
     return (
-      <figure className={`constellation-image constellation-image--${mode}`}>
+      <figure className={`constellation-image constellation-image--${mode}${hideConstellationName ? ' constellation-image--quiz-label-covered' : ''}`}>
         <div className="constellation-image__pending" role="img" aria-label={`Official IAU image pending for ${constellationName}`}>
           <span>Official IAU image pending</span>
         </div>
@@ -36,7 +38,7 @@ export function ConstellationImage({
   }
 
   return (
-    <figure className={`constellation-image constellation-image--${mode}`}>
+    <figure className={`constellation-image constellation-image--${mode}${hideConstellationName ? ' constellation-image--quiz-label-covered' : ''}`}>
       <div className="constellation-image__frame">
         {imageStatus === 'loading' && (
           <div className="constellation-image__loading" role="status">
@@ -52,7 +54,9 @@ export function ConstellationImage({
             ref={imageRef}
             className={`constellation-image__img${imageStatus === 'ready' ? ' is-ready' : ''}`}
             src={chart.imageUrl}
-            alt={`Official IAU constellation chart for ${constellationName}`}
+            alt={hideConstellationName
+              ? 'Official IAU constellation chart for identification practice; target name covered'
+              : `Official IAU constellation chart for ${constellationName}`}
             loading={mode === 'card' ? 'lazy' : 'eager'}
             decoding="async"
             fetchPriority={mode === 'quiz' ? 'high' : 'auto'}

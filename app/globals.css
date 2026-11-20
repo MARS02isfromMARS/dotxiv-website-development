@@ -789,6 +789,17 @@ button,input { font:inherit; }
   transition: opacity .25s ease, filter .2s ease;
 }
 .constellation-image__img.is-ready { opacity: 1; }
+.constellation-image--quiz-label-covered .constellation-image__frame::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 42%;
+  left: 52%;
+  width: 40%;
+  height: 8%;
+  background: #f3f4f1;
+  pointer-events: none;
+}
 .constellation-image__loading,
 .constellation-image__unavailable,
 .constellation-image__pending {
