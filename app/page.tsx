@@ -95,8 +95,9 @@ export default function Page() {
           <p className="hero-lede">Rigorous, beautifully explained notes and problem sets for curious minds — from your first orbit to the edge of the observable universe.</p>
           <div className="hero-actions">
             <Link className="button button-primary" href="/notes">Browse notes <ArrowUpRight size={16} /></Link>
-            <Link className="button button-quiet" href="/library">Explore the library <ArrowUpRight size={16} /></Link>
-          </div>
+              <Link className="button button-quiet" href="/library">Explore the library <ArrowUpRight size={16} /></Link>
+              <Link className="button button-quiet" href="/constellations">Learn constellations <ArrowUpRight size={16} /></Link>
+            </div>
           <a href="#contributors" className="hero-proof" aria-label="Meet the contributors behind DotXiv">
             <span className="proof-avatars" aria-hidden="true">
               {contributors.slice(0, 3).map((contributor) => (
@@ -236,6 +237,7 @@ export default function Page() {
               <span>Explore</span>
               <Link href="/notes">Notes</Link>
               <Link href="/library">Library</Link>
+              <Link href="/constellations">Constellations</Link>
               <Link href="#about">About us</Link>
               <a href="#contributors">Contributors</a>
             </div>
