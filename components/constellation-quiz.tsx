@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, Check, Clock3, RotateCcw, X } from 'lucide-react
 import { ConstellationImage } from '@/components/constellation-image'
 import {
   constellations,
+  getConstellationQuizPhotos,
   matchesConstellationAnswer,
   QUESTION_SECONDS,
   QUIZ_LENGTH,
@@ -233,7 +234,7 @@ export function ConstellationQuiz({ onClose }: { onClose: () => void }) {
           <main className="constellation-quiz__loading" role="status">
             <span className="constellation-quiz__loading-mark" aria-hidden="true">α</span>
             <h1 id="constellation-quiz-title" ref={titleRef} tabIndex={-1}>Preparing your session</h1>
-            <p>Shuffling ten unique charts from the 88-constellation atlas.</p>
+            <p>Shuffling ten unannotated photos from the 88-constellation atlas.</p>
           </main>
         )}
 
@@ -257,11 +258,11 @@ export function ConstellationQuiz({ onClose }: { onClose: () => void }) {
               <h1 id="constellation-quiz-title" ref={titleRef} tabIndex={-1}>Read the pattern.</h1>
               <div className="constellation-quiz__chart-wrap">
                 <ConstellationImage
-                  key={currentQuestion.chart.imageUrl}
+                  key={currentQuestion.constellation.id}
                   chart={currentQuestion.chart}
+                  imageSources={getConstellationQuizPhotos(currentQuestion.constellation.id)}
                   constellationName={currentQuestion.constellation.name}
                   mode="quiz"
-                  hideConstellationName={phase === 'question'}
                 />
               </div>
             </section>
@@ -331,7 +332,7 @@ export function ConstellationQuiz({ onClose }: { onClose: () => void }) {
             <div className="constellation-quiz__results-heading">
               <p className="constellation-eyebrow">SESSION COMPLETE</p>
               <h1 id="constellation-quiz-title" ref={titleRef} tabIndex={-1}>A good night&apos;s work.</h1>
-              <p>Your ten-chart constellation identification test is complete.</p>
+              <p>Your ten-photo constellation identification test is complete.</p>
             </div>
 
             <div className="constellation-quiz__result-stats" aria-label="Quiz results">
@@ -356,7 +357,7 @@ export function ConstellationQuiz({ onClose }: { onClose: () => void }) {
                 <div className="constellation-quiz__review-heading">
                   <div>
                     <p className="constellation-eyebrow">ANSWER KEY</p>
-                    <h2 id="constellation-quiz-review-title">Review the charts.</h2>
+                    <h2 id="constellation-quiz-review-title">Review the photos.</h2>
                   </div>
                   <span>{records.length} questions</span>
                 </div>
@@ -364,8 +365,9 @@ export function ConstellationQuiz({ onClose }: { onClose: () => void }) {
                   {records.map((record, index) => (
                     <article className="constellation-quiz__review-card" key={`${record.constellation.id}-${index}`}>
                       <ConstellationImage
-                        key={record.chart.imageUrl}
+                        key={record.constellation.id}
                         chart={record.chart}
+                        imageSources={getConstellationQuizPhotos(record.constellation.id)}
                         constellationName={record.constellation.name}
                         mode="review"
                       />

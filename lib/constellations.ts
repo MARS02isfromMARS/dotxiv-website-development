@@ -43,6 +43,32 @@ export type Constellation = {
 
 export const constellations = catalog.constellations as Constellation[]
 export const constellationSources = catalog.sources
+
+export type ConstellationQuizPhoto = {
+  imageUrl: string
+  sourceUrl: string
+  attribution: string
+  license: string
+  licenseUrl: string
+}
+
+const NOIRLAB_PHOTO_IDS: Record<string, string[]> = {
+  'corona-australis': ['coronaAustralis'],
+  serpens: ['serpens-caput', 'serpens-cauda'],
+}
+
+export function getConstellationQuizPhotos(constellationId: string): ConstellationQuizPhoto[] {
+  const photoIds = NOIRLAB_PHOTO_IDS[constellationId] ?? [constellationId]
+
+  return photoIds.map((photoId) => ({
+    imageUrl: `https://storage.noirlab.edu/media/archives/images/screen/${photoId}.jpg`,
+    sourceUrl: `https://noirlab.edu/public/images/${photoId}/`,
+    attribution: 'E. Slawik/NOIRLab/NSF/AURA/M. Zamani',
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+  }))
+}
+
 export const QUIZ_LENGTH = 10
 export const QUESTION_SECONDS = 10
 
