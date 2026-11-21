@@ -70,7 +70,7 @@ export function getConstellationQuizPhotos(constellationId: string): Constellati
 }
 
 export const QUIZ_LENGTH = 10
-export const QUESTION_SECONDS = 10
+export const QUESTION_SECONDS = 20
 
 export function getConstellationById(id: string) {
   return constellations.find((constellation) => constellation.id === id)

@@ -36,7 +36,7 @@ export function ConstellationCatalog() {
               <div className="constellation-hero__stats" aria-label="Constellation guide statistics">
                 <div><strong>{constellations.length}</strong><span>IAU constellations</span></div>
                 <div><strong>{bayerDesignationCount.toLocaleString('en')}</strong><span>Bayer designations</span></div>
-                <div><strong>10 sec</strong><span>per quick-test question</span></div>
+                <div><strong>20 sec</strong><span>per quick-test question</span></div>
               </div>
             </div>
 
@@ -44,12 +44,12 @@ export function ConstellationCatalog() {
               <span className="constellation-quick-test__index">FIELD EXERCISE · 01</span>
               <div className="constellation-quick-test__mark" aria-hidden="true"><span /><span /><span /></div>
               <h2>Read the sky<br />under pressure.</h2>
-              <p>Ten official charts. Ten seconds each. No multiple-choice shortcuts.</p>
+              <p>Ten official charts. Twenty seconds each. No multiple-choice shortcuts.</p>
               <button
                 className="constellation-quick-test__button"
                 type="button"
                 onClick={() => setQuizOpen(true)}
-                aria-label="Start a ten-question constellation quick test with ten seconds per question"
+                aria-label="Start a ten-question constellation quick test with twenty seconds per question"
               >
                 QUICK TEST <ArrowRight aria-hidden="true" />
               </button>
