@@ -38,6 +38,7 @@ export function SiteHeader() {
           </div>
         </details>
         <Link href="/constellations">Constellations</Link>
+        <Link href="/messier">Messier objects</Link>
         <Link href="/#about">About</Link>
         <Link href="/#community">Community</Link>
         <Link href="/#contact">Contact</Link>
@@ -59,6 +60,7 @@ export function SiteHeader() {
         <nav className="mobile-nav" aria-label="Mobile navigation">
           <Link href="/notes" onClick={closeMenu}>All notes</Link>
           <Link href="/constellations" onClick={closeMenu}>Learn constellations</Link>
+          <Link href="/messier" onClick={closeMenu}>Learn Messier objects</Link>
           <div className="mobile-nav-group">
             <span className="mobile-nav-label">Study sections</span>
             {noteSections.map((section) => (

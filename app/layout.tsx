@@ -4,6 +4,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dotxiv.vercel.app'),
+  applicationName: 'DotXiv',
   title: { default: 'DotXiv', template: '%s | DotXiv' },
   description: 'DotXiv is an astronomy olympiad guide with structured notes, study roadmaps, celestial mechanics, stellar astronomy, cosmology, galactic astronomy, and observational astronomy resources for BDOAA and IOAA preparation.',
   keywords: ['DotXiv', 'DotXiv Astronomy Olympiad guide', 'astronomy olympiad', 'BDOAA', 'IOAA', 'celestial mechanics', 'stellar astronomy', 'cosmology', 'galactic astronomy', 'observational astronomy'],
@@ -48,10 +49,18 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
+              '@id': 'https://dotxiv.vercel.app/#website',
               name: 'DotXiv',
               alternateName: 'DotXiv Astronomy Olympiad Guide',
               url: 'https://dotxiv.vercel.app/',
               description: 'Astronomy olympiad notes, study roadmaps, and astrophysics resources.',
+              publisher: {
+                '@type': 'Organization',
+                '@id': 'https://dotxiv.vercel.app/#organization',
+                name: 'DotXiv',
+                url: 'https://dotxiv.vercel.app/',
+                logo: 'https://dotxiv.vercel.app/dotxiv-browser-logo.png',
+              },
             }),
           }}
         />

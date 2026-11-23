@@ -11,13 +11,11 @@ import {
   QUESTION_SECONDS,
   QUIZ_LENGTH,
   selectQuizConstellations,
-  shuffle,
 } from '@/lib/constellations'
-import type { Constellation, ConstellationChart } from '@/lib/constellations'
+import type { Constellation } from '@/lib/constellations'
 
 type QuizQuestion = {
   constellation: Constellation
-  chart: ConstellationChart
 }
 
 type QuizRecord = QuizQuestion & {
@@ -92,10 +90,7 @@ export function ConstellationQuiz({ onClose }: { onClose: () => void }) {
         const selected = selectQuizConstellations(history.recentIds, history.lastSession)
         if (selected.length !== QUIZ_LENGTH) throw new Error('The quiz could not prepare ten unique questions.')
 
-        const session = selected.map((constellation) => ({
-          constellation,
-          chart: shuffle(constellation.charts)[0],
-        }))
+        const session = selected.map((constellation) => ({ constellation }))
         const recentIds = [...history.recentIds]
         for (const question of session) {
           const previousIndex = recentIds.indexOf(question.constellation.id)
@@ -234,7 +229,7 @@ export function ConstellationQuiz({ onClose }: { onClose: () => void }) {
           <main className="constellation-quiz__loading" role="status">
             <span className="constellation-quiz__loading-mark" aria-hidden="true">α</span>
             <h1 id="constellation-quiz-title" ref={titleRef} tabIndex={-1}>Preparing your session</h1>
-            <p>Shuffling ten unannotated photos from the 88-constellation atlas.</p>
+              <p>Shuffling ten unannotated photographs from the 88-constellation atlas.</p>
           </main>
         )}
 
@@ -259,7 +254,6 @@ export function ConstellationQuiz({ onClose }: { onClose: () => void }) {
               <div className="constellation-quiz__chart-wrap">
                 <ConstellationImage
                   key={currentQuestion.constellation.id}
-                  chart={currentQuestion.chart}
                   imageSources={getConstellationQuizPhotos(currentQuestion.constellation.id)}
                   constellationName={currentQuestion.constellation.name}
                   mode="quiz"
@@ -366,7 +360,6 @@ export function ConstellationQuiz({ onClose }: { onClose: () => void }) {
                     <article className="constellation-quiz__review-card" key={`${record.constellation.id}-${index}`}>
                       <ConstellationImage
                         key={record.constellation.id}
-                        chart={record.chart}
                         imageSources={getConstellationQuizPhotos(record.constellation.id)}
                         constellationName={record.constellation.name}
                         mode="review"

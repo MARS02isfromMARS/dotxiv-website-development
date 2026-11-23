@@ -97,6 +97,7 @@ export default function Page() {
             <Link className="button button-primary" href="/notes">Browse notes <ArrowUpRight size={16} /></Link>
               <Link className="button button-quiet" href="/library">Explore the library <ArrowUpRight size={16} /></Link>
               <Link className="button button-quiet" href="/constellations">Learn constellations <ArrowUpRight size={16} /></Link>
+              <Link className="button button-quiet" href="/messier">Learn Messier objects <ArrowUpRight size={16} /></Link>
             </div>
           <a href="#contributors" className="hero-proof" aria-label="Meet the contributors behind DotXiv">
             <span className="proof-avatars" aria-hidden="true">

@@ -147,14 +147,16 @@ export function selectQuizConstellations(recentIds: string[], lastSession: strin
 
   let selection = pool.slice(0, QUIZ_LENGTH)
   const selectionIds = selection.map((constellation) => constellation.id)
-  const repeatsPreviousOrder = selectionIds.length === lastSession.length
-    && selectionIds.every((id, index) => id === lastSession[index])
+  const previousSessionIds = new Set(lastSession)
+  const repeatsPreviousSet = selectionIds.length === lastSession.length
+    && selectionIds.length === QUIZ_LENGTH
+    && selectionIds.every((id) => previousSessionIds.has(id))
+    && previousSessionIds.size === selectionIds.length
 
-  if (repeatsPreviousOrder) {
+  if (repeatsPreviousSet) {
+    const alternative = pool.find((constellation) => !previousSessionIds.has(constellation.id))
+    if (alternative) selection[selection.length - 1] = alternative
     selection = shuffle(selection)
-    if (selection.every((constellation, index) => constellation.id === lastSession[index])) {
-      ;[selection[0], selection[1]] = [selection[1], selection[0]]
-    }
   }
 
   return selection
