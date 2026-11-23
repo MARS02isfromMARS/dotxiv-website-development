@@ -20,7 +20,8 @@ export function ConstellationImage({
 }: ConstellationImageProps) {
   const imageRef = useRef<HTMLImageElement>(null)
   const [imageStatus, setImageStatus] = useState<'loading' | 'ready' | 'error'>('loading')
-  const displaySources = imageSources?.length ? imageSources : chart?.verified ? [chart] : []
+  const requiresPhoto = mode === 'quiz' || mode === 'review'
+  const displaySources = imageSources?.length ? imageSources : !requiresPhoto && chart?.verified ? [chart] : []
   const firstImageUrl = displaySources[0]?.imageUrl
   const hasPairedImages = displaySources.length > 1
 
@@ -31,10 +32,15 @@ export function ConstellationImage({
   }, [firstImageUrl])
 
   if (!displaySources.length) {
+    const unavailableLabel = requiresPhoto
+      ? `Unannotated constellation photo unavailable for ${constellationName}`
+      : `Official IAU image pending for ${constellationName}`
+    const unavailableMessage = requiresPhoto ? 'Unannotated photo unavailable' : 'Official IAU image pending'
+
     return (
       <figure className={`constellation-image constellation-image--${mode}`}>
-        <div className="constellation-image__pending" role="img" aria-label={`Official IAU image pending for ${constellationName}`}>
-          <span>Official IAU image pending</span>
+        <div className="constellation-image__pending" role="img" aria-label={unavailableLabel}>
+          <span>{unavailableMessage}</span>
         </div>
       </figure>
     )
