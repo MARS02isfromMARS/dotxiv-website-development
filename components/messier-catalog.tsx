@@ -121,9 +121,8 @@ export function MessierCatalog() {
                 return (
                   <article className={`constellation-card messier-card messier-card--${category}`} key={object.id}>
                     <div className="messier-card__visual" aria-hidden="true">
+                      <img className="messier-card__image" src={object.imageUrl} alt="" loading="lazy" decoding="async" />
                       <span className="messier-card__visual-number">M{String(object.number).padStart(2, '0')}</span>
-                      <span className="messier-card__orb messier-card__orb--one" />
-                      <span className="messier-card__orb messier-card__orb--two" />
                       <span className="messier-card__visual-type">{category}</span>
                     </div>
                     <div className="constellation-card__content">
@@ -158,8 +157,9 @@ export function MessierCatalog() {
           )}
 
           <p className="constellation-browser__provenance">
-            Catalogue numbers, cross-identifications, types, constellations, and apparent magnitudes are compiled from the Messier object catalogue. Images open in NASA&apos;s public image archive.
+            Catalogue details are compiled from the Messier object catalogue. Object photographs are served by Wikimedia Commons; the links on each card open NASA&apos;s public image archive.
             {' '}<a href="https://en.wikipedia.org/wiki/List_of_Messier_objects" target="_blank" rel="noopener noreferrer">View catalogue source</a>.
+            {' '}<a href="https://commons.wikimedia.org/wiki/Category:Messier_objects" target="_blank" rel="noopener noreferrer">View image collection</a>.
           </p>
         </section>
       </div>

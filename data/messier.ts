@@ -1,3 +1,7 @@
+import messierImageData from '@/data/messier-images.json'
+
+const imageSources: Record<string, string> = messierImageData.images
+
 export type MessierObject = {
   id: string
   number: number
@@ -6,6 +10,7 @@ export type MessierObject = {
   type: string
   constellation: string
   magnitude: number
+  imageUrl: string
 }
 
 type MessierRow = [number, string | null, string | null, string, string, number]
@@ -131,6 +136,7 @@ export const messierObjects: MessierObject[] = catalogRows.map(([number, catalog
   type,
   constellation,
   magnitude,
+  imageUrl: imageSources[String(number)],
 }))
 
 export const messierCatalogSource = {

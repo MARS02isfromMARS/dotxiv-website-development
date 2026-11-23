@@ -1263,22 +1263,30 @@ button,input { font:inherit; }
     linear-gradient(135deg, #1c2824, #111419 70%);
   background-size: auto, auto, auto, auto;
 }
-.messier-card__visual::before,
-.messier-card__visual::after {
+.messier-card__image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .45s ease;
+}
+.messier-card:hover .messier-card__image { transform: scale(1.04); }
+.messier-card__visual::before {
   position: absolute;
   z-index: -1;
-  width: 120px;
-  height: 56px;
-  border: 1px solid rgba(167, 208, 185, .33);
-  border-radius: 50%;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8, 10, 12, .5), rgba(8, 10, 12, .08) 75%), linear-gradient(0deg, rgba(8, 10, 12, .45), transparent 52%);
   content: '';
 }
-.messier-card__visual::before { right: 8%; transform: rotate(-27deg); }
-.messier-card__visual::after { right: 8%; width: 94px; height: 42px; transform: rotate(32deg); }
 .messier-card--galaxies .messier-card__visual { background-color: #141922; background-image: radial-gradient(ellipse at 78% 45%, rgba(178, 169, 214, .5), transparent 38%), radial-gradient(circle at 72% 36%, rgba(198, 221, 205, .7) 0 1px, transparent 2px), linear-gradient(135deg, #1a202d, #101115 70%); }
 .messier-card--nebulae .messier-card__visual { background-image: radial-gradient(ellipse at 78% 45%, rgba(207, 155, 131, .38), transparent 42%), radial-gradient(circle at 72% 36%, rgba(198, 221, 205, .7) 0 1px, transparent 2px), linear-gradient(135deg, #28201f, #111216 70%); }
 .messier-card--clusters .messier-card__visual { background-image: radial-gradient(circle at 70% 50%, rgba(200, 214, 187, .25), transparent 40%), radial-gradient(circle at 72% 36%, rgba(198, 221, 205, .7) 0 1px, transparent 2px), linear-gradient(135deg, #1b2824, #111216 70%); }
 .messier-card__visual-number {
+  position: relative;
+  z-index: 1;
   color: #f3f0ea;
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(34px, 5vw, 54px);
@@ -1286,6 +1294,8 @@ button,input { font:inherit; }
   line-height: 1;
 }
 .messier-card__visual-type {
+  position: relative;
+  z-index: 1;
   align-self: flex-end;
   padding: 5px 7px;
   border: 1px solid rgba(155, 201, 178, .27);
