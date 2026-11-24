@@ -1,0 +1,2046 @@
+
+
+Binary StarsDotXivFariha Farha
+Binary Stars
+Visual, Spectroscopic and Eclipsing Systems
+Fariha Farha
+DotXiv Notes
+1  Visual Binary Stars
+MizarandAlcorare the classic naked-eye pair in the Big Dipper, and Mizar–Alcor is itself part of
+a larger binary (multiple) system.
+1.1  Chance alignment:  how likely is an apparent pair?
+Take a circle of angular radiusθon the sky (small angle, in radians).  Its solid angle is Ω =πθ
+2
+and
+the whole sky has Ω
+sky
+= 4π, so the probability that a given star falls inside the circle is
+P=
+Ω
+Ω
+sky
+=
+πθ
+2
+4π
+=
+θ
+2
+4
+,(1)
+and the probability that it lies outside is 1−P.
+star
+θ
+a second star falls in
+the circle with probabilityP
+Figure 1:Chance alignment on the celestial sphere.
+If there arenstars at least as bright as the faintest star of the pair considered, the probability that
+noneof them lies withinθof the chosen star is
+(1−P)
+n
+≃1−nP(nP≪1).(2)
+The first star of the pair can itself be any of thenstars, so the probability ofno close pair anywhere
+in the skyis
+(1−P)
+n×n
+≃1−n
+2
+P(3)
+(to order of magnitude; counting each pair only once gives a factor
+1
+2
+).  Hence the expected number
+of purely accidental close pairs is aboutn
+2
+P, and a pair that is much closer than this estimate allows
+is probably a genuine binary.
+1.2  Classification of binary stars
+True binaries are classified byhow we observe them, which depends on the inclination angleiof the
+orbit:
+TypeInclinationHow it is detected
+Visual binaryi≈0
+◦
+(face-on)two stars resolved on the sky
+Spectroscopic binary    0
+◦
+̸=i≲90
+◦
+periodic Doppler shifts
+Eclipsing binaryi≈90
+◦
+(edge-on)    periodic dips in brightness
+1
+
+Binary StarsDotXivFariha Farha
+Algol(βPersei) is a variable star:  the prototype of eclipsing binaries.
+Visual binary
+Two stars form a visual binary if their angular separation is greater than the minimum angular
+resolution of a telescope on Earth.
+2  Two-Body Motion in a Binary
+2.1  Barycentre and mass ratio
+Both stars orbit their common centre of mass (thebarycentre).  Leta
+1
+anda
+2
+be their distances
+from it anda=a
+1
++a
+2
+their separation.  PlacingM
+1
+at the origin,
+a
+1
+=
+M
+1
+(0) +M
+2
+(a
+1
++a
+2
+)
+M
+1
++M
+2
+⇒M
+2
+(a
+1
++a
+2
+) =a
+1
+(M
+1
++M
+2
+)⇒M
+1
+a
+1
+=M
+2
+a
+2
+(4)
+so that
+M
+1
+M
+2
+=
+a
+2
+a
+1
+.(5)
+M
+1
+M
+2
+barycentre
+a
+1
+a
+2
+a=a
+1
++a
+2
+Figure 2:The heavier star (M
+1
+) sits on the smaller orbit, the lighter star on the larger orbit;M
+1
+a
+1
+=M
+2
+a
+2
+.
+Both stars always lie on opposite sides of the barycentre, so they have the same orbital period,
+T
+1
+=T
+2
+=P:
+2πa
+1
+v
+1
+=
+2πa
+2
+v
+2
+⇒
+a
+1
+v
+1
+=
+a
+2
+v
+2
+⇒
+v
+1
+v
+2
+=
+a
+1
+a
+2
+=
+M
+2
+M
+1
+.(6)
+Equivalently, the momenta are equal and opposite:M
+1
+v
+1
+=M
+2
+v
+2
+.The lighter star always moves
+faster and on the larger orbit.
+2
+
+Binary StarsDotXivFariha Farha
+2.2  Circular orbits for different mass ratios
+M
+1
+M
+2
+v
+1
+v
+2
+(a)M
+1
+≈M
+2
+M
+1
+M
+2
+v
+1
+v
+2
+(b)M
+1
+> M
+2
+M
+1
+M
+2
+v
+1
+v
+2
+(c)M
+1
+≫M
+2
+Figure 3:Circular orbits about the barycentre (dot).  AsM
+1
+/M
+2
+grows, the big star’s orbit shrinks and the
+small star behaves like a planet.
+2.3  Elliptical orbits
+In an elliptical orbit the barycentre is acommon focusof both ellipses.  The two orbits have the
+same eccentricity, and at every instant the two stars and the barycentre are collinear.
+1
+1
+2
+2
+3
+3
+4
+4
+COM (common focus)
+Figure 4:Actual orbits of the two stars (hereM
+1
+= 2M
+2
+, equal eccentricitye= 0.5).  Equal numbers mark
+simultaneous positions:  the chords all pass through the barycentre.
+2.4  Triple (hierarchical) systems
+For three stars, the close pairM
+1
+,M
+2
+orbits its own barycentre, whileM
+3
+orbits the barycentre of
+the pair on a much larger orbit.
+M
+1
+M
+2
+CM
+M
+3
+Figure 5:A triple system:  a close binary plus a distant third star.
+3
+
+Binary StarsDotXivFariha Farha
+2.5  Orbital radii from the separation
+Letrbe the separation of the two stars.  Fromr
+1
+=
+M
+2
+M
+1
+r
+2
+andr
+2
+=r−r
+1
+:
+r
+1
+=
+M
+2
+M
+1
+(r−r
+1
+)⇒r
+1
+
+1 +
+M
+2
+M
+1
+
+=
+M
+2
+M
+1
+r⇒r
+1
+=
+M
+2
+M
+1
++M
+2
+r
+,    r
+2
+=
+M
+1
+M
+1
++M
+2
+r
+.(7)
+2.6  Kepler’s third law for a binary
+Gravity supplies the centripetal force onM
+2
+:
+GM
+1
+M
+2
+r
+2
+=M
+2
+r
+2
+ω
+2
+,   r
+2
+=
+M
+1
+M
+1
++M
+2
+r,   ω=
+2π
+P
+,(8)
+which gives
+P
+2
+=
+4π
+2
+G(M
+1
++M
+2
+)
+r
+3
+.(9)
+For an elliptical orbitr→a=a
+1
++a
+2
+(semi-major axis of the relative orbit).
+2.7  Energy and orbit shape
+SinceM
+1
+v
+1
+=M
+2
+v
+2
+≡p, the total kinetic energy is
+KE=
+p
+2
+2M
+1
++
+p
+2
+2M
+2
+=
+p
+2
+2
+
+1
+M
+1
++
+1
+M
+2
+
+=
+p
+2
+2μ
+=
+1
+2
+μv
+2
+,   μ=
+M
+1
+M
+2
+M
+1
++M
+2
+,(10)
+whereμis thereduced massandv=v
+1
++v
+2
+is the relative speed.  The total energy is
+E=
+1
+2
+μv
+2
+−
+GM
+1
+M
+2
+r
+.(11)
+Using the vis-viva equation
+v
+2
+=G(M
+1
++M
+2
+)
+
+2
+r
+−
+1
+a
+
+(12)
+this simplifies to
+E=−
+GM
+1
+M
+2
+2a
+(elliptical orbit).(13)
+circle
+ellipse
+parabola
+hyperbola
+Orbital energy   OrbitType
+E=E
+min
+circularbound
+E <0ellipticalbound
+E= 0parabolaunbound
+E >0hyperbola    unbound
+Figure 6:Conic sections with a common focus; the shape is set by the orbital energy.
+E <0:  bound system.E= 0:  parabolic path (escape speed reached).E >0:  unbound.
+4
+
+Binary StarsDotXivFariha Farha
+An object at escape velocity follows a parabola and leaves the gravity of the central body.
+Takinga→∞andM
+1
+≫M
+2
+in the vis-viva equation:
+v
+2
+esc
+=
+2GM
+r
+.(14)
+ForM
+1
+≫M
+2
+only the light body moves appreciably, soKE
+total
+≃
+1
+2
+M
+2
+v
+2
+2
+; for comparable
+masses,KE
+total
+=
+1
+2
+M
+1
+v
+2
+1
++
+1
+2
+M
+2
+v
+2
+2
+.
+At fixed angular momentumLthe possible energies are:  minimum (E
+min
+, circular),E <0
+(ellipse),E= 0 (parabola),E >0 (hyperbola).  At fixed energy, the largestLgives the circular
+orbit, whileL→0 gives a purely radial plunge.
+An object on an unbound orbit has radial velocity.
+3  Visual Binaries:  Masses and the Relative Orbit
+From a well-observed visual binary we can determine:  (1) parallax, (2) proper motion, (3) eccentricity,
+(4) angular size of the orbit, (5) total mass, (6) inclination of the orbit.  For a face-on system the
+radial velocity is zero.
+3.1  Inclination
+i= 0
+◦
+(face-on)
+0
+◦
+< i <90
+◦
+i= 90
+◦
+(edge-on)
+plane of the sky
+line of sight (to observer)
+orbit plane
+ˆn
+i
+Figure 7:Top:  the same orbit seen at different inclinations.  Bottom:iis the angle between the orbit normal
+ˆnand the line of sight (equivalently, between the orbit plane and the plane of the sky).
+5
+
+Binary StarsDotXivFariha Farha
+3.2  Visual binary mass equation
+M
+1
+M
+2
+CM
+observer
+a
+1
+a
+2
+α
+1
+α
+2
+d
+Figure 8:α
+1
+,α
+2
+are the maximum angular displacements of the stars from the barycentre;dis the distance
+to the system.
+For small angles,s=rθgivesa
+1
+=dα
+1
+anda
+2
+=dα
+2
+, soa=a
+1
++a
+2
+=d(α
+1
++α
+2
+).  Kepler’s third
+law then gives the total mass:
+M
+1
++M
+2
+=
+4π
+2
+a
+3
+GP
+2
+=
+4π
+2
+d
+3
+(α
+1
++α
+2
+)
+3
+GP
+2
+(visual binary mass equation).(15)
+Combined withM
+1
+/M
+2
+=a
+2
+/a
+1
+=α
+2
+/α
+1
+, the individual masses follow:
+M
+1
+=
+4π
+2
+d
+3
+(α
+1
++α
+2
+)
+3
+GP
+2
+·
+α
+2
+α
+1
++α
+2
+,   M
+2
+=
+4π
+2
+d
+3
+(α
+1
++α
+2
+)
+3
+GP
+2
+·
+α
+1
+α
+1
++α
+2
+.(16)
+Handy units
+Withain AU,Pin years and masses in solar masses,
+M
+1
++M
+2
+M
+⊙
+=
+(a/AU)
+3
+(P/yr)
+2
+, anda/AU=α
+′′
+/π
+′′
+whereπ
+′′
+is the parallax in arcseconds.
+3.3  Relative orbit
+The two-body problem is equivalent to a single body of reduced massμ=
+M
+1
+M
+2
+M
+1
++M
+2
+moving around
+a fixed central massM
+1
++M
+2
+, on an orbit of semi-major axisa=a
+1
++a
+2
+.  This is therelative orbit;
+it has the same eccentricity as the two actual orbits, and it is the orbit we see on the sky.
+6
+
+Binary StarsDotXivFariha Farha
+M
+1
++M
+2
+(central mass)
+μ
+a=a
+1
++a
+2
+Figure 9:Relative orbit:  the reduced massμorbits the total massM
+1
++M
+2
+placed at the focus.
+For a bound (Keplerian) orbit,
+M
+1
++M
+2
+=
+4π
+2
+(a
+1
++a
+2
+)
+3
+GP
+2
+.(17)
+3.4  Mass–luminosity relation
+Main-sequence stars satisfyL∝M
+α
+withαdepending on mass:
+L
+L
+⊙
+≈
+
+
+
+
+
+
+
+0.23 (M/M
+⊙
+)
+2.3
+,  M <0.43M
+⊙
+,
+(M/M
+⊙
+)
+4
+,0.43M
+⊙
+< M <2M
+⊙
+,
+1.4 (M/M
+⊙
+)
+3.5
+,2M
+⊙
+< M <55M
+⊙
+.
+(18)
+10
+−1
+10
+0
+10
+1
+10
+−3
+10
+0
+10
+3
+10
+6
+∝M
+2.3
+∝M
+4
+∝M
+3.5
+Sun
+M/M
+⊙
+L/L
+⊙
+Figure 10:Mass–luminosity relation (the three branches join continuously).
+4  Spectroscopic Binaries
+If the spectrum showstwosets of Doppler-shifted lines, one for each star, the system is adouble-
+line spectroscopic binary.  If only one star’s lines are visible (the companion is unseen), it is a
+single-line spectroscopic binary.
+7
+
+Binary StarsDotXivFariha Farha
+4.1  Doppler shift
+λ
+0
+λ
+′
+=λ
+0
++ ∆λ
+at rest
+receding (v
+r
+>0)
+Figure 11:A source moving away from the observer stretches the wavelength (red shift).
+A crest emitted by the source arrives after ∆t=λ
+0
+/c; during this time the source recedes byv
+r
+∆t,
+so
+λ
+′
+=λ
+0
++v
+r
+∆t=λ
+0
++
+v
+r
+λ
+0
+c
+⇒
+∆λ
+λ
+0
+=
+λ
+′
+−λ
+0
+λ
+0
+=
+v
+r
+c
+.
+(19)
+Radial velocityv
+r
+is the velocity component along the line of sight (positive = receding).  For an
+orbit inclined byionly the projection counts:
+v
+r
+=v
+orbital
+sini.(20)
+4.2  Radial-velocity curve of a circular orbit
+COM
+observer
+A
+B
+C
+D
+v
+r
+= 0
+v
+r
+= +v
+v
+r
+= 0
+v
+r
+=−v
+t
+v
+r
+A
+B
+C
+D
+Figure 12:Circular orbit and its radial-velocity curve (M
+1
+≫M
+2
+, centre-of-mass velocity zero).
+If the system as a whole has a velocityv
+COM
+along the line of sight, the whole curve is shifted by
+that constant (thesystemic velocityγ); if the star has no proper motion and no systemic motion,
+the curve oscillates about zero.  For two stars the curves are in anti-phase:
+8
+
+Binary StarsDotXivFariha Farha
+00.10.20.30.40.50.60.70.80.91
+0
+50
+100
+K
+1
+K
+2
+phase
+v
+r
+(km s
+−
+1
+)
+star 1
+star 2
+v
+COM
+Figure 13:Radial velocities of both components of a double-line binary.K
+1
+,K
+2
+are the semi-amplitudes.
+The star with thelargeramplitude is thelighterone:K
+1
+/K
+2
+=M
+2
+/M
+1
+(hereM
+2
+= 2M
+1
+).  The period is
+the time between two successive maxima.
+4.3  Total mass of a double-line system
+For a circular orbit seen at inclinationi, the observed velocity amplitudes are
+v
+1r
+=
+2πr
+1
+P
+sini,   v
+2r
+=
+2πr
+2
+P
+sini⇒r=r
+1
++r
+2
+=
+(v
+1r
++v
+2r
+)P
+2πsini
+.(21)
+Inserting into Kepler’s lawP
+2
+= 4π
+2
+r
+3
+/[G(M
+1
++M
+2
+)]:
+M
+1
++M
+2
+=
+P
+2πG
+(v
+1r
++v
+2r
+)
+3
+sin
+3
+i
+(22)
+This is the total mass of the spectroscopic binary; withoutiit is a lower limit (Msin
+3
+i
+).  The mass
+ratio comes fromM
+1
+/M
+2
+=v
+2r
+/v
+1r
+.
+4.4  Mass function (single-line binaries)
+If only the visible star’s velocityv
+1r
+≡K
+s
+is measured, usev
+2r
+=v
+1r
+M
+1
+/M
+2
+in the formula above
+and call the unseen companionM
+u
+and the visible starM
+s
+:
+f(M
+s
+,M
+u
+) =
+P K
+3
+s
+2πG
+=
+M
+3
+u
+sin
+3
+i
+(M
+s
++M
+u
+)
+2
+(binary mass function).(23)
+For an eccentric orbitf=
+(1−e
+2
+)
+3/2
+K
+3
+s
+P
+2πG
+.  Since sini≤1 andM
+u
+/(M
+s
++M
+u
+)<1,
+f(M
+s
+,M
+u
+) =
+M
+u
+sin
+3
+i
+(1 +M
+s
+/M
+u
+)
+2
+< M
+u
+,(24)
+sofis a lower limit for the mass of the unseen companion.
+
+If the visible star is a giant (or any normal star) andfis large, the unseen companion may be
+awhite dwarf, neutron star or black hole:  compact objects emit mainly at high frequencies
+(UV/X-ray) and give no usable Doppler lines in the optical spectrum.
+Aplanetcan also be an unseen companion.
+9
+
+Binary StarsDotXivFariha Farha
+4.5  Exoplanets
+For a star much heavier than its planet (M
+s
+≫M
+p
+),M
+s
++M
+p
+=M
+s
+(1 +M
+p
+/M
+s
+)≈M
+s
+and
+f≈
+M
+3
+p
+sin
+3
+i
+M
+2
+s
+≈
+P v
+3
+s
+2πG
+⇒M
+p
+sini=
+
+fM
+2
+s
+
+1/3
+,(25)
+soM
+p
+siniis alower limit on the planet mass.
+Classification of planets:(1) rocky planets; (2) giant planets, which split into (i)hot Jupiters—
+Jupiter-sized planets orbiting very close to their star — and (ii) ice giants.
+Transmission spectroscopy.If starlight passes through the atmosphere of a hot Jupiter during
+transit, extra absorption lines from the planet’s atmosphere appear in the star’s spectrum.
+Useful terms.Epoch:  the reference time from which phase is counted.Photometric variability:
+brightness changes with time, recorded as a light curve.
+Worked scheme (IOAA 2018)
+(a) The acceleration from the radial-velocity data isa=
+dv
+dt
+≈
+∆RV
+∆T
+=
+RV
+1
+−RV
+2
+t
+2
+−t
+1
+.
+(b) The companion producesa=
+GM
+2
+r
+2
+, soM
+2
+=
+ar
+2
+G
+withr≈
+(v
+2
+−v
+1
+)(t
+2
+−t
+1
+)
+2
+, giving
+M
+2
+∼
+(v
+2
+−v
+1
+)
+3
+(t
+2
+−t
+1
+)
+4G
+.
+5  Eclipsing Binaries
+5.1  When do we see an eclipse?
+to observer
+R
+1
+R
+2
+a
+acosi
+90
+◦
+−i
+Figure 14:At conjunction the stars’ separation projected on the sky isacosi.  An eclipse needs this to be
+smaller thanR
+1
++R
+2
+.
+An eclipse requiresR
+1
++R
+2
+> acosi, i.e.
+i≥i
+min
+= arccos
+
+R
+1
++R
+2
+a
+
+(26)
+Fori < i
+min
+there is no eclipse.  WithR
+1
+> R
+2
+:
+R
+1
+−R
+2
+< acosi < R
+1
++R
+2
+:partialeclipse;
+10
+
+Binary StarsDotXivFariha Farha
+acosi≤R
+1
+−R
+2
+:  the smaller star is completely in front of (annular/transit) or completely
+behind (total/occultation) the larger one.
+Example:  two Sun-like stars 1 AU apart
+sinθ= 2R
+⊙
+/AU, soi≥90
+◦
+−θ=
+π
+2
+−
+2R
+⊙
+AU
+≈89.47
+◦
+andsini≃1.  Eclipsing binaries are
+therefore almost exactly edge-on, which is why theirMsin
+3
+iis essentially the true mass.
+no eclipsepartialannular (transit)total (occultation)
+Figure 15:Geometry of the possible eclipses (small star dark, large star bright).
+5.2  Contact times and the radius ratio
+For an edge-on circular orbit, the small star moves at speedvacross the disc of the large star.  The
+four contacts are:
+1234
+2R
+1
++ 2R
+2
+2R
+1
+−2R
+2
+Figure 16:Positions 1–4 of the small star at the four contacts (centre positions shown).
+d
+1-4
+=v t
+1-4
+= 2R
+1
++ 2R
+2
+,(27)
+d
+2-3
+=v t
+2-3
+= 2R
+1
+−2R
+2
+,(28)
+and dividing,
+R
+1
++R
+2
+R
+1
+−R
+2
+=
+t
+1-4
+t
+2-3
+⇒
+R
+1
+R
+2
+=
+t
+1-4
++t
+2-3
+t
+1-4
+−t
+2-3
+.(29)
+11
+
+Binary StarsDotXivFariha Farha
+5.3  Light curves of a single eclipse
+time
+normalised flux
+t
+I
+t
+II
+t
+III
+t
+IV
+mid-transit
+transit durationt
+IV
+−t
+I
+ingressegress
+total phase
+Figure 17:Trapezoidal transit/eclipse light curve fori≈90
+◦
+.
+t
+I
+:  1st contact, start of ingress;t
+II
+:  2nd contact, end of ingress;
+t
+III
+:  3rd contact, start of egress;t
+IV
+:  4th contact, end of egress.
+Ingress duration =t
+II
+−t
+I
+; transit duration =t
+IV
+−t
+I
+; transit (mid) time = (t
+II
++t
+III
+)/2.
+(a) grazing eclipse,i=i
+min
+:
+V-shaped, no flat bottom
+(b) limb darkening:  curved
+bottom
+(c) total/annular eclipse:  flat
+bottom
+Figure 18:Variants of the eclipse light curve.
+Limb darkening.A stellar disc is brighter at its centre than at its edge.  As the eclipsing body
+moves from the dim limb towards the bright centre it blocks more and more light, so the bottom of
+the light curve is curved instead of flat.
+12
+
+Binary StarsDotXivFariha Farha
+5.4  Light curves for different assumptions
+CaseGeometryLight curve
+I: one star
+luminous, the
+other completely
+dark
+(a) partialcircular or elliptical orbit, semi-major
+axis along the line of sight
+(b)
+annular/total
+circular or elliptical orbit, semi-major
+axis along the line of sight
+II: two equal,
+uniformly
+luminous stars
+(a) partialcircular or elliptical, semi-major axis
+along line of sight; equal minima, equal
+spacing
+(b) partialelliptical, major axisnotalong line of
+sight; equal minima, unequal spacing
+III: two
+uniformly
+luminous stars of
+unequal
+luminosity
+(a) partial
+circular or elliptical, major axis along line
+of sight; alternating deep/shallow
+minima, equal spacing
+(b) partialelliptical, major axis at an angle to the
+line of sight; alternating depths, unequal
+spacing
+For two equal discs (Case II) there is no flat bottom because the 2nd and 3rd contacts do not exist:
+the discs are never fully one inside the other.
+5.5  Primary and secondary minima
+Surface brightness follows Stefan–Boltzmann:  a unit area emitsF=σT
+4
+.  A star’s luminosity is
+L= 4πR
+2
+σT
+4
+, and the flux we receive from its projected disc is proportional toR
+2
+T
+4
+.
+Theprimary minimumis the deeper one:  it occurs when the star of higher surface brightness
+(the hotter star) is eclipsed.  The shallower one is thesecondary minimum.  The time between two
+successive primary minima is theorbital period.
+13
+
+Binary StarsDotXivFariha Farha
+time
+brightness
+B
+T
+B
+P
+B
+S
+primary minimum
+secondary minimum
+orbital periodP
+Figure 19:Light curve with a deep primary and a shallower secondary minimum.
+Let star 1 be the larger star (R
+1
+> R
+2
+) andB
+T
+∝R
+2
+1
+T
+4
+1
++R
+2
+2
+T
+4
+2
+the out-of-eclipse brightness.  In an
+annular/total eclipse geometry:
+small star hidden:B
+occ
+∝R
+2
+1
+T
+4
+1
+⇒α=
+B
+occ
+B
+T
+=
+R
+2
+1
+T
+4
+1
+R
+2
+1
+T
+4
+1
++R
+2
+2
+T
+4
+2
+,(30)
+small star in front:B
+tr
+∝(R
+2
+1
+−R
+2
+2
+)T
+4
+1
++R
+2
+2
+T
+4
+2
+⇒β=
+B
+tr
+B
+T
+.(31)
+Subtracting and dividing gives
+1−β=
+R
+2
+2
+T
+4
+1
+R
+2
+1
+T
+4
+1
++R
+2
+2
+T
+4
+2
+,
+R
+1
+R
+2
+=
+r
+α
+1−β
+,
+
+T
+2
+T
+1
+
+4
+=
+1−α
+1−β
+.(32)
+(The note also uses 1 +
+
+R
+2
+R
+1
+
+2
+
+T
+2
+T
+1
+
+4
+=
+1
+α
+, which is the same relation.)  Hotter stars in such systems
+are usually main-sequence stars.
+5.6  Surface gravity in eclipsing single-lined spectroscopic binaries
+LetM
+u
+be the unseen andM
+s
+the visible component, withq=M
+s
+/M
+u
+.  The mass function (1) and
+Kepler’s law (2) are
+f(M) =
+(1−e
+2
+)
+3/2
+K
+3
+s
+P
+2πG
+=
+M
+3
+u
+sin
+3
+i
+(M
+u
++M
+s
+)
+2
+,(1)
+P
+2
+=
+(2π)
+2
+a
+3
+G(M
+u
++M
+s
+)
+.(2)
+Eliminating (M
+s
++M
+u
+)
+2
+:
+(M
+s
++M
+u
+)
+2
+=
+2πGM
+3
+u
+sin
+3
+i
+(1−e
+2
+)
+3/2
+K
+3
+s
+P
+=
+(2π)
+4
+a
+6
+G
+2
+P
+4
+.(33)
+Thefractional radiusof a star isr=R/a(R= linear radius,a= semi-major axis), so its surface
+gravity isg=
+GM
+R
+2
+=
+GM
+a
+2
+r
+2
+.  UsingK
+s
+=
+2πa
+s
+sini
+P
+√
+1−e
+2
+anda
+s
+=
+M
+u
+M
+u
++M
+s
+a, one obtains
+g
+s
+=
+2π
+P
+√
+1−e
+2
+K
+s
+r
+2
+s
+sini
+q
+,    g
+u
+=
+2π
+P
+√
+1−e
+2
+K
+s
+r
+2
+u
+sini
+.(34)
+14
+
+Binary StarsDotXivFariha Farha
+In practical units (Pin days,K
+s
+in km s
+−1
+,gin cm s
+−2
+):
+log
+10
+g
+u
+= 0.8617 + log
+10
+
+√
+1−e
+2
+K
+s
+P r
+2
+u
+sini
+
+,log
+10
+g
+s
+= log
+10
+g
+u
++ log
+10
+q.(35)
+The constant0.8617 =log
+10
+
+2π·10
+5
+/
+86400
+
+converts days to seconds,km s
+−1
+tocm s
+−1
+and includes
+the factor2π.
+6  Roche Geometry and Binary Classification
+6.1  Eclipsing subtypes (by light curve)
+EA(Algol type):  detached
+EB(βLyrae type):
+semi-detached
+EW(W UMa type):  contact
+Figure 20:Roche-lobe geometry of the three eclipsing-binary subtypes.  The two lobes touch at the inner
+Lagrange point.
+phase
+flux
+EA: flat out-of-eclipse
+phase
+flux
+EB: continuous variation, unequal
+minima
+phase
+flux
+EW: nearly equal minima
+Figure 21:Light curves of the EA, EB and EW types.
+Reflection effect.When a less luminous star faces a more luminous companion, the side of the
+cooler star facing the hotter star is heated and receives and re-emits more flux, so a region of the
+cooler star is brighter.  This changes the brightness outside eclipse and is called thereflection effect.
+6.2  Detached, semi-detached and contact binaries
+Detached binary:  no mass transfer by gravity takes place between the stars.
+TheHill sphereis the region where a star’s gravity dominates, itssphere of influence.  The
+speed needed to leave it is the escape velocity from the star’s potential,V=−GMm/r.
+SupposeM
+1
+> M
+2
+andR
+1
+> R
+2
+.  IfM
+2
+swells, its radius grows but its mass does not, so its
+sphere of influence stays the same; after some time the star fills it.  This limiting surface is the
+Roche lobe.
+IfM
+2
+grows larger than its sphere of influence, matter flows fromM
+2
+ontoM
+1
+and forms an
+accretion disc.  The system is then asemi-detached binary.
+When mass exchange is complete in both directions and the two stars behave as one common
+envelope, the system is acontact binary.
+15
+
+Binary StarsDotXivFariha Farha
+7  Quick Reference
+TypeObservedKey results
+Visualα
+1
+,α
+2
+,P,dM
+1
++M
+2
+=
+4π
+2
+d
+3
+(α
+1
++α
+2
+)
+3
+GP
+2
+,
+M
+1
+M
+2
+=
+α
+2
+α
+1
+Spectroscopic
+(double-line)
+v
+1r
+,v
+2r
+,PM
+1
++M
+2
+=
+P(v
+1r
++v
+2r
+)
+3
+2πGsin
+3
+i
+,
+M
+1
+M
+2
+=
+v
+2r
+v
+1r
+Spectroscopic
+(single-line)
+K
+s
+,Pf=
+PK
+3
+s
+2πG
+=
+M
+3
+u
+sin
+3
+i
+(M
+s
++M
+u
+)
+2
+< M
+u
+Eclipsingt
+1-4
+,t
+2-3
+,α,β
+R
+1
+R
+2
+=
+t
+1-4
++t
+2-3
+t
+1-4
+−t
+2-3
+=
+r
+α
+1−β
+,
+
+T
+2
+T
+1
+
+4
+=
+1−α
+1−β
+,
+i≥arccos
+R
+1
++R
+2
+a
+16
