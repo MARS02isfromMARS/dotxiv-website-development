@@ -74,7 +74,24 @@ export const noteCollections: Record<string, NoteCollection> = {
   },
   'stellar-astronomy': {
     title: 'Stellar astronomy',
-    resources: [],
+    resources: [
+      {
+        title: 'Binary Stars',
+        description: 'A guide to visual, spectroscopic, and eclipsing binary systems, orbital dynamics, and stellar mass measurements.',
+        versions: [
+          {
+            label: 'English PDF',
+            language: 'en',
+            href: '/note-pdfs/stellar-astronomy/binary-stars-english.pdf',
+          },
+          {
+            label: 'Bangla PDF',
+            language: 'bn',
+            href: '/note-pdfs/stellar-astronomy/binary-stars-bangla.pdf',
+          },
+        ],
+      },
+    ],
   },
   'galactic-astronomy': {
     title: 'Galactic astronomy',
