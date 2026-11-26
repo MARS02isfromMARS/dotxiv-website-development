@@ -1487,12 +1487,15 @@ button,input { font:inherit; }
 .chapter-hero__meta { display: flex; flex-wrap: wrap; gap: 18px; color: #8d8793; font-size: 10px; }
 .chapter-hero__meta span { display: flex; align-items: center; gap: 7px; }
 .chapter-hero__meta svg { color: var(--violet); }
-.scientific-diagram { min-width: 0; margin: 0; padding: 17px 17px 15px; border: 1px solid #302c36; background: #100f13; }
+.scientific-diagram { min-width: 0; margin: 0; padding: 17px 17px 15px; border: 1px solid #403a45; background: linear-gradient(180deg, #141117 0%, #100f13 100%); }
 .scientific-diagram--hero { margin-top: 38px; padding: clamp(14px, 2vw, 24px); }
 .scientific-diagram__meta { display: flex; justify-content: space-between; gap: 12px; color: #817b87; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
-.scientific-diagram__meta span:first-child { color: #a999c4; }
+.scientific-diagram__meta span:first-child { color: #c5a987; font-family: Georgia, serif; letter-spacing: .16em; }
+.scientific-diagram__meta span:last-child { letter-spacing: .08em; }
 .science-svg-wrap { width: 100%; min-width: 0; margin-top: 12px; }
+.science-svg-wrap:focus-visible { outline: 1px solid #c5a987; outline-offset: 3px; }
 .science-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.scientific-diagram__hint { display: none; color: #8f8995; font-size: 9px; line-height: 1.5; }
 .scientific-diagram__caption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 13px; margin-top: 10px; padding-top: 12px; border-top: 1px solid #27242c; }
 .scientific-diagram__caption strong { color: #e4dee7; font-family: Georgia, serif; font-size: 14px; font-weight: 400; }
 .scientific-diagram__caption span { flex: 1 1 320px; color: #8f8995; font-size: 10px; line-height: 1.6; }
@@ -1660,9 +1663,12 @@ button,input { font:inherit; }
   .scientific-diagram { padding: 12px; }
   .science-svg-wrap { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; }
   .science-svg { min-width: 540px; }
+  .scientific-diagram__hint { display: block; margin-top: 7px; }
   .scientific-diagram__meta { font-size: 7px; }
   .scientific-diagram__caption { display: block; }
   .scientific-diagram__caption span { display: block; margin-top: 5px; }
+  .chapter-reading-list ol { grid-template-columns: 1fr; }
+  .chapter-reading-list { padding: 24px 0; }
   .chapter-objectives { grid-template-columns: 1fr; gap: 20px; padding: 34px 0; }
   .chapter-layers { grid-template-columns: 1fr; gap: 8px; }
   .chapter-layout { display: block; margin-top: 30px; }

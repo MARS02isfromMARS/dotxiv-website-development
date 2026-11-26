@@ -627,7 +627,7 @@ export const noteChapters: Record<string, NoteChapter> = {
     title: 'Observational Astronomy',
     subtitle: 'Every measurement begins with a direction.',
     description: 'Move from the local sky to the detector. Learn how coordinate systems locate objects, how apertures and optics shape observations, and how parallax and spectra turn photons into distance and physics.',
-    readingTime: '22 minute chapter',
+    readingTime: '30 minute chapter',
     references: [
       { author: 'H. Karttunen et al.', title: 'Fundamental Astronomy', edition: '6th edition, 2017' },
       { author: 'Steve B. Howell', title: 'Handbook of CCD Astronomy', edition: '2nd edition, 2006' },
@@ -638,6 +638,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       'Translate between equatorial and local horizon coordinates.',
       'Estimate a telescope’s light-gathering power and diffraction limit.',
       'Explain how parallax, photometry, and spectra yield physical measurements.',
+      'Describe why bias, dark, and flat-field calibration are applied to detector images.',
+      'Estimate when photon noise, sky background, or read noise limits a measurement.',
     ],
     layers: [
       { name: 'Foundation', description: 'Locate a target using a named coordinate frame and epoch.' },
@@ -686,6 +688,24 @@ export const noteChapters: Record<string, NoteChapter> = {
         figure: { kind: 'spectral-lines', title: 'The same transitions appear in absorption or emission', caption: 'Line positions identify transitions; their widths, depths, and shifts add information about temperature, pressure, composition, and motion.' },
         takeaway: 'A spectrum is a measurement with finite resolution, calibration, and signal-to-noise—not a perfect barcode.',
       },
+      {
+        id: 'image-calibration', label: '05 / Calibration', title: 'A science image is calibrated, not merely saved',
+        paragraphs: [
+          'A detector records source photons together with electronic bias, thermal dark current, pixel-to-pixel sensitivity, and optical vignetting. Matched calibration exposures measure these instrumental patterns so they can be removed or divided out before scientific interpretation.',
+          'A normalized flat field corrects relative pixel response; bias and dark frames must match the detector setup and exposure conditions. Calibration cannot restore saturated pixels or remove every cosmic ray, and precision photometry still needs a stable aperture or point-spread-function model and comparison standards.',
+        ],
+        figure: { kind: 'detector-workflow', title: 'From detector counts to calibrated flux', caption: 'A simplified reduction sequence. Real pipelines also track masks, uncertainty arrays, non-linearity, cosmic rays, and astrometric solutions.' },
+        takeaway: 'Keep the raw exposure and its calibration metadata; every correction carries assumptions and uncertainty.',
+      },
+      {
+        id: 'signal-to-noise', label: '06 / Noise', title: 'More exposure helps, but not without limit',
+        paragraphs: [
+          'Photon arrivals are discrete, so source counts fluctuate with Poisson statistics. Sky photons, dark current, and detector read noise add uncertainty; in a sky-background-limited observation, signal-to-noise grows roughly as the square root of exposure time rather than linearly.',
+          'Splitting a long exposure into shorter frames can help reject cosmic rays and protect against saturation, but every read adds read noise. The best exposure strategy depends on target brightness, background, detector, and the science requirement.',
+        ],
+        figure: { kind: 'signal-to-noise', title: 'The square-root return of longer exposure', caption: 'Illustrative sky-limited scaling with fixed source and background. Read noise, saturation, changing sky, and systematics are omitted.' },
+        takeaway: 'State which noise term dominates before using a simple exposure-time scaling.',
+      },
     ],
     equations: [
       {
@@ -714,6 +734,36 @@ export const noteChapters: Record<string, NoteChapter> = {
           { symbol: 'p', meaning: 'annual parallax angle in arcseconds' },
         ],
         note: 'This inverse relation follows from the parsec definition; uncertainty becomes strongly non-linear for very small parallaxes.',
+      },
+      {
+        title: 'Bias, dark, and flat-field correction', latex: 'I_{\\mathrm{cal}} = \\frac{I_{\\mathrm{raw}} - B - tD}{F}',
+        variables: [
+          { symbol: 'Iraw', meaning: 'raw detector value at each pixel' },
+          { symbol: 'B', meaning: 'measured electronic bias map' },
+          { symbol: 'D', meaning: 'dark-current rate, in detector counts per pixel per unit time' },
+          { symbol: 'F', meaning: 'normalized flat-field response map' },
+          { symbol: 't', meaning: 'science exposure time' },
+        ],
+        note: 'Assumes a linear detector and a dark-current rate measured with bias removed; practical pipelines propagate uncertainty and masks too.',
+      },
+      {
+        title: 'Photon-counting signal-to-noise', latex: '\\mathrm{SNR} = \\frac{S}{\\sqrt{S + N_{\\mathrm{sky}} + n_{\\mathrm{pix}}(Dt + \\sigma_R^2)}}',
+        variables: [
+          { symbol: 'S', meaning: 'source electrons summed over the photometric aperture' },
+          { symbol: 'Nsky', meaning: 'sky-background electrons summed over that aperture' },
+          { symbol: 'npix', meaning: 'number of pixels in the aperture' },
+          { symbol: 'D t', meaning: 'dark-current electrons per pixel during the exposure' },
+          { symbol: 'σR', meaning: 'read noise per pixel, in electrons RMS' },
+        ],
+        note: 'Independent Poisson and read-noise terms are combined in quadrature; calibration and systematic errors are not included.',
+      },
+      {
+        title: 'Magnitude difference', latex: 'm_1-m_2=-2.5\\log_{10}\\left(\\frac{F_1}{F_2}\\right)',
+        variables: [
+          { symbol: 'm₁, m₂', meaning: 'magnitudes in the same photometric band and system' },
+          { symbol: 'F₁, F₂', meaning: 'measured fluxes after consistent calibration' },
+        ],
+        note: 'The logarithmic magnitude scale runs backward: a brighter source has a smaller magnitude.',
       },
     ],
     comparison: {

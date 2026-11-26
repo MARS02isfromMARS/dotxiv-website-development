@@ -27,6 +27,11 @@ export type DiagramKind =
   | 'parallax'
   | 'electromagnetic-spectrum'
   | 'spectral-lines'
+  | 'transfer-orbit'
+  | 'stellar-interior'
+  | 'galactic-cycle'
+  | 'detector-workflow'
+  | 'signal-to-noise'
 
 const colors = {
   paper: '#f3f0ea',
@@ -49,7 +54,7 @@ function Grid({ x = 56, y = 42, width = 608, height = 300 }: { x?: number; y?: n
 }
 
 function Label({ x, y, children, color = colors.muted, anchor = 'start', size = 13 }: { x: number; y: number; children: ReactNode; color?: string; anchor?: 'start' | 'middle' | 'end'; size?: number }) {
-  return <text x={x} y={y} fill={color} fontSize={size} textAnchor={anchor} fontFamily="Arial, Helvetica, sans-serif">{children}</text>
+  return <text x={x} y={y} fill={color} fontSize={size} textAnchor={anchor} fontFamily="Georgia, 'Times New Roman', serif">{children}</text>
 }
 
 function OrbitArt() {
@@ -545,6 +550,120 @@ function EclipsesArt() {
   </SvgFrame>
 }
 
+function TransferOrbitArt() {
+  return <SvgFrame label="Hohmann transfer from a lower to a higher circular orbit, showing the central body at one focus of the elliptical transfer path and tangential burns at both ends.">
+    <circle cx="360" cy="194" r="220" fill="none" stroke={colors.violet} strokeWidth="1.5" strokeDasharray="6 6" />
+    <circle cx="360" cy="194" r="120" fill="none" stroke={colors.blue} strokeWidth="1.5" strokeDasharray="6 6" />
+    <ellipse cx="410" cy="194" rx="170" ry="120" fill="none" stroke={colors.amber} strokeWidth="2.5" />
+    <path d="M 273 112 C 338 65 462 65 528 112" fill="none" stroke={colors.paper} strokeWidth="1.5" strokeDasharray="3 6" />
+    <path d="M 519 108 L 530 112 L 522 120" fill="none" stroke={colors.paper} strokeWidth="1.5" />
+    <circle cx="360" cy="194" r="11" fill={colors.amber} />
+    <circle cx="240" cy="194" r="6" fill={colors.blue} />
+    <circle cx="580" cy="194" r="6" fill={colors.violet} />
+    <line x1="360" y1="194" x2="240" y2="194" stroke={colors.blue} strokeDasharray="4 4" />
+    <line x1="360" y1="194" x2="580" y2="194" stroke={colors.violet} strokeDasharray="4 4" />
+    <path d="M 240 194 V 153 M 235 160 L 240 151 L 245 160" stroke={colors.green} strokeWidth="2" fill="none" />
+    <path d="M 580 194 V 235 M 575 228 L 580 237 L 585 228" stroke={colors.rose} strokeWidth="2" fill="none" />
+    <Label x={360} y={177} color={colors.amber} anchor="middle">central body</Label>
+    <Label x={240} y={220} color={colors.blue} anchor="middle">r₁ · departure</Label>
+    <Label x={580} y={220} color={colors.violet} anchor="middle">r₂ · arrival</Label>
+    <Label x={245} y={145} color={colors.green}>Δv₁</Label>
+    <Label x={585} y={253} color={colors.rose}>Δv₂</Label>
+    <Label x={410} y={76} color={colors.paper} anchor="middle">half-ellipse coast</Label>
+    <Label x={360} y={372} anchor="middle" size={11}>A two-impulse, coplanar transfer between ideal circular orbits.</Label>
+  </SvgFrame>
+}
+
+function StellarInteriorArt() {
+  return <SvgFrame label="Approximate radial structure of a Sun-like star, with a fusion core, radiative zone, and convective envelope.">
+    <circle cx="190" cy="190" r="122" fill="#15131a" stroke={colors.blue} strokeWidth="2" />
+    <circle cx="190" cy="190" r="86" fill={colors.violet} fillOpacity=".12" stroke={colors.violet} strokeWidth="1.5" />
+    <circle cx="190" cy="190" r="30" fill={colors.amber} fillOpacity=".42" stroke={colors.amber} strokeWidth="2" />
+    <path d="M 189 186 C 171 178 165 159 180 148 C 198 136 214 155 202 169 C 191 181 181 198 197 211 C 212 224 224 205 211 194" fill="none" stroke={colors.rose} strokeWidth="2" strokeDasharray="3 4" />
+    <path d="M 119 143 C 102 164 103 204 121 227 M 112 220 L 121 230 L 124 216" fill="none" stroke={colors.green} strokeWidth="2" />
+    <path d="M 261 228 C 278 207 277 166 259 144 M 268 151 L 259 141 L 256 155" fill="none" stroke={colors.green} strokeWidth="2" />
+    <line x1="218" y1="177" x2="320" y2="115" stroke={colors.amber} strokeWidth="1" />
+    <line x1="248" y1="146" x2="320" y2="190" stroke={colors.violet} strokeWidth="1" />
+    <line x1="282" y1="213" x2="320" y2="267" stroke={colors.blue} strokeWidth="1" />
+    <Label x={190} y={195} anchor="middle" color={colors.paper}>core</Label>
+    <Label x={334} y={107} color={colors.amber}>CORE · fusion</Label>
+    <Label x={334} y={186} color={colors.violet}>RADIATIVE ZONE</Label>
+    <Label x={334} y={263} color={colors.blue}>CONVECTIVE ENVELOPE</Label>
+    <Label x={334} y={286} size={11}>radial transport changes with depth</Label>
+    <line x1="68" y1="343" x2="312" y2="343" stroke={colors.dim} />
+    <line x1="68" y1="337" x2="68" y2="349" stroke={colors.dim} /><line x1="312" y1="337" x2="312" y2="349" stroke={colors.dim} />
+    <Label x={68} y={365} size={10}>0</Label><Label x={312} y={365} size={10} anchor="end">1 R☉</Label>
+    <Label x={478} y={366} anchor="middle" size={10}>Approximate solar radial scale</Label>
+  </SvgFrame>
+}
+
+function GalacticCycleArt() {
+  return <SvgFrame label="Galactic baryon cycle linking molecular clouds, new stars, stellar feedback, and gas returned to the interstellar medium.">
+    <path d="M 166 162 H 256 M 341 162 H 423 M 510 162 H 584" fill="none" stroke={colors.dim} strokeWidth="1.5" />
+    <path d="M 248 157 L 258 162 L 248 167 M 415 157 L 425 162 L 415 167 M 576 157 L 586 162 L 576 167" fill="none" stroke={colors.paper} strokeWidth="1.5" />
+    <circle cx="120" cy="154" r="28" fill={colors.blue} fillOpacity=".18" stroke={colors.blue} />
+    <circle cx="99" cy="160" r="16" fill="#17151b" stroke={colors.blue} /><circle cx="130" cy="137" r="20" fill="#17151b" stroke={colors.blue} />
+    <circle cx="295" cy="158" r="25" fill={colors.amber} fillOpacity=".18" stroke={colors.amber} />
+    <circle cx="295" cy="158" r="8" fill={colors.amber} />
+    <circle cx="449" cy="145" r="5" fill={colors.paper} /><circle cx="473" cy="166" r="4" fill={colors.blue} /><circle cx="495" cy="143" r="5" fill={colors.paper} /><circle cx="467" cy="132" r="3" fill={colors.amber} />
+    <circle cx="624" cy="157" r="27" fill={colors.rose} fillOpacity=".1" stroke={colors.rose} />
+    <path d="M 624 120 L 628 146 L 650 133 L 635 154 L 661 160 L 635 165 L 650 187 L 628 171 L 624 197 L 620 171 L 598 187 L 613 165 L 587 160 L 613 154 L 598 133 L 620 146 Z" fill="none" stroke={colors.rose} strokeWidth="1.5" />
+    <path d="M 621 187 C 532 300 219 309 125 196" fill="none" stroke={colors.green} strokeWidth="1.5" strokeDasharray="5 5" />
+    <path d="M 130 195 L 122 186 L 119 198" fill="none" stroke={colors.green} strokeWidth="1.5" />
+    <Label x={120} y={225} anchor="middle" color={colors.blue}>molecular cloud</Label>
+    <Label x={295} y={225} anchor="middle" color={colors.amber}>star formation</Label>
+    <Label x={472} y={225} anchor="middle" color={colors.paper}>stellar population</Label>
+    <Label x={624} y={225} anchor="middle" color={colors.rose}>feedback</Label>
+    <Label x={359} y={329} anchor="middle" color={colors.green}>winds and supernovae return energy and enriched gas</Label>
+    <Label x={360} y={372} anchor="middle" size={11}>A cycle with inflow, outflow, and recycling—not a closed tank.</Label>
+  </SvgFrame>
+}
+
+function DetectorWorkflowArt() {
+  return <SvgFrame label="Observational workflow showing a raw detector exposure, matched calibration frames, a corrected image, and extracted calibrated flux.">
+    <Label x={104} y={63} anchor="middle" color={colors.amber}>PHOTONS</Label>
+    <circle cx="104" cy="145" r="13" fill={colors.amber} fillOpacity=".25" stroke={colors.amber} />
+    <path d="M 122 145 H 159 M 132 137 L 142 145 L 132 153 M 159 137 L 149 145 L 159 153" fill="none" stroke={colors.amber} strokeWidth="1.5" />
+    <Label x={243} y={63} anchor="middle" color={colors.blue}>RAW FRAME</Label>
+    <rect x="207" y="105" width="72" height="72" fill="#141218" stroke={colors.blue} />
+    <path d="M 231 105 V 177 M 255 105 V 177 M 207 129 H 279 M 207 153 H 279" stroke={colors.grid} />
+    <circle cx="229" cy="131" r="3" fill={colors.paper} /><circle cx="260" cy="155" r="4" fill={colors.amber} /><circle cx="246" cy="120" r="2" fill={colors.blue} />
+    <path d="M 289 145 H 337 M 312 137 L 322 145 L 312 153" fill="none" stroke={colors.paper} strokeWidth="1.5" />
+    <Label x={390} y={63} anchor="middle" color={colors.violet}>CALIBRATION</Label>
+    <rect x="354" y="109" width="35" height="29" fill="#15131a" stroke={colors.dim} /><rect x="370" y="136" width="35" height="29" fill="#15131a" stroke={colors.amber} /><rect x="386" y="163" width="35" height="29" fill="#15131a" stroke={colors.violet} />
+    <Label x={370} y={128} size={9}>bias</Label><Label x={386} y={155} size={9}>dark</Label><Label x={402} y={182} size={9}>flat</Label>
+    <path d="M 430 145 H 481 M 456 137 L 466 145 L 456 153" fill="none" stroke={colors.paper} strokeWidth="1.5" />
+    <Label x={570} y={63} anchor="middle" color={colors.green}>MEASURED FLUX</Label>
+    <line x1="500" y1="182" x2="644" y2="182" stroke={colors.dim} /><line x1="510" y1="176" x2="510" y2="101" stroke={colors.dim} />
+    <path d="M 513 172 C 535 166 542 145 557 137 C 575 126 580 151 593 150 C 608 150 615 126 639 116" fill="none" stroke={colors.green} strokeWidth="2" />
+    <circle cx="557" cy="137" r="3" fill={colors.paper} /><circle cx="593" cy="150" r="3" fill={colors.paper} />
+    <Label x={571} y={207} anchor="middle" size={10}>standard stars set the zero point</Label>
+    <Label x={360} y={372} anchor="middle" size={11}>Each stage adds a measurement model and its own uncertainty.</Label>
+  </SvgFrame>
+}
+
+function SignalToNoiseArt() {
+  const curve = Array.from({ length: 31 }, (_, index) => {
+    const t = index / 30
+    const x = 104 + t * 528
+    const y = 300 - Math.sqrt(t) * 218
+    return `${index === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${y.toFixed(1)}`
+  }).join(' ')
+  return <SvgFrame label="Sky-limited signal-to-noise ratio rises with the square root of exposure time, so four times the exposure yields twice the signal-to-noise in the idealized regime.">
+    <Grid x={104} y={62} width={528} height={238} />
+    <line x1="104" y1="300" x2="632" y2="300" stroke={colors.paper} /><line x1="104" y1="62" x2="104" y2="300" stroke={colors.paper} />
+    <path d={curve} fill="none" stroke={colors.green} strokeWidth="3" />
+    <circle cx="236" cy="191" r="5" fill={colors.blue} /><circle cx="632" cy="82" r="5" fill={colors.amber} />
+    <line x1="236" y1="191" x2="236" y2="300" stroke={colors.blue} strokeDasharray="4 5" />
+    <line x1="632" y1="82" x2="632" y2="300" stroke={colors.amber} strokeDasharray="4 5" />
+    <Label x={236} y={175} anchor="middle" color={colors.blue}>t, S/N = ½</Label>
+    <Label x={620} y={67} anchor="end" color={colors.amber}>4t, S/N = 1</Label>
+    <Label x={366} y={337} anchor="middle">exposure time (relative)</Label>
+    <Label x={51} y={80}>signal /</Label><Label x={51} y={97}>noise</Label>
+    <Label x={365} y={370} anchor="middle" size={11}>Sky-limited case: S/N ∝ √t; real noise budgets add other terms.</Label>
+  </SvgFrame>
+}
+
 const diagrams: Record<DiagramKind, () => ReactNode> = {
   orbit: OrbitArt,
   'kepler-area': KeplerAreaArt,
@@ -572,9 +691,14 @@ const diagrams: Record<DiagramKind, () => ReactNode> = {
   parallax: ParallaxArt,
   'electromagnetic-spectrum': SpectrumArt,
   'spectral-lines': SpectralLinesArt,
+  'transfer-orbit': TransferOrbitArt,
+  'stellar-interior': StellarInteriorArt,
+  'galactic-cycle': GalacticCycleArt,
+  'detector-workflow': DetectorWorkflowArt,
+  'signal-to-noise': SignalToNoiseArt,
 }
 
 export function DiagramIllustration({ kind, label }: { kind: DiagramKind; label: string }) {
   const Illustration = diagrams[kind]
-  return <div className="science-svg-wrap" role="img" aria-label={label}><Illustration /></div>
+  return <div className="science-svg-wrap" role="img" aria-label={label} tabIndex={0}><Illustration /></div>
 }
