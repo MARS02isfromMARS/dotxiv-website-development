@@ -1,6 +1,12 @@
-import Link from 'next/link'
-import { ArrowLeft, ArrowUpRight, BookOpen, ExternalLink, Telescope } from 'lucide-react'
+import type { Metadata } from 'next'
+import { NotesLibrary } from '@/components/notes-library'
 import { SiteHeader } from '@/components/site-header'
+
+export const metadata: Metadata = {
+  title: 'Visual Astronomy Notes',
+  description: 'Diagram-led Astronomy Olympiad chapters with interactive astronomy models, equations, real examples, and knowledge checks.',
+  alternates: { canonical: '/notes' },
+}
 
 const syllabus = [
   {
@@ -71,30 +77,7 @@ export default function NotesPage() {
   return (
     <>
       <SiteHeader />
-      <main className="notes-page page-pad">
-      <Link href="/" className="back-link"><ArrowLeft size={15} /> Back to DotXiv</Link>
-      <div className="notes-page-heading">
-        <p className="eyebrow"><span className="eyebrow-dot" />The DotXiv library</p>
-        <h1>Five paths into<br /><em>the universe.</em></h1>
-        <p>A curated astronomy roadmap. Read the description, follow the textbook sequence, practise the physics, and use the visualisation tools before opening the downloadable notes.</p>
-      </div>
-      <div className="syllabus-stack">
-        {syllabus.map((area) => (
-          <article className="syllabus-section" id={area.slug} key={area.slug}>
-            <div className="syllabus-section-header"><span>{area.number}</span><Telescope size={21} /></div>
-            <h2>{area.title}</h2>
-            <p className="syllabus-lede">{area.description}</p>
-            <div className="syllabus-grid">
-              <section><h3>A. Comprehensive description</h3><p>{area.coverage}</p><p>{area.principles}</p></section>
-              <section><h3>B. Textbooks & specific chapters</h3><ul>{area.books.map((book) => <li key={book}>{book}</li>)}</ul></section>
-              <section className="syllabus-tools"><h3>C. Interactive visualisation</h3><p>{area.tools}</p></section>
-            </div>
-            <Link href={`/notes/${area.slug}`} className="syllabus-link">Open {area.title} notes <ArrowUpRight size={15} /></Link>
-          </article>
-        ))}
-      </div>
-      <div className="pdf-intro"><BookOpen size={19} /><span>Choose a subject to find available handouts and PDFs. More resources will be added as each collection grows.</span><ExternalLink size={15} />      </div>
-      </main>
+      <NotesLibrary syllabus={syllabus} />
     </>
   )
 }
