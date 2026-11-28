@@ -112,20 +112,18 @@ function KeplerAreaArt() {
 }
 
 function OrbitalEnergyArt() {
-  return <SvgFrame label="Energy diagram distinguishing bound elliptical orbits, escape energy, and unbound trajectories.">
-    <Grid x={105} y={54} width={500} height={254} />
-    <line x1="105" y1="181" x2="605" y2="181" stroke={colors.amber} strokeWidth="1.5" strokeDasharray="7 6" />
-    <Label x={604} y={169} color={colors.amber} anchor="end">E = 0 • escape threshold</Label>
-    <line x1="105" y1="113" x2="605" y2="113" stroke={colors.rose} strokeWidth="2" />
-    <Label x={605} y={103} color={colors.rose} anchor="end">E &gt; 0 • hyperbolic, unbound</Label>
-    <line x1="105" y1="253" x2="605" y2="253" stroke={colors.green} strokeWidth="2" />
-    <Label x={605} y={244} color={colors.green} anchor="end">E &lt; 0 • bound ellipse</Label>
-    <line x1="105" y1="308" x2="605" y2="308" stroke={colors.paper} />
-    <line x1="105" y1="308" x2="105" y2="54" stroke={colors.paper} />
-    <Label x={355} y={339} anchor="middle">distance from central mass, r</Label>
-    <Label x={76} y={64}>total</Label><Label x={76} y={80}>energy</Label>
-    <path d="M 112 292 C 195 288 239 276 290 258 C 365 230 414 208 466 194 C 520 184 566 181 604 181" fill="none" stroke={colors.blue} strokeWidth="2" />
-    <Label x={354} y={372} anchor="middle" size={11}>For an ideal two-body system, total orbital energy fixes the conic-section family.</Label>
+  return <SvgFrame label="Specific orbital energy classifies an ideal two-body orbit: negative energy is a bound ellipse, zero is a parabolic escape path, and positive energy is an unbound hyperbola.">
+    <line x1="140" y1="310" x2="140" y2="68" stroke={colors.paper} strokeWidth="1.5" />
+    <path d="M 134 78 L 140 66 L 146 78 Z" fill={colors.paper} />
+    <Label x={158} y={79} color={colors.paper}>energy increases</Label>
+    <line x1="170" y1="184" x2="625" y2="184" stroke={colors.amber} strokeWidth="1.5" strokeDasharray="7 6" />
+    <Label x={188} y={173} color={colors.amber}>ε = 0 • parabolic escape boundary</Label>
+    <line x1="190" y1="116" x2="585" y2="116" stroke={colors.rose} strokeWidth="2" />
+    <Label x={190} y={103} color={colors.rose}>ε &gt; 0 • hyperbolic, unbound</Label>
+    <line x1="190" y1="252" x2="585" y2="252" stroke={colors.green} strokeWidth="2" />
+    <Label x={190} y={242} color={colors.green}>ε &lt; 0 • elliptical, bound</Label>
+    <Label x={360} y={341} anchor="middle">specific orbital energy, ε</Label>
+    <Label x={360} y={372} anchor="middle" size={11}>Energy is constant along an ideal two-body orbit; levels are qualitative, not to scale.</Label>
   </SvgFrame>
 }
 
@@ -150,16 +148,22 @@ function HrArt() {
 }
 
 function LifeCycleArt() {
-  const node = (x: number, y: number, text: string, accent: string, width = 124) => <g><rect x={x} y={y} width={width} height="40" rx="2" fill="#17151b" stroke={accent} /><text x={x + width / 2} y={y + 25} fill={colors.paper} fontSize="12" textAnchor="middle" fontFamily="Arial">{text}</text></g>
-  return <SvgFrame label="Two schematic stellar evolution pathways: a Sun-like star becomes a white dwarf, while a massive star may end as a neutron star or black hole.">
-    <Label x={360} y={44} anchor="middle" color={colors.amber}>Mass determines the evolutionary route (schematic; not to scale).</Label>
-    <path d="M 156 111 H 260 M 385 111 H 490 M 552 132 V 193 H 190 V 222 M 550 132 V 222" fill="none" stroke={colors.dim} strokeWidth="2" />
-    <path d="M 156 263 H 260 M 385 263 H 490" fill="none" stroke={colors.dim} strokeWidth="2" />
-    <path d="M 207 106 l-8 -5 v10z M 432 106 l-8 -5 v10z M 185 217 l-5 -8 -5 8z M 545 217 l-5 -8 -5 8z M 250 258 l-8 -5 v10z M 480 258 l-8 -5 v10z" fill={colors.violet} />
-    {node(32, 91, 'gas cloud', colors.blue)}{node(260, 91, 'protostar', colors.blue)}{node(490, 91, 'main sequence', colors.green)}
-    {node(112, 243, 'red giant', colors.amber)}{node(260, 243, 'planetary nebula', colors.amber)}{node(490, 243, 'white dwarf', colors.violet)}
-    {node(112, 312, 'massive star', colors.rose)}{node(260, 312, 'supernova', colors.rose)}{node(490, 312, 'neutron star / BH', colors.rose)}
-    <path d="M 552 132 V 296 H 190 V 307" fill="none" stroke={colors.rose} strokeWidth="2" />
+  const node = (x: number, y: number, text: string, accent: string, width = 124, size = 11) => <g><rect x={x} y={y} width={width} height="34" rx="2" fill="#17151b" stroke={accent} /><text x={x + width / 2} y={y + 22} fill={colors.paper} fontSize={size} textAnchor="middle" fontFamily="Arial">{text}</text></g>
+  const arrow = (x: number, y: number) => <path d={`M ${x - 4} ${y - 5} L ${x} ${y + 2} L ${x + 4} ${y - 5}`} fill="none" stroke={colors.violet} strokeWidth="1.5" />
+  return <SvgFrame label="Two broad stellar life paths after the main sequence: lower- and intermediate-mass stars can become white dwarfs, while high-mass stars can undergo core collapse and leave neutron stars or black holes.">
+    <Label x={360} y={34} anchor="middle" color={colors.amber}>A star&apos;s initial mass strongly influences its later path.</Label>
+    {node(282, 53, 'main-sequence star', colors.green, 156, 12)}
+    <path d="M 360 87 V 115 H 192 V 137 M 360 115 H 528 V 137" fill="none" stroke={colors.dim} strokeWidth="1.5" />
+    <path d="M 187 131 L 192 141 L 197 131 M 523 131 L 528 141 L 533 131" fill="none" stroke={colors.violet} strokeWidth="1.5" />
+    <rect x="32" y="145" width="320" height="206" fill="none" stroke={colors.grid} />
+    <rect x="368" y="145" width="320" height="206" fill="none" stroke={colors.grid} />
+    <Label x={192} y={166} anchor="middle" color={colors.amber}>LOWER / INTERMEDIATE INITIAL MASS</Label>
+    <Label x={528} y={166} anchor="middle" color={colors.rose}>HIGH INITIAL MASS</Label>
+    {node(130, 180, 'red giant', colors.amber)}{node(130, 235, 'planetary nebula', colors.amber)}{node(130, 290, 'white dwarf', colors.violet)}
+    {arrow(192, 227)}{arrow(192, 282)}
+    {node(443, 180, 'red supergiant', colors.rose, 170)}{node(443, 235, 'core-collapse supernova', colors.rose, 170, 10)}{node(443, 290, 'neutron star or black hole', colors.rose, 170, 10)}
+    {arrow(528, 227)}{arrow(528, 282)}
+    <Label x={360} y={378} anchor="middle" size={10}>Broad paths only: mass loss, composition, rotation, and binary companions affect the outcome.</Label>
   </SvgFrame>
 }
 
@@ -195,19 +199,19 @@ function BlackbodyArt() {
 }
 
 function BinaryArt() {
-  return <SvgFrame label="Two stars orbit their common barycentre; radial-velocity observations reveal alternating Doppler shifts.">
-    <Grid />
-    <ellipse cx="360" cy="180" rx="236" ry="94" fill="none" stroke={colors.blue} strokeDasharray="6 5" />
-    <ellipse cx="360" cy="180" rx="118" ry="47" fill="none" stroke={colors.violet} strokeDasharray="6 5" />
-    <circle cx="360" cy="180" r="4" fill={colors.paper} />
-    <circle cx="242" cy="180" r="12" fill={colors.amber} /><circle cx="478" cy="180" r="8" fill={colors.blue} />
-    <line x1="242" y1="265" x2="478" y2="265" stroke={colors.dim} /><line x1="242" y1="257" x2="242" y2="273" stroke={colors.paper} /><line x1="478" y1="257" x2="478" y2="273" stroke={colors.paper} />
-    <Label x={360} y={289} anchor="middle">projected separation changes with orbital phase</Label>
-    <Label x={360} y={148} anchor="middle" color={colors.paper}>barycentre</Label>
-    <Label x={220} y={136} color={colors.amber}>star A</Label><Label x={492} y={136} color={colors.blue}>star B</Label>
-    <path d="M 128 330 C 190 300 230 300 292 330 S 394 360 456 330 S 558 300 620 330" fill="none" stroke={colors.rose} strokeWidth="2" />
+  return <SvgFrame label="A circular binary-star example with both stars orbiting their barycentre: the more massive star follows the smaller circle, and their radial velocities vary in opposite directions.">
+    <circle cx="360" cy="156" r="116" fill="none" stroke={colors.blue} strokeDasharray="6 5" />
+    <circle cx="360" cy="156" r="58" fill="none" stroke={colors.violet} strokeDasharray="6 5" />
+    <circle cx="360" cy="156" r="4" fill={colors.paper} />
+    <circle cx="302" cy="156" r="12" fill={colors.amber} /><circle cx="476" cy="156" r="8" fill={colors.blue} />
+    <Label x={360} y={144} anchor="middle" color={colors.paper}>barycentre</Label>
+    <Label x={292} y={124} color={colors.amber} anchor="middle">A · more massive</Label><Label x={476} y={124} color={colors.blue} anchor="middle">B · lighter</Label>
+    <Label x={360} y={290} anchor="middle">circular example • mA : mB = 2 : 1 • rA : rB = 1 : 2</Label>
+    <Label x={48} y={319} color={colors.muted}>radial velocity</Label>
     <line x1="128" y1="330" x2="620" y2="330" stroke={colors.dim} />
-    <Label x={360} y={370} anchor="middle" size={11}>In a spectroscopic binary, opposite line shifts trace motion toward and away from us.</Label>
+    <path d="M 128 330 C 190 312 230 312 292 330 S 394 348 456 330 S 558 312 620 330" fill="none" stroke={colors.amber} strokeWidth="2" />
+    <path d="M 128 330 C 190 366 230 366 292 330 S 394 294 456 330 S 558 366 620 330" fill="none" stroke={colors.blue} strokeWidth="2" />
+    <Label x={360} y={378} anchor="middle" size={11}>Opposite Doppler shifts reveal that the two stars move in opposite directions.</Label>
   </SvgFrame>
 }
 
@@ -256,9 +260,9 @@ function DistanceLadderArt() {
     { x: 72, n: '01', title: 'parallax', sub: 'nearby stars', color: colors.violet },
     { x: 226, n: '02', title: 'Cepheids', sub: 'nearby galaxies', color: colors.blue },
     { x: 380, n: '03', title: 'Type Ia SNe', sub: 'distant galaxies', color: colors.amber },
-    { x: 534, n: '04', title: 'redshift', sub: 'cosmic expansion', color: colors.rose },
+    { x: 534, n: '04', title: 'Hubble flow', sub: 'cosmic expansion', color: colors.rose }
   ]
-  return <SvgFrame label="Cosmic distance ladder connecting geometric parallax, Cepheid variable stars, Type Ia supernovae, and redshift-based expansion measurements.">
+  return <SvgFrame label="Cosmic distance ladder connecting geometric parallax, Cepheid variable stars, Type Ia supernovae, and the calibrated Hubble flow.">
     <path d="M 88 275 L 242 226 L 396 177 L 550 128" fill="none" stroke={colors.dim} strokeWidth="3" />
     {steps.map((step) => <g key={step.n}><circle cx={step.x + 40} cy={274 - (step.x - 72) * .32} r="26" fill="#17151b" stroke={step.color} strokeWidth="2" /><text x={step.x + 40} y={278 - (step.x - 72) * .32} textAnchor="middle" fill={step.color} fontSize="12" fontFamily="Arial">{step.n}</text><text x={step.x + 40} y={324} textAnchor="middle" fill={colors.paper} fontSize="12" fontFamily="Arial">{step.title}</text><text x={step.x + 40} y={343} textAnchor="middle" fill={colors.muted} fontSize="10" fontFamily="Arial">{step.sub}</text></g>)}
     <Label x={360} y={376} anchor="middle" size={11}>Each rung is calibrated against the one below; uncertainties propagate upward.</Label>
@@ -296,60 +300,70 @@ function RotationCurveArt() {
 }
 
 function LensingArt() {
-  return <SvgFrame label="Light from a distant source bends around a foreground galaxy, producing multiple apparent images for an observer.">
+  return <SvgFrame label="Two distinct light paths from a distant source bend around a foreground gravitational lens and arrive at the same observer, producing separate apparent images.">
     <Grid />
     <circle cx="360" cy="190" r="35" fill={colors.amber} fillOpacity=".2" stroke={colors.amber} strokeWidth="2" />
     <circle cx="360" cy="190" r="8" fill={colors.amber} />
     <circle cx="95" cy="190" r="10" fill={colors.blue} /><circle cx="632" cy="190" r="8" fill={colors.paper} />
-    <path d="M 95 190 C 220 105 290 105 360 190 C 430 275 510 275 632 190" fill="none" stroke={colors.violet} strokeWidth="2.5" />
-    <path d="M 95 190 C 220 275 290 275 360 190 C 430 105 510 105 632 190" fill="none" stroke={colors.rose} strokeWidth="2.5" />
-    <circle cx="492" cy="146" r="6" fill={colors.violet} /><circle cx="492" cy="234" r="6" fill={colors.rose} />
+    <path d="M 95 190 C 220 130 275 130 360 130 C 445 130 510 190 632 190" fill="none" stroke={colors.violet} strokeWidth="2.5" />
+    <path d="M 95 190 C 220 250 275 250 360 250 C 445 250 510 190 632 190" fill="none" stroke={colors.rose} strokeWidth="2.5" />
     <Label x={95} y={160} color={colors.blue} anchor="middle">distant source</Label>
     <Label x={360} y={140} color={colors.amber} anchor="middle">foreground lens</Label>
-    <Label x={632} y={167} color={colors.paper} anchor="end">observer</Label>
-    <Label x={492} y={130} color={colors.violet} anchor="middle">image A</Label><Label x={492} y={259} color={colors.rose} anchor="middle">image B</Label>
-    <Label x={360} y={370} anchor="middle" size={11}>The source, lens, and observer are aligned in depth; the drawing is not to scale.</Label>
+    <Label x={632} y={167} color={colors.paper} anchor="end">same observer</Label>
+    <Label x={500} y={128} color={colors.violet} anchor="middle">path 1</Label><Label x={500} y={259} color={colors.rose} anchor="middle">path 2</Label>
+    <Label x={360} y={370} anchor="middle" size={11}>Different arrival directions make separate apparent images; geometry is not to scale.</Label>
   </SvgFrame>
 }
 
 function CelestialSphereArt() {
-  return <SvgFrame label="Celestial sphere with celestial equator, north celestial pole, local meridian, declination, and right ascension.">
+  return <SvgFrame label="Equatorial coordinates on a projected celestial sphere: right ascension is measured eastward along the celestial equator from the vernal equinox, and declination is measured north or south from the equator.">
     <ellipse cx="353" cy="192" rx="204" ry="140" fill="none" stroke={colors.blue} strokeWidth="2" />
     <ellipse cx="353" cy="192" rx="204" ry="60" fill="none" stroke={colors.green} strokeWidth="2" />
     <ellipse cx="353" cy="192" rx="92" ry="140" fill="none" stroke={colors.dim} strokeDasharray="6 5" />
     <line x1="353" y1="52" x2="353" y2="332" stroke={colors.paper} strokeDasharray="5 5" />
-    <line x1="353" y1="192" x2="474" y2="146" stroke={colors.amber} strokeWidth="2" />
-    <circle cx="474" cy="146" r="7" fill={colors.violet} />
+    <path d="M 149 192 A 204 60 0 0 1 474 144" fill="none" stroke={colors.rose} strokeWidth="3" />
+    <line x1="474" y1="144" x2="474" y2="96" stroke={colors.amber} strokeWidth="2" />
+    <circle cx="474" cy="144" r="4" fill={colors.green} />
+    <circle cx="474" cy="96" r="7" fill={colors.violet} />
     <circle cx="149" cy="192" r="5" fill={colors.rose} />
     <circle cx="353" cy="52" r="6" fill={colors.paper} />
-    <circle cx="353" cy="192" r="4" fill={colors.amber} />
-    <path d="M 355 192 A 85 30 0 0 1 438 172" fill="none" stroke={colors.rose} strokeWidth="2" />
     <Label x={366} y={67}>north celestial pole</Label>
-    <Label x={499} y={139} color={colors.violet}>celestial object</Label>
+    <Label x={490} y={91} color={colors.violet}>celestial object</Label>
     <Label x={520} y={211} color={colors.green}>celestial equator</Label>
     <Label x={114} y={181} color={colors.rose}>vernal equinox γ</Label>
-    <Label x={387} y={181} color={colors.amber}>declination δ</Label>
-    <Label x={414} y={226} color={colors.rose}>right ascension α</Label>
-    <Label x={360} y={371} anchor="middle" size={11}>Equatorial coordinates are Earth-centred directions projected onto the celestial sphere.</Label>
+    <Label x={307} y={123} color={colors.rose}>right ascension α</Label>
+    <Label x={483} y={125} color={colors.amber}>declination δ</Label>
+    <Label x={360} y={371} anchor="middle" size={11}>Right ascension follows the equator; declination is measured north or south of it.</Label>
   </SvgFrame>
 }
 
 function HorizonArt() {
-  return <SvgFrame label="Local sky dome showing horizon, zenith, altitude above the horizon, and azimuth measured around the horizon from north.">
-    <circle cx="360" cy="211" r="134" fill="#15131a" stroke={colors.blue} strokeWidth="2" />
-    <ellipse cx="360" cy="211" rx="134" ry="36" fill="none" stroke={colors.green} strokeWidth="2" />
-    <line x1="226" y1="211" x2="494" y2="211" stroke={colors.green} strokeWidth="2" />
-    <line x1="360" y1="211" x2="438" y2="116" stroke={colors.violet} strokeWidth="2" />
-    <circle cx="438" cy="116" r="7" fill={colors.amber} />
-    <line x1="438" y1="116" x2="438" y2="211" stroke={colors.amber} strokeDasharray="5 5" />
-    <path d="M 360 178 A 33 33 0 0 1 382 186" fill="none" stroke={colors.rose} strokeWidth="2" />
-    <path d="M 327 211 A 33 20 0 0 0 346 228" fill="none" stroke={colors.blue} strokeWidth="2" />
-    <Label x={360} y={62} anchor="middle" color={colors.paper}>zenith</Label>
-    <Label x={438} y={101} color={colors.amber}>object</Label>
-    <Label x={449} y={171} color={colors.amber}>altitude h</Label>
-    <Label x={378} y={174} color={colors.rose}>azimuth A</Label>
-    <Label x={230} y={236} color={colors.green}>local horizon</Label>
-    <Label x={350} y={364} anchor="middle" size={11}>Altitude is measured up from the horizon; azimuth convention must be stated.</Label>
+  return <SvgFrame label="Two views of local horizon coordinates: altitude is the angle above the horizon in side view, and azimuth is the compass direction around the horizon measured clockwise from north in the top view.">
+    <rect x="34" y="58" width="320" height="282" fill="#15131a" stroke={colors.grid} />
+    <rect x="366" y="58" width="320" height="282" fill="#15131a" stroke={colors.grid} />
+    <Label x={194} y={83} anchor="middle" color={colors.blue}>SIDE VIEW · ALTITUDE</Label>
+    <line x1="62" y1="244" x2="326" y2="244" stroke={colors.green} strokeWidth="2" />
+    <line x1="172" y1="244" x2="273" y2="151" stroke={colors.violet} strokeWidth="2" />
+    <line x1="172" y1="244" x2="292" y2="244" stroke={colors.dim} strokeDasharray="5 5" />
+    <circle cx="273" cy="151" r="7" fill={colors.amber} />
+    <circle cx="172" cy="244" r="4" fill={colors.paper} />
+    <path d="M 208 244 A 36 36 0 0 0 198 220" fill="none" stroke={colors.amber} strokeWidth="2" />
+    <Label x={172} y={277} anchor="middle" color={colors.muted}>observer</Label>
+    <Label x={278} y={143} color={colors.amber}>object</Label>
+    <Label x={216} y={218} color={colors.amber}>altitude h</Label>
+    <Label x={62} y={264} color={colors.green}>horizon</Label>
+    <Label x={526} y={83} anchor="middle" color={colors.violet}>TOP VIEW · AZIMUTH</Label>
+    <circle cx="526" cy="205" r="94" fill="none" stroke={colors.green} strokeWidth="2" />
+    <line x1="526" y1="205" x2="526" y2="119" stroke={colors.dim} strokeDasharray="5 5" />
+    <line x1="526" y1="205" x2="594" y2="145" stroke={colors.violet} strokeWidth="2" />
+    <circle cx="594" cy="145" r="7" fill={colors.amber} />
+    <path d="M 526 164 A 41 41 0 0 1 556 177" fill="none" stroke={colors.rose} strokeWidth="2" />
+    <circle cx="526" cy="205" r="4" fill={colors.paper} />
+    <Label x={526} y={108} anchor="middle" color={colors.paper}>N</Label>
+    <Label x={611} y={209} color={colors.paper}>E</Label>
+    <Label x={558} y={192} color={colors.rose}>azimuth A</Label>
+    <Label x={602} y={139} color={colors.amber}>target</Label>
+    <Label x={360} y={374} anchor="middle" size={11}>Altitude is above the horizon; azimuth is measured clockwise from north in this example.</Label>
   </SvgFrame>
 }
 
@@ -700,5 +714,5 @@ const diagrams: Record<DiagramKind, () => ReactNode> = {
 
 export function DiagramIllustration({ kind, label }: { kind: DiagramKind; label: string }) {
   const Illustration = diagrams[kind]
-  return <div className="science-svg-wrap" role="img" aria-label={label} tabIndex={0}><Illustration /></div>
+  return <div className="science-svg-wrap" role="region" aria-label={`Scientific diagram. ${label}`} tabIndex={0}><Illustration /></div>
 }

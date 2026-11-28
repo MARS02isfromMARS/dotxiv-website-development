@@ -22,7 +22,7 @@ export function NotesLibrary({ syllabus }: { syllabus: SyllabusArea[] }) {
         <div className="notes-library__intro">
           <p className="eyebrow"><span className="eyebrow-dot" /> The DotXiv field guide</p>
           <h1>Learn the sky.<br /><em>See the physics.</em></h1>
-          <p>Five visual chapters for Astronomy Olympiad preparation: start with a clear model, test it against real observations, then carry the mathematics into a problem.</p>
+          <p>Five visual chapters for Astronomy Olympiad preparation. Each one starts with a clear picture, explains the idea in plain language, and then connects it to equations and real observations.</p>
           <div className="notes-library__stats"><span><strong>05</strong> subject chapters</span><span><strong>03</strong> interactive labs</span><span><strong>∞</strong> ways to connect the ideas</span></div>
         </div>
         <div className="notes-library__plate">
@@ -33,7 +33,7 @@ export function NotesLibrary({ syllabus }: { syllabus: SyllabusArea[] }) {
       <section className="notes-library__curriculum" aria-labelledby="notes-curriculum-title">
         <div className="notes-library__section-heading">
           <div><span className="chapter-kicker">A connected curriculum</span><h2 id="notes-curriculum-title">Choose a chapter</h2></div>
-          <p>Every chapter blends foundation, visual understanding, and Olympiad-level reasoning. Existing DotXiv reading lists and handouts stay alongside the new lessons.</p>
+          <p>Read the figure first, follow the explanation, then see how the idea appears in the real sky. Each chapter ends with a short summary; original DotXiv reading lists and handouts remain available too.</p>
         </div>
         <div className="notes-library__grid">
           {syllabus.map((area) => {

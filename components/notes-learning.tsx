@@ -10,7 +10,7 @@ export function ConceptBreakdown({
 }) {
   return (
     <section className="concept-breakdown" aria-label={title}>
-      <div className="concept-breakdown__heading"><span className="chapter-kicker">A visual derivation</span><h3>{title}</h3></div>
+      <div className="concept-breakdown__heading"><span className="chapter-kicker">Start with the picture</span><h3>{title}</h3><p>First identify what is being shown. Then follow what changes, what stays fixed, and what the labels measure.</p></div>
       <ol className="concept-breakdown__steps">
         {steps.map((step, index) => (
           <li key={step.title}>

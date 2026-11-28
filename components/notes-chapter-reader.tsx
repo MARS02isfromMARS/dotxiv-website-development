@@ -4,7 +4,6 @@ import { noteSections, type NoteResource } from '@/data/notes'
 import type { NoteChapter } from '@/data/note-chapters'
 import { ScientificDiagram } from '@/components/notes-diagram'
 import { CompareVisual, CommonMistake, ConceptBreakdown, EquationExplainer, QuickInsight } from '@/components/notes-learning'
-import { KnowledgeCheck } from '@/components/notes-knowledge-check'
 import { CoordinateVisualizer, OrbitVisualizer, SpectrumVisualizer } from '@/components/notes-visualizers'
 
 const chapterTrail = ['stellar-astronomy', 'cosmology', 'celestial-mechanics', 'galactic-astronomy', 'observational-astronomy']
@@ -37,6 +36,21 @@ function ReferenceShelf({ references }: { references: NoteChapter['references'] 
             <div><cite>{reference.title}</cite><p>{reference.author}<span aria-hidden="true"> · </span>{reference.edition}</p></div>
           </li>
         ))}
+      </ol>
+    </section>
+  )
+}
+
+function ChapterSummary({ title, points }: { title: string; points: string[] }) {
+  return (
+    <section className="chapter-summary" id="chapter-summary" aria-labelledby="chapter-summary-title">
+      <div className="chapter-summary__heading">
+        <span className="chapter-kicker">Chapter summary</span>
+        <h2 id="chapter-summary-title">What to carry forward</h2>
+        <p>Use these {title} ideas as a quick map when you return to the topic or start a problem.</p>
+      </div>
+      <ol>
+        {points.map((point, index) => <li key={point}><span>{String(index + 1).padStart(2, '0')}</span><p>{point}</p></li>)}
       </ol>
     </section>
   )
@@ -89,7 +103,7 @@ export function NotesChapterReader({ chapter, resources }: { chapter: NoteChapte
             {chapter.sections.map((section) => <a href={`#${section.id}`} key={section.id}>{section.label}</a>)}
             <a href="#equations">Equations</a><a href="#compare-models">Compare the models</a>
             {chapter.interactive && <a href="#interactive-lab">Interactive explorer</a>}
-            <a href="#real-example">Astronomical example</a><a href="#olympiad-insight">Olympiad insight</a><a href="#knowledge-check">Knowledge check</a><a href="#references">Further reading</a>
+            <a href="#real-example">Astronomical example</a><a href="#olympiad-insight">Olympiad insight</a><a href="#chapter-summary">Chapter summary</a><a href="#references">Further reading</a>
           </nav>
         </aside>
 
@@ -125,9 +139,7 @@ export function NotesChapterReader({ chapter, resources }: { chapter: NoteChapte
             <CommonMistake>{chapter.misconception}</CommonMistake>
           </section>
 
-          <section className="chapter-section" id="knowledge-check">
-            <KnowledgeCheck title={`Test your understanding of ${chapter.title.toLowerCase()}.`} questions={chapter.questions} />
-          </section>
+          <ChapterSummary title={chapter.title} points={chapter.summary} />
 
           <ReferenceShelf references={chapter.references} />
           <ResourceShelf resources={resources} title={chapter.title} />

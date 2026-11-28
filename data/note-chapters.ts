@@ -8,13 +8,6 @@ export type ChapterFigure = {
   caption: string
 }
 
-export type ChapterQuestion = {
-  prompt: string
-  options: string[]
-  answer: number
-  explanation: string
-}
-
 export type NoteChapter = {
   slug: string
   number: string
@@ -47,7 +40,7 @@ export type NoteChapter = {
   example: { title: string; body: string; result: string }
   insight: string
   misconception: string
-  questions: ChapterQuestion[]
+  summary: string[]
 }
 
 export const noteChapters: Record<string, NoteChapter> = {
@@ -56,7 +49,7 @@ export const noteChapters: Record<string, NoteChapter> = {
     number: '03',
     title: 'Celestial Mechanics',
     subtitle: 'Gravity writes the paths of worlds.',
-    description: 'Read an orbit as geometry, energy, and angular momentum working together. Build from Kepler’s laws to the two-body problem, then test how eccentricity changes a body’s speed and path.',
+    description: 'Learn why an orbit has its shape, why a planet speeds up near its star, and how energy helps predict whether an object will return or escape. Each idea builds from a labeled picture to the equation that describes it.',
     readingTime: '28 minute chapter',
     references: [
       { author: 'J. M. A. Danby', title: 'Fundamentals of Celestial Mechanics', edition: '2nd edition, 1988' },
@@ -80,16 +73,16 @@ export const noteChapters: Record<string, NoteChapter> = {
       { name: 'Olympiad insight', description: 'Choose a conserved quantity before reaching for a long calculation.' },
     ],
     steps: [
-      { title: 'Locate the focus', body: 'For a planet orbiting a much more massive star, place the star at one focus—not at the geometric centre of the ellipse.' },
-      { title: 'Measure the shape', body: 'The semi-major axis a sets the orbit’s scale. Eccentricity e sets its shape: a circle has e = 0; a bound ellipse has 0 ≤ e < 1.' },
-      { title: 'Read the turning points', body: 'At periapsis and apoapsis the radial speed is zero. Angular momentum still requires the body to move fastest at periapsis.' },
+      { title: 'Find the focus and centre', body: 'The central star sits at a focus, not at the ellipse’s centre. The semi-major axis a is measured from the centre to an end of the long axis; it is not the star-to-planet distance.' },
+      { title: 'Separate size from shape', body: 'The semi-major axis sets the orbit’s overall size. Eccentricity e describes how stretched it is: e = 0 is a circle, while 0 < e < 1 is an ellipse.' },
+      { title: 'Compare near and far', body: 'At the closest and farthest points, the planet briefly has no motion toward or away from the star. It is still moving sideways—and it moves fastest at the closest point.' },
     ],
     sections: [
       {
         id: 'kepler-laws', label: '01 / Kepler’s laws', title: 'Equal areas reveal changing speed',
         paragraphs: [
-          'Kepler’s first law describes the orbit; his second law describes how motion proceeds along it. A line from the central body to the orbiting body sweeps equal areas in equal times.',
-          'This is the geometrical form of angular-momentum conservation. Near periapsis the radius is short, so the body must sweep a wider angle in the same interval. Near apoapsis the radius is long and its angular motion is slower.',
+          'Kepler’s first law says that an ideal planet follows an ellipse with the Sun at one focus. His second law tells us how quickly the planet moves along that ellipse: imagine drawing a line from the Sun to the planet. In equal time intervals, that line sweeps out equal areas.',
+          'Think of each shaded wedge as a short time slice. Near perihelion the planet is close to the Sun, so it must travel through a wider angle to sweep the same area. Near aphelion it is farther away, so it moves through a smaller angle and travels more slowly. This is angular momentum conservation shown as geometry.',
         ],
         figure: { kind: 'kepler-area', title: 'Same time, same swept area', caption: 'The near-periapsis wedge is narrow in radius but wide in angle; the far wedge is long and thin. Their areas represent equal time intervals.' },
         takeaway: 'If the force is central, torque about the focus is zero and angular momentum is conserved.',
@@ -97,8 +90,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'kepler-periods', label: '02 / Kepler’s third law', title: 'Orbit size sets the period',
         paragraphs: [
-          'Kepler’s third law relates the orbital period to the semi-major axis and the total mass of the system. For the same central mass, a wider orbit takes disproportionately longer: doubling a multiplies the period by 2√2.',
-          'The comparison is exact for ideal two-body motion. In the Solar System, using years and astronomical units is convenient when the orbiting body has negligible mass compared with the Sun.',
+          'The semi-major axis is the orbit’s size, and the period P is the time for one complete revolution. Kepler’s third law says P² grows with a³ when the system’s total mass stays the same. A planet twice as far out in semi-major-axis terms therefore takes about 2.8 times as long to orbit—not merely twice as long.',
+          'For objects orbiting the Sun, years and astronomical units make the calculation especially simple: to a good approximation, P² = a³ when P is in years and a is in AU. This shortcut assumes the Sun dominates the system’s mass; the general two-body equation includes both masses.',
         ],
         figure: { kind: 'kepler-period', title: 'A wider orbit takes much longer', caption: 'For circular orbits around the same central mass, doubling the radius multiplies the period by 2√2, not by two.' },
         takeaway: 'The period depends on a³ and total mass; eccentricity does not change it when those quantities are fixed.',
@@ -106,17 +99,17 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'orbital-energy', label: '03 / Energy', title: 'Energy decides whether an orbit is bound',
         paragraphs: [
-          'For an ideal two-body system, the total mechanical energy is constant. Negative energy gives a bound ellipse, zero energy is the parabolic escape boundary, and positive energy gives an unbound hyperbola.',
-          'The vis-viva equation links speed to distance r and semi-major axis a. A body speeds up as it falls inward because gravitational potential energy is converted to kinetic energy.',
+          'In an isolated two-body model, orbital energy stays the same throughout the journey. Its sign tells you the broad outcome: negative energy means a bound ellipse that returns; zero is the exact escape boundary, a parabola; positive energy means the object arrives with excess energy and follows a hyperbola.',
+          'The vis-viva equation is a speed calculator for a known orbit: give it the object’s current distance r and the orbit’s semi-major axis a. As the object falls inward, gravity converts some potential energy into kinetic energy, so its speed rises. The energy levels in the figure are constant values, not a curve of energy changing with distance.',
         ],
-        figure: { kind: 'orbital-energy', title: 'Three energy regimes', caption: 'The zero-energy line is the escape threshold. The curve sketches the gravitational potential trend; it is not a scale plot of every orbit.' },
+        figure: { kind: 'orbital-energy', title: 'Three energy regimes', caption: 'The diagram classifies an ideal two-body orbit by its constant specific energy: negative for an ellipse, zero for a parabola, and positive for a hyperbola. Levels are qualitative, not to scale.' },
         takeaway: 'A larger speed at the same distance means larger orbital energy; reaching escape requires the specific energy to reach zero.',
       },
       {
         id: 'two-body-systems', label: '04 / Two-body systems', title: 'Both bodies move around a barycentre',
         paragraphs: [
-          'Newton’s two-body problem is solved most simply by separating the centre-of-mass motion from the relative orbit. The two bodies trace similar ellipses about their shared barycentre, with the more massive body moving on the smaller ellipse.',
-          'This is not a small correction for comparable masses. Binary stars are the clearest example: their changing positions and velocities let observers infer masses that cannot be measured by weighing the stars directly.',
+          'Two gravitating bodies do not have one fixed body and one moving body: both orbit their shared centre of mass, called the barycentre. The heavier body stays closer to it, while the lighter body travels on a larger orbit. For a circular binary, those paths are circles; for an elliptical binary, the barycentre is a focus of each path.',
+          'If one mass is tiny compared with the other, the barycentre lies very close to the heavier body, which is why the planet-around-the-Sun picture works so well. In a binary star, both masses matter. Measure their orbital period and separation, and Kepler’s law gives the total mass; the separate motions give each star’s share.',
         ],
         figure: { kind: 'binary-stars', title: 'A binary is one gravitational system', caption: 'Both stars orbit the barycentre. Spectroscopic line shifts reveal the line-of-sight part of their motion.' },
         takeaway: 'Use the total mass in Kepler’s third law for the relative orbit; do not silently treat both bodies as massless test particles.',
@@ -124,17 +117,17 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'conic-orbits', label: '05 / Orbit families', title: 'The sign of orbital energy separates return from escape',
         paragraphs: [
-          'Under an isolated inverse-square gravitational force, the relative path is a conic section. Specific orbital energy ε = v²/2 − μ/r is negative for a bound ellipse, zero at the parabolic escape boundary, and positive for a hyperbolic flyby; μ = G(M₁ + M₂) for the relative two-body problem.',
-          'Eccentricity describes where a trajectory sits within that family, while angular momentum fixes its plane and orientation. For real Solar-System objects, a quoted Kepler orbit is often an osculating orbit: the instantaneous best-fit conic before perturbations from other bodies are included.',
+          'With only two bodies and an inverse-square gravitational force, the relative path is one of three conic sections: an ellipse when ε < 0, a parabola when ε = 0, or a hyperbola when ε > 0. Here ε = v²/2 − μ/r is energy per unit reduced mass, and μ = G(M₁ + M₂). The diagram groups paths by this energy sign; it does not show the path’s distance or shape.',
+          'Eccentricity gives the shape more precisely: circles and ellipses have 0 ≤ e < 1, a parabola has e = 1, and a hyperbola has e > 1. Real planets are also pulled by other bodies. An “osculating orbit” is the ideal conic that best matches a planet’s position and velocity at one moment; it slowly changes as those extra pulls act.',
         ],
-        figure: { kind: 'orbital-energy', title: 'Energy classifies an ideal two-body trajectory', caption: 'The energy levels are schematic, not a plotted potential curve. Planetary perturbations slowly change the osculating elements.' },
+        figure: { kind: 'orbital-energy', title: 'Energy classifies an ideal two-body trajectory', caption: 'Specific energy stays constant along each ideal orbit. Real planetary perturbations slowly change an object’s osculating orbital elements.' },
         takeaway: 'Begin with the two-body conic, then add perturbations only when the accuracy or timescale requires them.',
       },
       {
         id: 'hohmann-transfer', label: '06 / Transfer orbits', title: 'A Hohmann transfer trades time for fuel',
         paragraphs: [
-          'Between two coplanar circular orbits, the ideal Hohmann transfer follows half an ellipse tangent to both circles. A prograde impulse raises the spacecraft onto the transfer ellipse; after half an orbital period, a second impulse matches the destination circular speed.',
-          'The construction minimizes total Δv among two-impulse coplanar transfers for the stated idealization. Real trajectories may add inclination changes, finite thrust, launch-window timing, third-body effects, or gravity assists, so a textbook Hohmann result is a baseline rather than a mission plan.',
+          'To move from one circular orbit to a higher one, an ideal Hohmann transfer uses half of an ellipse that just touches both circles. At the lower orbit, a short forward burn places the spacecraft on the transfer ellipse. It then coasts for half an ellipse; a second burn at the far end matches the higher circular orbit.',
+          'The two burns change velocity; the coast between them uses no continuous thrust in this ideal model. For coplanar circular start and finish orbits, the Hohmann path minimizes the total velocity change among two-impulse transfers. Real missions must also account for launch timing, inclination, finite engine burns, and other planets’ gravity.',
         ],
         figure: { kind: 'transfer-orbit', title: 'Two tangential impulses connect circular orbits', caption: 'The central body lies at one focus of the transfer ellipse. Orbit sizes and burn vectors are schematic; the circles are coplanar and circular.' },
         takeaway: 'Use vis-viva to find transfer speed at each apsis, then subtract the local circular speed to get each impulse.',
@@ -202,12 +195,13 @@ export const noteChapters: Record<string, NoteChapter> = {
     interactive: 'orbit',
     interactiveTitle: 'Change the orbit, watch the motion change',
     interactiveDescription: 'Adjust eccentricity and viewing inclination. The drawing is a projected Kepler ellipse; the speed ratio is calculated from angular-momentum conservation.',
-    example: { title: 'Earth around the Sun', body: 'Earth’s orbit is close to circular, with a ≈ 1 AU and e ≈ 0.017. Kepler’s third law gives a period close to one year when Solar mass dominates.', result: 'At e = 0.017, the perihelion-to-aphelion speed ratio is (1 + e)/(1 − e) ≈ 1.035.' },
+    example: { title: 'Earth around the Sun', body: 'Earth’s orbit is nearly circular: a ≈ 1 AU and e ≈ 0.017. At perihelion and aphelion, angular momentum gives rₚvₚ = rₐvₐ. Using rₚ = a(1 − e) and rₐ = a(1 + e), the speed ratio is vₚ/vₐ = (1 + e)/(1 − e).', result: 'For Earth, vₚ/vₐ ≈ 1.035: Earth moves about 3.5% faster at perihelion than at aphelion.' },
     insight: 'In a two-body problem, the semi-major axis determines the period; eccentricity changes the shape and speed distribution, not the period when a and total mass are fixed.',
     misconception: 'A planet does not move fastest because it is “pulled forward” at perihelion. It is fastest there because conserved angular momentum requires a larger transverse speed at smaller radius.',
-    questions: [
-      { prompt: 'At which point of an elliptical orbit is a planet moving fastest?', options: ['At apoapsis, farthest from the star', 'At periapsis, closest to the star', 'At both apsides the speed is equal'], answer: 1, explanation: 'Angular momentum per unit mass h = r v⊥ is constant. At the turning points the velocity is transverse, so the smaller periapsis radius requires the larger speed.' },
-      { prompt: 'For the same central mass, what happens to the period if the semi-major axis doubles?', options: ['It doubles', 'It grows by 2√2', 'It grows by a factor of 4'], answer: 1, explanation: 'Kepler’s third law gives P ∝ a^(3/2), so doubling a multiplies P by 2^(3/2) = 2√2 ≈ 2.83.' },
+    summary: [
+      'The semi-major axis measures an orbit’s size from its geometric centre; eccentricity measures how stretched it is. In the Sun-centred diagram, the Sun sits at a focus.',
+      'A planet moves faster when it is closer to the Sun. Equal areas swept in equal times are the picture-version of angular-momentum conservation.',
+      'For an ideal two-body orbit, negative, zero, and positive orbital energy correspond to an ellipse, a parabolic escape path, and a hyperbolic flyby. State the model assumptions before using these results.',
     ],
   },
   'stellar-astronomy': {
@@ -215,7 +209,7 @@ export const noteChapters: Record<string, NoteChapter> = {
     number: '01',
     title: 'Stellar Astronomy',
     subtitle: 'A star is a spectrum with a life story.',
-    description: 'Turn starlight into physical properties. Read the H–R diagram, infer temperature from a spectrum, and follow how mass shapes a star’s structure, lifetime, and final state.',
+    description: 'Learn how astronomers turn a star’s light into clues about its temperature, size, and life story. Start with the spectrum, place the star on the H–R diagram, then connect its mass to how it lives and dies.',
     readingTime: '30 minute chapter',
     references: [
       { author: 'B. W. Carroll & D. A. Ostlie', title: 'An Introduction to Modern Astrophysics', edition: '2nd edition, 2017' },
@@ -235,16 +229,16 @@ export const noteChapters: Record<string, NoteChapter> = {
       { name: 'Olympiad insight', description: 'Use mass as the main control parameter—but state the regime of each scaling law.' },
     ],
     steps: [
-      { title: 'Measure the light', body: 'Photometry gives flux and colour; spectroscopy gives a continuum shape plus absorption or emission lines.' },
-      { title: 'Infer intrinsic properties', body: 'Distance turns observed flux into luminosity. The continuum estimates effective temperature; luminosity and temperature constrain radius.' },
-      { title: 'Place the star', body: 'Plot luminosity against temperature. Its location on the H–R diagram suggests its evolutionary state, not a direct photograph of its interior.' },
+      { title: 'Read the light', body: 'A spectrum spreads starlight by wavelength. Its smooth overall shape gives a temperature clue; narrow dark or bright lines reveal atoms and ions in the star’s atmosphere.' },
+      { title: 'Separate what we see from what the star is', body: 'A telescope measures flux: how much light reaches us. If we also know the distance, we can infer luminosity: the star’s total power. Temperature and luminosity then let us estimate its radius.' },
+      { title: 'Use the H–R diagram as a map', body: 'Plot luminosity upward and temperature decreasing to the right. The star’s region hints at its physical state and stage of life; the diagram is not a photograph of its interior.' },
     ],
     sections: [
       {
         id: 'stellar-radiation', label: '01 / Starlight', title: 'A spectrum carries temperature and composition',
         paragraphs: [
-          'A stellar continuum is often approximated by a blackbody, but real stellar atmospheres add absorption lines and departures from a perfect Planck curve. Wien’s law connects the peak wavelength to temperature; line patterns identify elements and ionization states.',
-          'For the Sun, an effective temperature near 5,800 K places the continuum peak near visible wavelengths. A star’s colour alone is not enough to infer its luminosity: distance and measured flux matter too.',
+          'The smooth part of a star’s spectrum is often close to a blackbody curve: a useful model for how a warm object glows. A real star’s atmosphere adds dark absorption lines, because atoms and ions remove particular wavelengths. The curve’s peak gives a temperature estimate; the line pattern tells us which atoms are present and how strongly they are ionized.',
+          'For the Sun, an effective temperature near 5,800 K puts the peak around 500 nm, in the visible range. A hotter star peaks at a shorter wavelength, but colour alone cannot tell us how powerful the star is. A small hot star can be less luminous than a much larger, cooler star.',
         ],
         figure: { kind: 'blackbody', title: 'Hotter blackbodies peak at shorter wavelengths', caption: 'These normalized Planck curves compare peak position. The curves are scaled independently, so their heights do not compare absolute stellar output.' },
         takeaway: 'Temperature shifts the spectrum; radius and temperature together set bolometric luminosity.',
@@ -252,17 +246,17 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'stellar-evolution', label: '02 / Evolution', title: 'Mass chooses the evolutionary route',
         paragraphs: [
-          'Stars form as self-gravitating gas clouds contract. Once a stable core can fuse hydrogen, a star spends most of its life on the main sequence. When core hydrogen is depleted, the envelope and core respond on different timescales and the star moves to a new region of the H–R diagram.',
-          'A Sun-like star sheds its outer layers and leaves a white dwarf. A sufficiently massive star develops an iron-rich core and may undergo core collapse, leaving a neutron star or black hole. The exact route depends on initial mass, composition, rotation, and mass exchange.',
+          'A star begins when gravity pulls a cloud of gas inward. The forming object heats up; when its core can sustain hydrogen fusion, it settles onto the main sequence. Most stars spend most of their lives there. Later, changes in the core make the outer layers expand, so the star moves to a different region of the H–R diagram.',
+          'A Sun-like star eventually releases its outer gas and leaves a compact white dwarf. A much more massive star can build an iron-rich core that collapses, producing a supernova and leaving a neutron star or black hole. These are broad paths, not a one-number rule: mass loss, composition, rotation, and a companion star can change the outcome.',
         ],
-        figure: { kind: 'stellar-life-cycle', title: 'Two broad paths after the main sequence', caption: 'The branching diagram is schematic: transition masses and outcomes depend on stellar physics and binary interaction.' },
+        figure: { kind: 'stellar-life-cycle', title: 'Two broad paths after the main sequence', caption: 'Both paths begin on the main sequence. The later outcome depends strongly on initial mass, mass loss, composition, rotation, and binary interaction; boundaries are not sharp.' },
         takeaway: 'Mass is the first-order control, while composition, rotation, and companions refine the outcome.',
       },
       {
         id: 'mass-luminosity', label: '03 / Mass and lifetime', title: 'A small mass difference can mean a large luminosity difference',
         paragraphs: [
-          'Ordinary main-sequence stars follow a steep, approximate mass–luminosity relation. A more massive star has a hotter core and a much higher fusion rate, so it radiates its available fuel far faster.',
-          'That is why stellar lifetime does not simply grow with mass. If available fuel scales roughly with M while luminosity scales roughly as M³·⁵, the simple main-sequence lifetime estimate falls approximately as M⁻²·⁵. This is a teaching approximation, not a universal stellar-evolution law.',
+          'For many ordinary main-sequence stars, more mass means a much brighter star. A heavier star’s core is hotter, so fusion uses fuel much faster. Across a limited range, astronomers summarize this trend with the rough rule L ∝ M³·⁵.',
+          'A brighter star does not necessarily live longer, because it burns through its larger fuel supply even faster. Combining “fuel roughly follows mass” with “luminosity roughly follows mass to the 3.5 power” gives a rough lifetime t ∝ M⁻²·⁵. For example, doubling the mass gives an estimated lifetime around one-sixth as long. Treat this as an order-of-magnitude shortcut, not a rule for every star.',
         ],
         figure: { kind: 'mass-luminosity', title: 'Luminosity rises steeply along the main sequence', caption: 'Log–log sketch of the rough L ∝ M³·⁵ trend across a limited mass interval; detailed models bend away from a single power law.' },
         takeaway: 'State the stellar class and mass regime before applying a power-law shortcut.',
@@ -270,17 +264,17 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'binary-stars', label: '04 / Stellar masses', title: 'Binary motion gives a star its mass',
         paragraphs: [
-          'A visual binary reveals changing angular separation and orientation. A spectroscopic binary reveals periodic Doppler shifts. Eclipses add orbital inclination and relative radii, turning a light curve into a powerful mass-and-size constraint.',
-          'The mass–luminosity relation is steep for ordinary main-sequence stars, but it is an empirical approximation over a limited mass range—not a universal law for giants, remnants, or all stars.',
+          'In a binary, two stars orbit their shared centre of mass. If we can watch their positions change, measure their Doppler shifts, or see them eclipse one another, we can reconstruct parts of that orbit. The orbital period and separation give the total mass; how far each star moves from the centre of mass gives the individual masses.',
+          'This is how astronomers test theories of stars: the motion gives a mass without relying on brightness. The mass–luminosity relation is a useful comparison for ordinary main-sequence stars, but it does not apply unchanged to giants, white dwarfs, or every mass range.',
         ],
-        figure: { kind: 'binary-stars', title: 'The orbit is the scale', caption: 'Combining the period with the semi-major axis gives the total system mass; the component motions separate the individual masses.' },
+        figure: { kind: 'binary-stars', title: 'Both stars orbit their barycentre', caption: 'This circular example uses a 2:1 mass ratio, so the more massive star follows the smaller orbit. Symbol sizes are illustrative, not to scale.' },
         takeaway: 'Dynamical masses from binaries calibrate stellar structure models and the mass–luminosity relation.',
       },
       {
         id: 'spectral-classification', label: '05 / Classification', title: 'A spectral type is a temperature sequence, not a ranking',
         paragraphs: [
-          'The familiar O–B–A–F–G–K–M sequence runs from hotter to cooler photospheres. Classification uses the pattern and strength of absorption lines as well as continuum colour; ionization balance makes different lines useful at different temperatures.',
-          'A luminosity class adds information about atmospheric pressure and surface gravity: class V marks main-sequence stars, while classes I–III describe supergiants and giants. Spectral type plus luminosity class is therefore more informative than colour alone, but metallicity and rotation can alter line patterns.',
+          'The letters O–B–A–F–G–K–M are a temperature sequence, from hottest to coolest. Astronomers assign a spectral type by comparing many absorption lines, not by matching a star to one colour swatch. Different temperatures leave different atoms and ions in the right state to make visible lines.',
+          'A second label describes luminosity class, which is related to a star’s size and surface gravity: class V means main sequence, while classes I–III include supergiants and giants. So “G2V” tells us more than “yellow”: it gives a temperature class and a luminosity class. Neither label alone gives the star’s distance or age.',
         ],
         figure: { kind: 'spectral-lines', title: 'Line patterns change with the conditions in a photosphere', caption: 'Illustrative line positions show how spectra are read; real classification uses calibrated standards and many blended features.' },
         takeaway: 'Read temperature and luminosity class together; neither one label gives mass, age, or distance by itself.',
@@ -288,8 +282,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'stellar-interiors', label: '06 / Stellar interiors', title: 'Pressure balances gravity while energy moves outward',
         paragraphs: [
-          'A stable star is close to hydrostatic equilibrium: inward gravity is balanced by an outward pressure gradient. The pressure, density, temperature, and enclosed mass change continuously with radius; the star is not a set of sharply separated shells.',
-          'In a Sun-like model, energy is produced mainly by fusion in the core, transported outward by radiation through much of the interior, then carried by convection in the outer envelope. The boundary and transport pattern depend on mass, composition, and evolutionary stage.',
+          'A star does not collapse under its own weight because pressure inside pushes outward. In a stable star, the pressure changes with depth just enough to balance the inward pull of gravity; this balance is called hydrostatic equilibrium. Pressure, temperature, and density vary smoothly through the star rather than changing at hard shell boundaries.',
+          'In today’s Sun, fusion releases energy in the core. That energy moves outward first mainly as radiation, then mainly through large-scale motion of hot gas near the surface. The diagram shows broad zones, not sharp walls. Other stars can have different transport zones because their masses and life stages differ.',
         ],
         figure: { kind: 'stellar-interior', title: 'A solar-type interior, drawn as nested working zones', caption: 'Approximate radial zones for the present Sun. Boundaries are gradual; massive stars can have convective cores and different envelope structures.' },
         takeaway: 'Interior models solve coupled structure equations; a single surface spectrum constrains them but does not reveal the interior directly.',
@@ -359,12 +353,13 @@ export const noteChapters: Record<string, NoteChapter> = {
     interactive: 'spectrum',
     interactiveTitle: 'Slide the temperature; watch the peak move',
     interactiveDescription: 'A normalized Planck curve updates with temperature. The peak wavelength follows Wien’s displacement law; the visualization isolates shape rather than absolute luminosity.',
-    example: { title: 'The Sun as a calibration point', body: 'The Sun is a G2V main-sequence star with Tₑff ≈ 5,780 K and luminosity 1 L☉. Those values imply a radius close to 1 R☉ through Stefan–Boltzmann.', result: 'Wien’s law predicts λmax ≈ 500 nm—near the green part of the visible spectrum, even though sunlight spans the full visible band.' },
+    example: { title: 'The Sun as a calibration point', body: 'The Sun has an effective temperature near 5,780 K. Wien’s law says the peak wavelength is 2.898 × 10⁶ nm K ÷ T, so the peak is about 500 nm. Its luminosity and temperature together imply a radius close to one solar radius.', result: 'The peak is in the green part of the spectrum, but sunlight contains every visible colour; the peak wavelength is not the only colour the Sun emits.' },
     insight: 'A star’s location on the H–R diagram is not a unique age label. Evolutionary tracks can cross, and population, composition, and binary history matter.',
     misconception: 'A blue star is not necessarily more luminous than every red star. Blue indicates a hotter surface; luminosity also depends on radius and distance affects observed brightness.',
-    questions: [
-      { prompt: 'If two stars have the same luminosity, which has the larger radius?', options: ['The hotter star', 'The cooler star', 'They must have equal radii'], answer: 1, explanation: 'From L = 4πR²σT⁴, at fixed luminosity a lower temperature requires a larger emitting area and therefore a larger radius.' },
-      { prompt: 'A star’s blackbody peak shifts to half the wavelength. What happens to its temperature?', options: ['It halves', 'It doubles', 'It stays the same'], answer: 1, explanation: 'Wien’s law gives λmax T = constant, so halving λmax doubles T.' },
+    summary: [
+      'A spectrum gives clues about temperature and composition, but observed brightness also depends on distance. Luminosity is the star’s actual total output.',
+      'On an H–R diagram, temperature decreases to the right and luminosity increases upward. A star’s location suggests its state; it is not a direct picture of the star or a unique age label.',
+      'Mass strongly shapes a star’s brightness, lifetime, and final state. Use scaling laws as approximations, and remember that binaries let astronomers measure stellar masses from motion.',
     ],
   },
   cosmology: {
@@ -372,7 +367,7 @@ export const noteChapters: Record<string, NoteChapter> = {
     number: '02',
     title: 'Cosmology',
     subtitle: 'Measure the universe by how it changes.',
-    description: 'Build a physical picture of cosmic expansion from redshift, the cosmic microwave background, and the distance ladder. Separate what observations show from what a cosmological model infers.',
+    description: 'Follow three kinds of evidence—the stretching of light, the afterglow of the early universe, and distance measurements—to understand how the universe changes. We separate what astronomers measure from what a model helps them infer.',
     readingTime: '29 minute chapter',
     references: [
       { author: 'Barbara Ryden', title: 'Introduction to Cosmology', edition: '2nd edition, 2017' },
@@ -392,16 +387,16 @@ export const noteChapters: Record<string, NoteChapter> = {
       { name: 'Olympiad insight', description: 'Check whether a formula is local, model-dependent, or valid at high redshift.' },
     ],
     steps: [
-      { title: 'Start with a measured spectrum', body: 'Identify a known spectral feature and measure how far its observed wavelength is shifted from its rest wavelength.' },
-      { title: 'Infer expansion', body: 'For cosmological redshift, the scale factor ratio links emitted and observed wavelengths: 1 + z = a₀/aₑ.' },
-      { title: 'Use a calibrated distance', body: 'Standard candles and other distance indicators turn flux or angular size into distances, letting expansion be tested across cosmic time.' },
+      { title: 'Compare one known line', body: 'Atoms make spectral lines at known wavelengths. Compare the wavelength measured in a distant galaxy with the same line measured in a laboratory; the shift is the redshift z.' },
+      { title: 'Read what the shift means', body: 'For light stretched by cosmic expansion, 1 + z equals the scale factor today divided by the scale factor when the light was emitted. A larger z means the universe has expanded more since then.' },
+      { title: 'Add a distance method', body: 'A redshift alone is not a distance. Astronomers calibrate objects of known brightness or size, then combine those distances with redshifts to trace how expansion has changed.' },
     ],
     sections: [
       {
         id: 'cosmological-redshift', label: '01 / Redshift', title: 'Wavelength stretches with cosmic expansion',
         paragraphs: [
-          'Cosmological redshift is defined by z = (λobs − λemit)/λemit. In a homogeneous expanding universe it is related to the scale factor at observation and emission. It is not simply a Doppler velocity once cosmological distances and high redshifts are involved.',
-          'For nearby galaxies, recessional speeds are small compared with the speed of light and a linear approximation is useful. At larger redshift, infer distance and lookback time by integrating a cosmological model rather than treating cz as an exact velocity.',
+          'Redshift measures how much a spectral feature has shifted: z = (observed wavelength − emitted wavelength) ÷ emitted wavelength. If a line emitted at 500 nm reaches us at 1,000 nm, then z = 1: the wavelength doubled. In the standard expanding-universe model, this also means the scale factor doubled while that light was travelling.',
+          'For nearby galaxies, the small-redshift approximation connects redshift to recession speed. Farther away, “cz” is not an exact speed through space. To infer distance or the time the light has travelled, astronomers use a model of the universe’s expansion history.',
         ],
         figure: { kind: 'redshift', title: 'A spectral ruler shifts to longer wavelength', caption: 'The line pattern remains recognizable while its wavelengths stretch. Redshift is dimensionless and does not by itself give a unique distance.' },
         takeaway: 'Redshift is an observable; converting it to distance requires a model and cosmological parameters.',
@@ -409,8 +404,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'cosmic-history', label: '02 / Cosmic history', title: 'The CMB is an early-universe afterglow',
         paragraphs: [
-          'The cosmic microwave background is relic radiation released when the early universe cooled enough for electrons and nuclei to form neutral atoms and photons to travel freely. Its near-blackbody spectrum is now observed at about 2.725 K.',
-          'Tiny temperature anisotropies encode the seeds of later structure. The CMB supports a hot, dense early phase, while the detailed pattern constrains geometry, matter content, and the expansion history within a cosmological model. Density parameters compare each cosmic component with the critical density set by the expansion rate.'
+          'The cosmic microwave background (CMB) is light left over from the hot early universe. For a long time, free electrons scattered light so often that the universe was opaque. When it cooled enough for electrons to join atomic nuclei, light could travel freely. We observe that ancient light today as microwaves, cooled to about 2.725 K.',
+          'The CMB is not a photograph of the instant the universe began; it shows the universe when it first became transparent, about 380,000 years later. Tiny temperature differences in the map are clues to the early density variations that later grew into galaxies. Comparing the pattern with a cosmological model helps estimate the universe’s geometry and contents.'
         ],
         figure: { kind: 'cosmic-timeline', title: 'From a hot plasma to the first galaxies', caption: 'Recombination and CMB release occurred roughly 380,000 years after the Big Bang. Time intervals in the diagram are not drawn to scale.' },
         takeaway: 'Evidence for the hot Big Bang includes cosmic expansion, the CMB spectrum, and primordial light-element abundances.',
@@ -418,17 +413,17 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'distance-ladder', label: '03 / Distance ladder', title: 'No single ruler spans every cosmic scale',
         paragraphs: [
-          'Geometric parallax calibrates nearby stars. Cepheid variables connect stellar physics to distances in nearby galaxies, and Type Ia supernovae extend the calibration to much greater distances. Redshift then maps the expansion history at the largest scales.',
-          'Each rung depends on calibration, selection effects, and measurement uncertainty. Modern surveys combine many methods and cross-check them; a ladder is a network of evidence, not a chain with error-free links.',
+          'No single technique works at every distance. Parallax uses geometry for nearby stars. Cepheid stars brighten and fade in a predictable way, so their measured pulsation helps estimate their true brightness and distance. Type Ia supernovae extend the comparison to farther galaxies; redshift helps map the expansion on the largest scales.',
+          'Each method is calibrated against measurements that work closer in, and every step brings uncertainty. Astronomers cross-check overlapping methods because a small calibration error near the bottom can affect every distance farther up. The “ladder” is really a network of checks, not a chain of perfect rulers.',
         ],
-        figure: { kind: 'distance-ladder', title: 'A calibrated route from nearby stars to cosmic expansion', caption: 'Methods overlap and cross-calibrate. The sketch shows a conceptual sequence, not strict distance boundaries.' },
+        figure: { kind: 'distance-ladder', title: 'A calibrated route from nearby stars to cosmic expansion', caption: 'The Hubble flow converts redshift to distance only after calibration. Methods overlap; this sketch is not a set of strict distance boundaries.' },
         takeaway: 'When a distance scale changes, ask which calibration or systematic uncertainty changed—not only the final number.',
       },
       {
         id: 'expansion-history', label: '04 / Expansion history', title: 'The expansion rate remembers what the universe contains',
         paragraphs: [
-          'The Hubble parameter H(t) = ȧ/a describes the fractional expansion rate, not a fixed speed for every galaxy. In the standard homogeneous model, radiation density thins fastest as the universe expands, matter next, while a cosmological-constant term stays constant.',
-          'That changing inventory makes H vary with time. A flat matter-only approximation is useful in a limited era, but precision distances and ages require the full expansion history and fitted cosmological parameters.',
+          'The Hubble parameter H(t) = ȧ/a tells us how quickly the scale factor is growing compared with its current size. It is an expansion rate, not one speed shared by every galaxy. As the universe expands, radiation thins faster than matter; a cosmological-constant contribution stays constant in the simplest standard model.',
+          'Because the contents change in importance over time, the expansion rate also changes. A matter-only universe is a useful simplified exercise, but calculating accurate ages or great distances requires the full expansion history and measured cosmological parameters.',
         ],
         figure: { kind: 'cosmic-expansion', title: 'The same comoving grid expands at different rates', caption: 'Marker separations grow with scale factor; panel spacing is illustrative and does not encode the measured expansion history.' },
         takeaway: 'The Hubble constant H₀ is the present-day value of H(t), not a timeless constant of nature.',
@@ -436,11 +431,11 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'cosmic-distances', label: '05 / Cosmic distances', title: 'Light travel time is not the distance to a galaxy today',
         paragraphs: [
-          'A distant galaxy is observed as it was when its light set out. During that journey the universe expands, so the distance the light traveled is not generally the galaxy’s present proper distance. Cosmologists define several distance measures because different observations depend on different geometry.',
-          'Comoving distance follows the expansion history along the light path; luminosity distance relates intrinsic power to observed flux, and angular-diameter distance relates physical size to apparent angle. They coincide only approximately in the nearby, low-redshift limit.',
+          'When we see a distant galaxy, we see light that left it in the past. The universe kept expanding while the light travelled, so the distance the light covered is not usually the same as the galaxy’s distance from us today. “How far?” can mean different things in cosmology.',
+          'Lookback time asks how long the light has travelled. Comoving distance factors out cosmic expansion; proper distance asks how far apart two places are at a chosen cosmic time. Luminosity distance describes how faint an object looks, while angular-diameter distance connects its size to its apparent angle. These measures are close to one another only for nearby objects.',
         ],
-        figure: { kind: 'cosmic-timeline', title: 'The observation is a point on the galaxy’s past light cone', caption: 'The timeline is schematic; converting redshift into elapsed time or distance requires an expansion model.' },
-        takeaway: 'Always name the distance definition and cosmological model when quoting a high-redshift distance.',
+        figure: { kind: 'cosmic-timeline', title: 'Light lets us look back in time', caption: 'This timeline marks when light was emitted, not the galaxy’s distance today. Turning redshift into time or distance requires an expansion model.' },
+        takeaway: 'When someone quotes a cosmic distance, ask which distance definition and expansion model they mean.',
       },
     ],
     equations: [
@@ -491,12 +486,13 @@ export const noteChapters: Record<string, NoteChapter> = {
     interactive: null,
     interactiveTitle: 'Track the evidence across cosmic time',
     interactiveDescription: 'Use the chapter figures to compare spectral shifts, the CMB epoch, and the calibration ladder. Each diagram states the assumptions needed to interpret it.',
-    example: { title: 'A familiar fossil: the microwave background', body: 'Expansion stretches the CMB photons from much shorter wavelengths to the microwave band. The measured spectrum is an almost perfect blackbody with a present temperature near 2.725 K.', result: 'The CMB is observed from every direction, but its existence alone does not specify every parameter; the anisotropy pattern and other evidence do the precision work.' },
+    example: { title: 'A redshift you can calculate', body: 'Suppose a known spectral line was emitted at 500 nm and is observed at 1,000 nm. Then z = (1,000 − 500) / 500 = 1. In the standard expansion picture, 1 + z = a₀/aₑ, so the scale factor has doubled since the light was emitted.', result: 'This tells us how much the universe expanded, not a unique distance by itself. Distance and lookback time also depend on the expansion history.' },
     insight: 'A cosmological redshift is not a speedometer reading for a distant galaxy. At sufficiently large distances, recession in the expanding metric is not ordinary motion through static space.',
     misconception: 'The Big Bang was not an explosion from one point into pre-existing empty space. In the standard model, the early hot dense state was everywhere in the observable region.',
-    questions: [
-      { prompt: 'A spectral line is observed at twice its emitted wavelength. What is its redshift?', options: ['z = 0.5', 'z = 1', 'z = 2'], answer: 1, explanation: 'z = (λobs − λemit)/λemit = (2λemit − λemit)/λemit = 1.' },
-      { prompt: 'What does the CMB most directly provide?', options: ['A snapshot of the universe when it became transparent', 'A direct image of the Big Bang instant', 'A map of every galaxy’s current distance'], answer: 0, explanation: 'The CMB photons last scattered around recombination, roughly 380,000 years after the Big Bang—not at the initial instant.' },
+    summary: [
+      'Redshift is a measured wavelength change. For distant galaxies, use a cosmological model—not a simple velocity conversion—to infer distance and lookback time.',
+      'The CMB is ancient light from when the universe became transparent, about 380,000 years after the hot early beginning. Its small temperature patterns help test models of cosmic history.',
+      'Cosmological distances are not all the same: name the measure, the redshift, and the model whenever you interpret a faraway object.',
     ],
   },
   'galactic-astronomy': {
@@ -504,7 +500,7 @@ export const noteChapters: Record<string, NoteChapter> = {
     number: '04',
     title: 'Galactic Astronomy',
     subtitle: 'Galaxies are ecosystems of matter and light.',
-    description: 'Explore the Milky Way as a dynamic system of stars, gas, dust, and dark matter. Connect visible structure to rotation curves, gravitational lensing, and the measurements that reveal hidden mass.',
+    description: 'See a galaxy as a changing system of stars, gas, dust, and dark matter. Learn how astronomers use motion and bent light to infer mass that cannot be seen directly.',
     readingTime: '26 minute chapter',
     references: [
       { author: 'J. Binney & M. Merrifield', title: 'Galactic Astronomy', edition: '1998' },
@@ -524,16 +520,16 @@ export const noteChapters: Record<string, NoteChapter> = {
       { name: 'Olympiad insight', description: 'Distinguish what a curve measures from the model used to infer mass.' },
     ],
     steps: [
-      { title: 'Map the light', body: 'Images reveal morphology, dust lanes, star-forming regions, and stellar populations—but surface brightness is not mass by itself.' },
-      { title: 'Measure motion', body: 'Spectral lines and proper motions reveal line-of-sight and transverse velocities. The rotation curve links those speeds to the gravitational potential.' },
-      { title: 'Compare independent probes', body: 'Lensing, gas dynamics, stellar motions, and satellite orbits test the mass distribution on different scales.' },
+      { title: 'Notice what shines', body: 'A galaxy image shows light from stars and gas, shaped by dust and the wavelength of the camera. Brightness is useful evidence, but it is not a direct map of all the mass.' },
+      { title: 'Measure how things move', body: 'Changes in spectral lines reveal motion toward or away from us; repeated images can reveal motion across the sky. These speeds show how strong the galaxy’s gravity must be.' },
+      { title: 'Check with a second method', body: 'Rotation curves, gravitational lensing, and the motions of stars and satellite galaxies test different parts of the mass picture. Agreement between independent methods makes the inference stronger.' },
     ],
     sections: [
       {
         id: 'galaxy-structure', label: '01 / Structure', title: 'Read a galaxy in three dimensions',
         paragraphs: [
-          'A spiral galaxy can contain a thin stellar and gas disk, spiral structure, a central bulge or bar, and a more extended stellar and dark-matter halo. The Milky Way’s Sun is in the disk, roughly 8 kpc from the Galactic centre.',
-          'Dust obscures visible light, so structure depends on wavelength and tracer. Infrared maps see through some dust; radio observations trace cold gas; X-rays reveal hot plasma and energetic environments.',
+          'A spiral galaxy is not just its bright spiral arms. It can include a flattened disk of stars and gas, a central bulge or bar, and a much larger halo. Our Sun sits in the Milky Way’s disk, about 8 kiloparsecs (roughly 26,000 light-years) from the centre. The drawing is face-on and simplified; we see our own galaxy from inside its disk.',
+          'Different kinds of light reveal different ingredients. Dust blocks some visible light but lets more infrared through; radio waves can trace cold gas; X-rays reveal very hot gas and energetic events. No single image shows everything in a galaxy.',
         ],
         figure: { kind: 'electromagnetic-spectrum', title: 'Different wavelengths reveal different components', caption: 'Radio, infrared, visible, ultraviolet, X-ray, and gamma-ray observations trace different physical processes and environments.' },
         takeaway: 'A galaxy image is a wavelength-dependent measurement, not a complete inventory of its matter.',
@@ -541,8 +537,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'rotation-curves', label: '02 / Rotation curves', title: 'The outer galaxy keeps moving quickly',
         paragraphs: [
-          'For a circular orbit, orbital speed depends on the gravitational mass enclosed within the orbit. If most mass were concentrated toward the centre, a Keplerian outer curve would decline roughly as r⁻¹ᐟ².',
-          'Many spiral galaxies instead show nearly flat outer rotation curves. Under standard gravitational dynamics, that implies the enclosed mass continues to grow beyond the bright disk. Dark matter is a leading explanation, tested alongside gas, stellar populations, and alternative gravity models.',
+          'Gas and stars orbit because gravity pulls inward while their sideways motion keeps them from falling straight in. In a simple spherical model, the speed at radius r depends on the mass inside that radius. If nearly all the mass sat near the centre, the outer speed would fall as distance increases—like planets moving farther from the Sun.',
+          'Instead, many spiral galaxies keep nearly the same orbital speed far beyond their bright disks. In the simple model, a flat speed means the enclosed mass keeps increasing with radius. A large halo of dark matter is the leading explanation, but astronomers also measure gas and stars carefully and compare alternative models. The data are the speeds; the mass distribution is inferred from them.',
         ],
         figure: { kind: 'rotation-curve', title: 'Visible light alone predicts a falling curve', caption: 'The flat observed trend is the key evidence. Both curves are schematic and the inferred mass profile depends on geometry and assumptions.' },
         takeaway: 'The data are velocities; “dark matter” is an interpretation supported by multiple independent observations.',
@@ -550,8 +546,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'gravitational-lensing', label: '03 / Lensing', title: 'Gravity bends light as well as matter',
         paragraphs: [
-          'In general relativity, mass-energy curves spacetime and light follows that geometry. A foreground galaxy or cluster can distort, magnify, or multiply the images of a more distant source.',
-          'Strong lensing can create arcs or multiple images; weak lensing produces small coherent distortions measured statistically. Lensing responds to projected mass, including matter that emits little or no light.',
+          'Gravity affects light as well as stars. A massive foreground galaxy bends light from a more distant source. Depending on the alignment, we may see the background object stretched into an arc, made brighter, or split into several apparent images.',
+          'Strong lensing produces obvious arcs or multiple images. Weak lensing is subtler: astronomers measure the tiny, shared distortions of many background galaxies. Both methods respond to the gravity of all the mass along the line of sight, including matter that emits little or no light.',
         ],
         figure: { kind: 'gravitational-lensing', title: 'One source, multiple apparent paths', caption: 'Two light paths bend around a foreground lens and reach the observer from different directions. The diagram is a simplified strong-lensing geometry.' },
         takeaway: 'Lensing provides a mass probe with systematics different from those of rotation curves.',
@@ -559,8 +555,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'stellar-populations', label: '04 / Stellar populations', title: 'A galaxy’s stars preserve different formation histories',
         paragraphs: [
-          'A disk, bulge, and stellar halo do not contain identical populations. Their stars differ statistically in age, chemical abundance, orbit shape, and vertical height; astronomers combine spectra, colours, and motions to separate overlapping groups.',
-          'The iron abundance [Fe/H] is logarithmic relative to the Sun, while element ratios such as [α/Fe] can preserve clues about how quickly a population formed. Dust, selection effects, and blended populations complicate the reconstruction, so no single colour is a reliable age label.',
+          'Stars in a galaxy’s disk, bulge, and halo are not all alike. They differ in age, chemical makeup, and the paths they follow around the galaxy. Astronomers combine colour, spectra, and motion to sort these overlapping populations; no single measurement cleanly separates every group.',
+          'The notation [Fe/H] compares a star’s iron abundance with the Sun’s on a logarithmic scale. Ratios such as [α/Fe] compare groups of elements and can hint at how quickly the star-forming gas was enriched. Dust and sample-selection effects complicate the story, so colour alone is not a reliable age measurement.',
         ],
         figure: { kind: 'hr-diagram', title: 'A colour–magnitude sequence is a population clue', caption: 'The H–R diagram is an idealized single-star reference; real galactic samples mix distances, extinction, binaries, and multiple ages.' },
         takeaway: 'Galactic archaeology is statistical: chemistry and kinematics together are stronger than either alone.',
@@ -568,8 +564,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'gas-and-feedback', label: '05 / Gas cycle', title: 'Stars return energy and elements to the interstellar medium',
         paragraphs: [
-          'Cold molecular gas can collapse into stars, but star formation does not consume a galaxy’s gas in one uninterrupted pass. Winds, radiation, and supernovae heat or expel gas; stellar deaths also return material enriched with newly made elements.',
-          'The cycle links gas supply, star-formation rate, and feedback. A simple gas-depletion time Mgas/SFR is a useful comparison, not a promise that the present rate continues unchanged; inflow, outflow, and recycling all matter.',
+          'Stars form inside cold clouds of molecular gas. Their light and winds heat the surrounding gas; when some stars die, supernova explosions can push gas outward and spread newly made elements. Other gas cools and mixes back into clouds that may form another generation of stars.',
+          'This exchange is called the gas cycle, but a galaxy is not a sealed tank: gas can flow in from its surroundings or leave in powerful outflows. Dividing the gas supply by the current star-formation rate gives a rough depletion time, not a countdown, because both the supply and the rate can change.',
         ],
         figure: { kind: 'galactic-cycle', title: 'A working cycle of gas, stars, and feedback', caption: 'A schematic of the baryonic cycle. The relative amounts and timescales vary widely between galaxies and across cosmic time.' },
         takeaway: 'Galaxies evolve through exchange between stars, gas, and their surroundings—not by passive stellar aging alone.',
@@ -613,12 +609,13 @@ export const noteChapters: Record<string, NoteChapter> = {
     interactive: null,
     interactiveTitle: 'Follow the evidence, not just the picture',
     interactiveDescription: 'Compare the galaxy’s luminous structure with the distinct signals from dynamics and lensing. The curves and ray paths are conceptual; measured analyses use survey data and uncertainty models.',
-    example: { title: 'The Milky Way’s Solar neighbourhood', body: 'The Sun lies about 8 kpc from the Galactic centre and moves around it at roughly 220 km/s. That orbital speed constrains the mass inside its galactocentric radius.', result: 'A circular-orbit estimate gives M(<r) ≈ v²r/G; it is an order-of-magnitude estimate, not a complete Milky Way mass model.' },
+    example: { title: 'The Milky Way’s Solar neighbourhood', body: 'The Sun is about 8 kpc from the Galactic centre and orbits at roughly 220 km/s. In a spherical approximation, M(<r) ≈ v²r/G. Substituting those values gives about 9 × 10¹⁰ solar masses inside the Sun’s orbit.', result: 'This is an order-of-magnitude estimate, not the Milky Way’s total mass. It assumes a circular orbit and spherical mass distribution; a real galaxy has a flattened disk and needs a fuller model.' },
     insight: 'A flat rotation curve does not mean the galaxy’s density is constant. In the spherical approximation it suggests M(<r) ∝ r, which corresponds to a declining density profile.',
     misconception: 'Dark matter is not inferred only because it is invisible. The case combines galaxy dynamics, gravitational lensing, galaxy clusters, and cosmological evidence.',
-    questions: [
-      { prompt: 'If a galaxy’s outer rotation curve is flat, what does the spherical model imply about enclosed mass?', options: ['It is nearly constant', 'It grows roughly in proportion to radius', 'It falls as the inverse square of radius'], answer: 1, explanation: 'With v² = GM(<r)/r and nearly constant v, the enclosed mass must grow approximately as M(<r) ∝ r.' },
-      { prompt: 'Why is gravitational lensing useful for studying dark matter?', options: ['It responds to gravity, not only emitted light', 'It measures only the temperature of stars', 'It removes all distance uncertainty'], answer: 0, explanation: 'Light deflection responds to the projected gravitational field, so lensing can trace total mass whether or not it shines.' },
+    summary: [
+      'A galaxy’s light shows stars, gas, and dust, but not every source of gravity. Observations at different wavelengths reveal different parts of the system.',
+      'A rotation curve records how fast material orbits. In a simple spherical model, a flat outer curve means enclosed mass keeps growing with radius.',
+      'Lensing and orbital motion are independent ways to test a galaxy’s total mass. Use their assumptions and uncertainties before deciding what the evidence implies.',
     ],
   },
   'observational-astronomy': {
@@ -626,7 +623,7 @@ export const noteChapters: Record<string, NoteChapter> = {
     number: '05',
     title: 'Observational Astronomy',
     subtitle: 'Every measurement begins with a direction.',
-    description: 'Move from the local sky to the detector. Learn how coordinate systems locate objects, how apertures and optics shape observations, and how parallax and spectra turn photons into distance and physics.',
+    description: 'Start by locating an object in the sky, then follow its light into a telescope and detector. See how careful measurements reveal distance, motion, and physical properties—and where uncertainty enters.',
     readingTime: '30 minute chapter',
     references: [
       { author: 'H. Karttunen et al.', title: 'Fundamental Astronomy', edition: '6th edition, 2017' },
@@ -647,25 +644,25 @@ export const noteChapters: Record<string, NoteChapter> = {
       { name: 'Olympiad insight', description: 'State conventions, units, and uncertainty before transforming coordinates.' },
     ],
     steps: [
-      { title: 'Choose the frame', body: 'Equatorial coordinates (right ascension and declination) are tied to Earth’s equator and celestial poles. Altitude and azimuth are tied to the observer’s horizon.' },
-      { title: 'Convert with geometry', body: 'Observer latitude, target declination, and hour angle determine altitude. Hour angle is local sidereal time minus right ascension.' },
-      { title: 'Measure with an instrument', body: 'Aperture, wavelength, atmosphere, detector noise, and calibration determine what can be resolved and how precisely it can be measured.' },
+      { title: 'Choose a sky address', body: 'Right ascension and declination give a star’s catalogue address on the celestial sphere. Altitude and azimuth tell an observer where to point from one particular place on Earth.' },
+      { title: 'Account for time and place', body: 'The local horizon changes as Earth turns. Hour angle is the difference between local sidereal time and a star’s right ascension; together with latitude and declination, it determines altitude.' },
+      { title: 'Ask what the instrument can measure', body: 'Aperture and wavelength limit the detail a telescope can resolve. The atmosphere, detector noise, and calibration affect how trustworthy the final measurement is.' },
     ],
     sections: [
       {
         id: 'horizon-coordinates', label: '01 / Coordinates', title: 'The same star has two useful addresses',
         paragraphs: [
-          'Right ascension α is measured eastward along the celestial equator from the vernal equinox; declination δ is measured north or south of that equator. Local altitude h is measured up from the horizon, while azimuth A is measured around it from a stated direction.',
-          'Hour angle H = local sidereal time − right ascension. It changes as Earth rotates, so equatorial coordinates are useful for catalogues while altitude and azimuth are useful for observing at a particular place and time.',
+          'Right ascension (RA) is the east–west coordinate measured along the celestial equator from the vernal equinox; it is usually written in hours. Declination is the north–south angle from the equator. Together they give a catalogue position that does not depend on where you are standing.',
+          'Altitude is how many degrees above your horizon an object appears. Azimuth is its direction around the horizon, measured from a chosen reference such as north. These local coordinates change as Earth turns. Hour angle = local sidereal time − right ascension, so it tells you how far the object is from crossing your local meridian.',
         ],
-        figure: { kind: 'horizon-sky', title: 'Altitude and azimuth belong to the observer', caption: 'The local sky dome is a projection. Azimuth conventions vary; here it is measured clockwise from north in the numerical explorer.' },
+        figure: { kind: 'horizon-sky', title: 'Altitude and azimuth belong to the observer', caption: 'The side view shows altitude above the horizon; the top view shows azimuth around it. Here, azimuth is measured clockwise from north.' },
         takeaway: 'Always name the coordinate frame, reference direction, epoch, and azimuth convention.',
       },
       {
         id: 'telescope-optics', label: '02 / Telescopes', title: 'An aperture collects light and limits detail',
         paragraphs: [
-          'A refractor focuses light with lenses; a Newtonian reflector uses a primary mirror and a secondary mirror to redirect the beam. For a fixed wavelength, a larger unobstructed aperture collects more light and has a smaller diffraction-limited angular scale.',
-          'Real observations may be limited by atmospheric seeing, optical quality, tracking, detector sampling, and contrast. Magnification alone does not create detail that the aperture and atmosphere have not resolved.',
+          'A refractor bends light through an objective lens. A Newtonian reflector gathers light with a large primary mirror, then uses a small diagonal mirror to send it to the eyepiece. In either design, the main aperture is the opening that gathers light.',
+          'Doubling the aperture diameter gives roughly four times the collecting area, so faint objects become easier to detect. It also makes the ideal diffraction blur smaller. But atmospheric turbulence, imperfect optics, focus, and detector sampling can hide that extra detail; adding magnification cannot recover detail the telescope never resolved.',
         ],
         figure: { kind: 'telescope-optics', title: 'Two optical paths, one job: form an image', caption: 'Idealized parallel rays show focal geometry. Secondary obstructions, lens aberrations, coatings, and atmosphere are not drawn.' },
         takeaway: 'Light-gathering area scales with D²; the Rayleigh angular scale scales roughly as λ/D.',
@@ -673,8 +670,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'parallax-distance', label: '03 / Parallax', title: 'A six-month baseline turns angle into distance',
         paragraphs: [
-          'As Earth orbits the Sun, a nearby star appears to shift against much more distant background stars. The parallax angle p is half the full apparent displacement measured between observations six months apart.',
-          'By definition, a star at one parsec has a parallax of one arcsecond when the baseline is one astronomical unit. In practice, precision, calibration, and source motion determine the distance uncertainty.',
+          'Take two pictures of a nearby star six months apart, when Earth is on opposite sides of its orbit. Against the much more distant background, the nearby star appears to shift back and forth. The full shift is 2p; the parallax angle p is half of it, measured using a 1-AU baseline.',
+          'A parsec is the distance at which that 1-AU baseline subtends an angle of one arcsecond. This definition gives the handy relation d (parsecs) = 1 ÷ p (arcseconds). Very small or uncertain parallax angles make the inferred distance much less certain.',
         ],
         figure: { kind: 'parallax', title: 'A small angle carries a large distance', caption: 'The full Earth-to-Earth baseline is 2 AU; p is the half-angle from the 1 AU baseline. The geometry is greatly exaggerated.' },
         takeaway: 'For parallax in arcseconds and distance in parsecs, d = 1/p is the defining relation.',
@@ -682,8 +679,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'spectroscopy', label: '04 / Spectra', title: 'Spectral lines are fingerprints and motion tracers',
         paragraphs: [
-          'Atoms and ions absorb or emit photons at characteristic wavelengths. A line pattern identifies composition and physical state; the shift of known lines measures radial velocity through the Doppler effect when the motion is non-relativistic.',
-          'Spectral resolving power R = λ/Δλ describes the smallest wavelength separation an instrument can distinguish. Higher resolution can reveal narrower features, but photon count and calibration still matter.',
+          'Atoms and ions absorb or emit light at particular wavelengths, leaving a pattern of lines in a spectrum. Matching those lines to laboratory measurements reveals which elements are present. If familiar lines shift together, their wavelength change can show whether the source is moving toward or away from us.',
+          'A spectrograph’s resolving power R = λ/Δλ tells us how close two wavelengths can be while still appearing separate. Higher resolution can reveal finer line detail, but it spreads the light out; enough photons, careful calibration, and a stable instrument are still essential.',
         ],
         figure: { kind: 'spectral-lines', title: 'The same transitions appear in absorption or emission', caption: 'Line positions identify transitions; their widths, depths, and shifts add information about temperature, pressure, composition, and motion.' },
         takeaway: 'A spectrum is a measurement with finite resolution, calibration, and signal-to-noise—not a perfect barcode.',
@@ -691,8 +688,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'image-calibration', label: '05 / Calibration', title: 'A science image is calibrated, not merely saved',
         paragraphs: [
-          'A detector records source photons together with electronic bias, thermal dark current, pixel-to-pixel sensitivity, and optical vignetting. Matched calibration exposures measure these instrumental patterns so they can be removed or divided out before scientific interpretation.',
-          'A normalized flat field corrects relative pixel response; bias and dark frames must match the detector setup and exposure conditions. Calibration cannot restore saturated pixels or remove every cosmic ray, and precision photometry still needs a stable aperture or point-spread-function model and comparison standards.',
+          'A raw detector image is not just a picture of the sky. It also contains an electronic offset (bias), signal from heat inside the detector (dark current), and pixels that respond with slightly different sensitivity. Astronomers take separate calibration images to measure these patterns.',
+          'Subtract a matching bias and dark signal, then divide by a normalized flat field to correct pixel-to-pixel response and uneven illumination. The correction only works when calibration frames match the observing setup. It cannot repair saturated pixels or remove every cosmic ray, so keep the raw data and record how each correction was made.',
         ],
         figure: { kind: 'detector-workflow', title: 'From detector counts to calibrated flux', caption: 'A simplified reduction sequence. Real pipelines also track masks, uncertainty arrays, non-linearity, cosmic rays, and astrometric solutions.' },
         takeaway: 'Keep the raw exposure and its calibration metadata; every correction carries assumptions and uncertainty.',
@@ -700,8 +697,8 @@ export const noteChapters: Record<string, NoteChapter> = {
       {
         id: 'signal-to-noise', label: '06 / Noise', title: 'More exposure helps, but not without limit',
         paragraphs: [
-          'Photon arrivals are discrete, so source counts fluctuate with Poisson statistics. Sky photons, dark current, and detector read noise add uncertainty; in a sky-background-limited observation, signal-to-noise grows roughly as the square root of exposure time rather than linearly.',
-          'Splitting a long exposure into shorter frames can help reject cosmic rays and protect against saturation, but every read adds read noise. The best exposure strategy depends on target brightness, background, detector, and the science requirement.',
+          'Light arrives as individual photons, so even a steady source gives slightly different counts from one exposure to the next. Sky glow, detector heat, and read noise add more uncertainty. When sky background dominates, taking four times as long gives about twice the signal-to-noise—not four times as much.',
+          'Several shorter exposures can make it easier to reject cosmic-ray hits and avoid saturation. The trade-off is that reading the detector each time adds read noise. The best plan depends on the target, sky brightness, detector, and the measurement you need.',
         ],
         figure: { kind: 'signal-to-noise', title: 'The square-root return of longer exposure', caption: 'Illustrative sky-limited scaling with fixed source and background. Read noise, saturation, changing sky, and systematics are omitted.' },
         takeaway: 'State which noise term dominates before using a simple exposure-time scaling.',
@@ -777,9 +774,10 @@ export const noteChapters: Record<string, NoteChapter> = {
     example: { title: 'Finding a star’s altitude', body: 'At latitude φ = 40° N, a target at δ = +20° on the meridian has H = 0. Substituting gives h = 90° − |φ − δ| = 70°.', result: 'The star culminates 70° above the southern horizon (for this northern observer and declination). Polaris is a useful near-pole check: its altitude is approximately the observer’s latitude.' },
     insight: 'A sidereal day is about 23 h 56 min of mean solar time because Earth advances along its orbit while rotating. That is why stars cross the meridian roughly four minutes earlier each solar day.',
     misconception: 'A telescope’s magnification is not its resolving power. A larger aperture improves light collection and the diffraction limit; seeing and contrast determine how much of that theoretical detail is usable.',
-    questions: [
-      { prompt: 'At an object’s upper meridian transit, what is its hour angle?', options: ['H = 0', 'H = 6 h', 'H = 12 h'], answer: 0, explanation: 'Hour angle is local sidereal time minus right ascension. At upper transit these are equal, so H = 0.' },
-      { prompt: 'What happens to the diffraction-limited angular scale if aperture diameter doubles?', options: ['It doubles', 'It halves', 'It is unchanged'], answer: 1, explanation: 'The Rayleigh scale is proportional to λ/D. At fixed wavelength, doubling D halves the angular scale.' },
+    summary: [
+      'Equatorial coordinates give a catalogue position. Altitude and azimuth give an object’s changing position above a particular observer’s horizon.',
+      'A larger telescope aperture gathers more light and can resolve finer detail, but atmosphere, optics, and detector noise can limit the result.',
+      'Parallax, spectra, and calibrated images turn light into measurements. Every result depends on the instrument, the observing conditions, and the uncertainty.',
     ],
   },
 }
