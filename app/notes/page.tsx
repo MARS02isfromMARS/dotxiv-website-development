@@ -4,7 +4,7 @@ import { SiteHeader } from '@/components/site-header'
 
 export const metadata: Metadata = {
   title: 'Visual Astronomy Notes',
-  description: 'Diagram-led Astronomy Olympiad chapters with interactive astronomy models, equations, real examples, and knowledge checks.',
+  description: 'Clear, diagram-led Astronomy Olympiad notes with plain-language explanations, worked examples, and carefully labeled scientific figures.',
   alternates: { canonical: '/notes' },
 }
 
@@ -12,8 +12,8 @@ const syllabus = [
   {
     title: 'Stellar Astronomy', slug: 'stellar-astronomy', number: '01',
     description: 'How stars form, shine, evolve, interact, and end as white dwarfs, neutron stars, or black holes.',
-    coverage: 'Stellar astronomy connects observation to stellar physics: hydrostatic equilibrium, energy generation and transport, equations of state, radiative transfer, spectra, chemical composition, stellar populations, binaries, and stellar evolution. The central questions are how mass controls a star’s temperature and lifetime, how luminosity is produced, and how observations reveal interiors we cannot see.',
-    principles: 'Build from inverse-square dilution and blackbody radiation to opacity, Kirchhoff’s laws, LTE spectra, hydrostatic equilibrium, the virial theorem, nuclear reaction chains, convection, degeneracy pressure, and the mass–luminosity relation. Practise reading H–R diagrams and using Stefan–Boltzmann, Wien, distance-modulus, and lifetime scaling relations.',
+    coverage: 'Stellar astronomy asks what stars are made of, how they produce light, and how they change over time. We begin with the clues that reach us—brightness, colour, and spectra—then use them to reason about temperature, size, mass, and age. The chapter also follows stars from their formation to their final states.',
+    principles: 'Learn to read an H–R diagram and connect a star’s spectrum to its temperature and composition. Then build a simple picture of the interior: gravity pulls inward, pressure pushes outward, and energy travels from the core to the surface. We use blackbody radiation, stellar masses, and lifetime estimates as models, while noting where each approximation stops working.',
     books: [
       'Fundamental Astronomy, Karttunen et al.: Ch. 5 “Radiation Mechanisms”; Ch. 6 “Photometry and Magnitudes”; Ch. 8 “Stellar Spectra”; Ch. 9 “Binary Stars and Stellar Masses”; Ch. 10 “Stellar Structure”; Ch. 11 “Stellar Evolution”; Ch. 13 “Variable Stars”; Ch. 14 “Compact Stars”.',
       'Carroll & Ostlie, An Introduction to Modern Astrophysics (Bobcat): Ch. 5 “The Interaction of Light and Matter”; Ch. 8 “The Stellar Atmosphere”; Ch. 9 “The Interiors of Stars”; Ch. 10 “Stellar Evolution”; Ch. 11 “The End States of Stars”; Ch. 12 “The Sun”; Ch. 13 “Binary Stars”; Ch. 14 “Variable Stars”.',
@@ -24,8 +24,8 @@ const syllabus = [
   {
     title: 'Cosmology', slug: 'cosmology', number: '02',
     description: 'The origin, expansion, contents, geometry, history, and ultimate fate of the universe.',
-    coverage: 'Cosmology studies the universe as a physical system: its homogeneous large-scale description, expansion history, thermal origin, structure formation, dark matter, dark energy, and the limits of observation. Its central questions are how expansion is measured, why the cosmic microwave background exists, how galaxies and clusters grew, and what the cosmic energy budget implies for the future.',
-    principles: 'Master comoving versus proper distance, scale factor, redshift, Hubble–Lemaître law, lookback time, critical density, density parameters, Friedmann dynamics, curvature, recombination, CMB anisotropies, primordial nucleosynthesis, and linear growth of perturbations. Distinguish observable evidence from model assumptions and keep units consistent.',
+    coverage: 'Cosmology studies the universe on its largest scales: how it began in a hot, dense state, how it has expanded, and how galaxies and clusters formed. We focus on evidence astronomers can measure, including shifted light, the cosmic microwave background, and distances to faraway objects.',
+    principles: 'Start by comparing the emitted and observed wavelength of light. Then connect redshift to cosmic expansion, and learn why a redshift is not a distance on its own. We introduce the scale factor and different ways to define cosmic distance, keeping observations separate from the assumptions in a cosmological model.',
     books: [
       'Fundamental Astronomy, Karttunen et al.: Ch. 18 “Galaxies”; Ch. 19 “Cosmology” (use the edition’s chapter numbering if your copy places these as Ch. 17–18).',
       'Carroll & Ostlie, An Introduction to Modern Astrophysics (Bobcat): Ch. 27 “Cosmology”; Ch. 28 “The Early Universe”; Ch. 29 “The Formation of Structure in the Universe”; Ch. 30 “The Universe in the Twenty-First Century” (verify numbering against your edition).',
@@ -36,8 +36,8 @@ const syllabus = [
   {
     title: 'Celestial Mechanics', slug: 'celestial-mechanics', number: '03',
     description: 'The mathematics and physics of orbits, trajectories, perturbations, tides, and dynamical systems.',
-    coverage: 'Celestial mechanics explains motion under gravity from two-body orbits to resonances, rotating frames, tides, spacecraft transfers, and many-body chaos. The core questions are how an orbit is determined, how energy and angular momentum constrain it, and how small perturbations accumulate into observable changes.',
-    principles: 'Work through Newton’s laws, gravitational potential, conservation of energy and angular momentum, Keplerian elements, vis-viva, conic sections, centre-of-mass motion, relative coordinates, orbital period, escape speed, perturbation theory, Lagrange points, tides, and resonance. Solve both vector and scalar forms, then check limiting cases and dimensions.',
+    coverage: 'Celestial mechanics explains how gravity shapes the paths of planets, moons, stars, and spacecraft. We begin with a simple two-body orbit, then look at what changes when both objects matter, when a spacecraft transfers between orbits, or when other bodies gently disturb the path.',
+    principles: 'Learn the geometry of an ellipse before using the equations for speed and orbital period. Energy helps classify a path as bound or escaping; angular momentum explains why an object speeds up near the central body. We show the assumptions behind the two-body model and use units and limiting cases to check our answers.',
     books: [
       'Fundamental Astronomy, Karttunen et al.: Ch. 3 “Celestial Mechanics” and the Solar System chapter for applications to planets, satellites, and small bodies.',
       'Carroll & Ostlie, An Introduction to Modern Astrophysics (Bobcat): Ch. 2 “Newtonian Mechanics”; Ch. 3 “Special Relativity”; Ch. 16 “The Solar System”; Ch. 17 “Planetary Atmospheres”; Ch. 18 “The Formation of the Solar System” (edition numbering may vary).',
@@ -49,8 +49,8 @@ const syllabus = [
   {
     title: 'Galactic Astronomy', slug: 'galactic-astronomy', number: '04',
     description: 'The Milky Way and galaxies as evolving systems of stars, gas, dust, dark matter, and black holes.',
-    coverage: 'Galactic astronomy examines galaxy structure, morphology, dynamics, stellar populations, interstellar medium, star formation, active nuclei, mergers, and the relationship between galaxies and their dark-matter haloes. It asks how the Milky Way is organised, how galaxies acquire and recycle gas, and how environment changes their evolution.',
-    principles: 'Learn surface-brightness profiles, rotation curves, virial reasoning, velocity dispersion, Jeans-style intuition, spiral density waves, metallicity, extinction, star-formation tracers, the Tully–Fisher relation, black-hole scaling relations, and gravitational lensing. Separate baryonic, dark-matter, and observational selection effects.',
+    coverage: 'Galactic astronomy treats a galaxy as a living system of stars, gas, dust, and dark matter. We use the Milky Way as a nearby example, then ask how galaxies are built, how their contents move, and how gas is turned into stars and recycled.',
+    principles: 'First learn what different wavelengths reveal. Then read a rotation curve: the speed of orbiting gas gives us a way to estimate the gravity—and therefore the mass—inside its path. Gravitational lensing offers another mass probe by measuring how foreground matter bends background light. Both methods have assumptions and uncertainties.',
     books: [
       'Fundamental Astronomy, Karttunen et al.: Ch. 15 “The Interstellar Medium”; Ch. 16 “Star Clusters and Associations”; Ch. 17 “The Milky Way”; Ch. 18 “Galaxies”.',
       'Carroll & Ostlie, An Introduction to Modern Astrophysics (Bobcat): Ch. 24 “The Milky Way Galaxy”; Ch. 25 “Normal Galaxies”; Ch. 26 “Active Galaxies”; Ch. 29 “The Formation of Structure in the Universe”.',
@@ -61,8 +61,8 @@ const syllabus = [
   {
     title: 'Observational Astronomy', slug: 'observational-astronomy', number: '05',
     description: 'Turning photons into measurements: sky navigation, instruments, coordinates, photometry, spectroscopy, and uncertainty.',
-    coverage: 'Observational astronomy is the practical language of the sky. It covers the celestial sphere, time systems, spherical coordinates, telescope optics, detectors, seeing, calibration, photometry, spectroscopy, astrometry, survey design, and scientific inference. Its central question is how to extract reliable physical information from finite, noisy measurements.',
-    principles: 'Practise altitude–azimuth and equatorial coordinates, right ascension and declination, hour angle, sidereal time, precession, airmass, angular resolution, diffraction, signal-to-noise, magnitude systems, colour indices, extinction, aperture and differential photometry, spectral resolution, Doppler shift, and error propagation.',
+    coverage: 'Observational astronomy follows the whole path from finding an object in the sky to interpreting the light a detector records. We cover sky coordinates, telescopes, parallax, spectra, image calibration, and noise—the practical steps that turn photons into evidence about the universe.',
+    principles: 'Learn to translate between the catalogue address of a star and its position above your local horizon. Then see how a telescope gathers and focuses light, how spectra reveal motion and composition, and why images need calibration. We keep track of uncertainty so a measurement is not mistaken for an exact answer.',
     books: [
       'Fundamental Astronomy, Karttunen et al.: Ch. 1 “Introduction”; Ch. 2 “Spherical Astronomy”; Ch. 4 “Observations and Instruments”; Ch. 6 “Photometry and Magnitudes”; Ch. 7 “The Solar System” for observational applications.',
       'Carroll & Ostlie, An Introduction to Modern Astrophysics (Bobcat): Ch. 1 “Introduction”; Ch. 2 “Newtonian Mechanics”; Ch. 3 “Special Relativity”; Ch. 4 “Radiation and Matter”; Ch. 5 “The Tools of Astronomy”; Ch. 6 “The Sun as a Star” (confirm titles in your edition).',
